@@ -3,12 +3,12 @@ import FrameImage from '../components/assets/Frame 1984078762.svg'
 
 const AboutSasha = () => {
   return (
-    <div className="bg-white-90 pt- ">
+    <div className="bg-white-90 -mt-20 ">
       {/* Main Container */}
       <div className="max-w-7xl mx-auto  py-20">
         
         {/* Header Section */}
-        <div className="mb-16">
+        <div className="mb-4">
           <div className="flex items-start">
             {/* Left Side - About Sasha Smiles */}
             <div className="flex-1 mt-5" style={{ transform: 'translateX(-16px)' }}>
@@ -21,7 +21,7 @@ const AboutSasha = () => {
             
             {/* Right Side - Our Vision */}
             <div className="max-w-lg relative" style={{ transform: 'translateX(-70px)' }}>
-              <h2 className="text-2xl font-bold mb-1 font-sans" style={{ color: '#FF6633' }}>Our Vision</h2>
+              <h2 className="text-3xl font-bold mb-1 font-sans" style={{ color: '#FF6633' }}>Our Vision</h2>
               
               {/* Body Text */}
               <div className="text-lg leading-relaxed font-sans" style={{ color: '#0267AC' }}>

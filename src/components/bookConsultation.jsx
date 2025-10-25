@@ -5,7 +5,7 @@ import bookaconsulting from "./assets/Book a Consultation.png";
 
 const BookConsultation = () => {
   return (
-    <section className="py-16">
+    <section className="py-16 -mt-28">
       <div className="max-w-6xl mx-auto px-6">
         <div 
           className="rounded-[24px] p-8 relative overflow-hidden"

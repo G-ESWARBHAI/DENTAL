@@ -49,7 +49,7 @@ export default function DentalServices() {
   ];
 
   return (
-    <div className="min-h-screen bg-white py-16 px-4">
+    <div className="min-h-screen bg-white py-16 px-4 -mt-32">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

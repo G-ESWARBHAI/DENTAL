@@ -6,7 +6,7 @@ import TechnologyWithIcon from '../components/assets/Technology with a Human Tou
 
 const Explore = () => {
   return (
-    <div className="bg-white py-20">
+    <div className="bg-white py-20 -mt-24">
       <div className="max-w-7xl mx-auto px-8">
         
         {/* Main Heading */}

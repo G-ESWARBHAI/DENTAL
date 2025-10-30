@@ -36,7 +36,7 @@ const BookConsultation = () => {
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center">
             
             {/* Left Content */}
             <motion.div className="space-y-4 sm:space-y-6 text-center lg:text-left" variants={itemVariants}>
@@ -72,7 +72,7 @@ const BookConsultation = () => {
             </motion.div>
 
             {/* Right Side - Illustration */}
-            <motion.div className="flex justify-center lg:justify-start" variants={itemVariants}>
+            <motion.div className="flex justify-center lg:justify-middle" variants={itemVariants}>
               <motion.div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 flex items-center justify-center" variants={imageVariants} whileHover="hover">
                 <motion.img 
                   src={bookaconsulting} 

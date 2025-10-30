@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Calendar, CalendarDays } from 'lucide-react'
+import { motion, useReducedMotion } from 'framer-motion'
 
 const BookAppointment = () => {
   const [formData, setFormData] = useState({
@@ -24,26 +25,42 @@ const BookAppointment = () => {
     // Handle form submission here
   }
 
+  const prefersReducedMotion = useReducedMotion();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.05 } }
+  };
+
+  const blockVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' } }
+  };
+
   return (
-    <section 
+    <motion.section 
       className="py-12 sm:py-16 lg:py-20"
       style={{
         background: 'linear-gradient(135deg, #A1D6FA 0%, #C9E8FB 52%, #EFF8FB 100%)'
       }}
+      initial={prefersReducedMotion ? false : 'hidden'}
+      whileInView={prefersReducedMotion ? undefined : 'visible'}
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-[48px] font-medium text-[#0067AC] mb-3 sm:mb-4 font-sans leading-tight">
+        <motion.div className="text-center mb-8 sm:mb-12" variants={blockVariants}>
+          <motion.h2 className="text-3xl sm:text-4xl lg:text-[48px] font-medium text-[#0067AC] mb-3 sm:mb-4 font-sans leading-tight" variants={blockVariants}>
             Book Appointment
-          </h2>
-          <p className="text-base sm:text-lg text-[#737B8C] font-sans max-w-2xl mx-auto px-4">
+          </motion.h2>
+          <motion.p className="text-base sm:text-lg text-[#737B8C] font-sans max-w-2xl mx-auto px-4" variants={blockVariants}>
             Simple. Quick. Hassle-free. Fill in your details and schedule your appointment at Sasha Smiles today.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Form Card */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg">
+        <motion.div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg" variants={blockVariants}>
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             {/* Input Fields Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -136,18 +153,20 @@ const BookAppointment = () => {
 
             {/* Submit Button */}
             <div className="pt-2 sm:pt-4">
-              <button
+              <motion.button
                 type="submit"
                 className="w-full bg-[#FF642F] hover:bg-[#e55a2b] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center space-x-2 transition-colors font-sans text-sm sm:text-base"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <CalendarDays className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>Book Appointment</span>
-              </button>
+              </motion.button>
             </div>
           </form>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import  ExpertSupervisionIcon from '../../assets/Expert Supervision.png';
 import  DiscreetIcon from '../../assets/Discreet.png';
 import  FlexibleIcon from '../../assets/Flexible.png';
@@ -8,14 +8,18 @@ import  DigitalSmileSimulationIcon from '../../assets/Digital Smile Simulation.p
 import arrowIcon from '../../assets/ARROW.png';
 
 export default function WhyChoose() {
+  const prefersReducedMotion = useReducedMotion();
+  const initialAnim = prefersReducedMotion ? false : 'hidden';
+  const animateAnim = prefersReducedMotion ? false : 'visible';
+  const whileInViewAnim = prefersReducedMotion ? undefined : 'visible';
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1
+        staggerChildren: 0.08,
+        delayChildren: 0.06
       }
     }
   };
@@ -46,7 +50,7 @@ export default function WhyChoose() {
       x: 0,
       scale: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.35,
         ease: "easeOut"
       }
     },
@@ -54,7 +58,7 @@ export default function WhyChoose() {
       y: -4,
       boxShadow: "0 10px 25px rgba(2, 103, 172, 0.15)",
       transition: {
-        duration: 0.1,
+        duration: 0.08,
         ease: "easeInOut"
       }
     }
@@ -71,7 +75,7 @@ export default function WhyChoose() {
       x: 0,
       scale: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.35,
         ease: "easeOut"
       }
     },
@@ -79,7 +83,7 @@ export default function WhyChoose() {
       y: -4,
       boxShadow: "0 10px 25px rgba(2, 103, 172, 0.15)",
       transition: {
-        duration: 0.2,
+        duration: 0.12,
         ease: "easeInOut"
       }
     }
@@ -100,8 +104,8 @@ export default function WhyChoose() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2
+        staggerChildren: 0.18,
+        delayChildren: 0.12
       }
     }
   };
@@ -117,7 +121,7 @@ export default function WhyChoose() {
       y: 0,
       x: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.4,
         ease: "easeOut"
       }
     }
@@ -151,7 +155,7 @@ export default function WhyChoose() {
       x: 0,
       scale: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.3,
         ease: "easeOut"
       }
     },
@@ -160,7 +164,7 @@ export default function WhyChoose() {
       x: 5,
       boxShadow: "0 8px 20px rgba(2, 103, 172, 0.2)",
       transition: {
-        duration: 0.2,
+        duration: 0.12,
         ease: "easeInOut"
       }
     }
@@ -171,8 +175,8 @@ export default function WhyChoose() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+        staggerChildren: 0.08,
+        delayChildren: 0.12
       }
     }
   };
@@ -213,8 +217,9 @@ export default function WhyChoose() {
   return (
     <motion.div 
       className="py-16 px-4 bg-white -mt-5 mb-10"
-      initial="hidden"
-      whileInView="visible"
+      initial={initialAnim}
+      animate={animateAnim}
+      whileInView={whileInViewAnim}
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
@@ -254,6 +259,11 @@ export default function WhyChoose() {
                       src={feature.icon} 
                       alt={feature.title}
                       className="w-14 h-14"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      width="56"
+                      height="56"
                     />
                   </motion.div>
                   
@@ -292,6 +302,11 @@ export default function WhyChoose() {
                       src={feature.icon} 
                       alt={feature.title}
                       className="w-14 h-14"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      width="56"
+                      height="56"
                     />
                   </motion.div>
                   
@@ -350,6 +365,11 @@ export default function WhyChoose() {
                     src={arrowIcon} 
                     alt="arrow" 
                     className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="low"
+                    width="20"
+                    height="20"
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
@@ -367,6 +387,11 @@ export default function WhyChoose() {
                     src={arrowIcon} 
                     alt="arrow" 
                     className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="low"
+                    width="20"
+                    height="20"
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
@@ -384,6 +409,11 @@ export default function WhyChoose() {
                     src={arrowIcon} 
                     alt="arrow" 
                     className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="low"
+                    width="20"
+                    height="20"
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
@@ -401,6 +431,11 @@ export default function WhyChoose() {
                     src={arrowIcon} 
                     alt="arrow" 
                     className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="low"
+                    width="20"
+                    height="20"
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
@@ -431,6 +466,11 @@ export default function WhyChoose() {
                     src={arrowIcon} 
                     alt="arrow" 
                     className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="low"
+                    width="20"
+                    height="20"
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
@@ -448,6 +488,11 @@ export default function WhyChoose() {
                     src={arrowIcon} 
                     alt="arrow" 
                     className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="low"
+                    width="20"
+                    height="20"
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />

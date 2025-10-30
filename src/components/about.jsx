@@ -5,7 +5,7 @@ const AboutSasha = () => {
   return (
     <div className="bg-white-90 -mt-16 sm:-mt-20">
       {/* Main Container */}
-      <div className="max-w-7xl mx-auto py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+      <div className="  max-w-6xl mx-auto py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
         <div className="mb-8 sm:mb-12 lg:mb-16">

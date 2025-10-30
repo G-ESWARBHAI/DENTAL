@@ -30,7 +30,7 @@ const Explore = () => {
 
   return (
     <motion.div 
-      className="bg-white py-20 -mt-24"
+      className="bg-white py-20 -mt-20"
       initial={prefersReducedMotion ? false : 'hidden'}
       whileInView={prefersReducedMotion ? undefined : 'visible'}
       viewport={{ once: true, amount: 0.2 }}
@@ -39,8 +39,8 @@ const Explore = () => {
       <div className="max-w-7xl mx-auto px-8">
         
         {/* Main Heading */}
-        <motion.div className="text-center mb-16" variants={headingVariants}>
-          <h3 className="text-4xl font-bold font-sans leading-tight">
+        <motion.div className="text-center mb-10 lg:mb-10" variants={headingVariants}>
+          <h3 className="lg:text-4xl text-2xl font-bold font-sans leading-tight">
             <span style={{ color: '#333333' }}>Explore What Makes </span>
             <span style={{ color: '#0067AC' }}>Sasha Smiles </span>
             <span style={{ color: '#333333' }}>Different</span>

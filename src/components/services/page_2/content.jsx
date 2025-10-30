@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import page3Image from '../../assets/page_3.svg';
-import orthodonticTreatmentImage from "../../assets/orthodontic.png";
+import orthodonticTreatmentImage from "../../assets/Orthodontic.png";
 import localClearImage from "../../assets/Local Clear.png";
 import invisalignImage from "../../assets/Invisalign.png";
 import arrowIcon from "../../assets/ARROW.png";

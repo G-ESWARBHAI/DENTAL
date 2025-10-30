@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import logo from './assets/SASHA SMILES LOGO.svg'
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -28,9 +30,9 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium">
+            <Link to="/" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium">
               Home
-            </a>
+            </Link>
             <div className="relative group">
               <a href="#" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium flex items-center">
                 About us
@@ -41,12 +43,12 @@ const Navbar = () => {
               {/* Dropdown menu would go here */}
             </div>
             <div className="relative group">
-              <a href="#" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium flex items-center">
+              <Link to="/services" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium flex items-center">
                 Services
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </a>
+              </Link>
               {/* Dropdown menu would go here */}
             </div>
             <a href="#" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium">
@@ -125,6 +127,7 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+
               <a href="#" className="block px-3 py-2 sm:py-3 text-dental-blue hover:text-dental-teal transition-colors font-medium text-sm sm:text-base">
                 Home
               </a>
@@ -135,6 +138,18 @@ const Navbar = () => {
                 Services
               </a>
               <a href="#" className="block px-3 py-2 sm:py-3 text-dental-blue hover:text-dental-teal transition-colors font-medium text-sm sm:text-base">
+
+              <Link to="/" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium">
+                Home
+              </Link>
+              <a href="#" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium">
+                About us
+              </a>
+              <Link to="/services" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium">
+                Services
+              </Link>
+              <a href="#" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium">
+
                 Blog
               </a>
               <a href="#" className="block px-3 py-2 sm:py-3 text-dental-blue hover:text-dental-teal transition-colors font-medium text-sm sm:text-base">

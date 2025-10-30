@@ -8,6 +8,10 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const toggleSearch = () => setIsSearchOpen(!isSearchOpen)
+  const closeOverlays = () => {
+    setIsMenuOpen(false)
+    setIsSearchOpen(false)
+  }
 
   return (
     <nav className="bg-white shadow-sm fixed w-full top-0 z-50">
@@ -24,7 +28,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium">
+            <Link to="/" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
               Home
             </Link>
             <div className="relative group">
@@ -36,17 +40,17 @@ const Navbar = () => {
               </a>
             </div>
             <div className="relative group">
-              <Link to="/services" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium flex items-center">
+              <Link to="/services" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium flex items-center" onClick={closeOverlays}>
                 Services
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </Link>
             </div>
-            <a href="#" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium">
+            <a href="#" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
               Blog
             </a>
-            <a href="#" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium">
+            <a href="#" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
               Contact us
             </a>
           </div>
@@ -118,19 +122,19 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-              <Link to="/" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium">
+              <Link to="/" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
                 Home
               </Link>
-              <a href="#" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium">
+              <a href="#" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
                 About us
               </a>
-              <Link to="/services" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium">
+              <Link to="/services" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
                 Services
               </Link>
-              <a href="#" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium">
+              <a href="#" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
                 Blog
               </a>
-              <a href="#" className="block px-3 py-2 sm:py-3 text-dental-blue hover:text-dental-teal transition-colors font-medium text-sm sm:text-base">
+              <a href="#" className="block px-3 py-2 sm:py-3 text-dental-blue hover:text-dental-teal transition-colors font-medium text-sm sm:text-base" onClick={closeOverlays}>
                 Contact us
               </a>
             </div>

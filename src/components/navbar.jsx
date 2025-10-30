@@ -127,18 +127,6 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-
-              <a href="#" className="block px-3 py-2 sm:py-3 text-dental-blue hover:text-dental-teal transition-colors font-medium text-sm sm:text-base">
-                Home
-              </a>
-              <a href="#" className="block px-3 py-2 sm:py-3 text-dental-blue hover:text-dental-teal transition-colors font-medium text-sm sm:text-base">
-                About us
-              </a>
-              <a href="#" className="block px-3 py-2 sm:py-3 text-dental-blue hover:text-dental-teal transition-colors font-medium text-sm sm:text-base">
-                Services
-              </a>
-              <a href="#" className="block px-3 py-2 sm:py-3 text-dental-blue hover:text-dental-teal transition-colors font-medium text-sm sm:text-base">
-
               <Link to="/" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium">
                 Home
               </Link>
@@ -149,7 +137,6 @@ const Navbar = () => {
                 Services
               </Link>
               <a href="#" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium">
-
                 Blog
               </a>
               <a href="#" className="block px-3 py-2 sm:py-3 text-dental-blue hover:text-dental-teal transition-colors font-medium text-sm sm:text-base">

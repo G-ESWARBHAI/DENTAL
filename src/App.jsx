@@ -11,6 +11,7 @@ import OralTop from './pages/Oral/OralTop'
 import DentalCrownsAndVeneers from './pages/page_2/hero'
 import RootTop from './pages/RootCanal/RootTop'
 import ToothTop from './pages/Tooth/ToothTop'
+import Hero from './pages/services_last/hero'
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/services" element={<Top />} />
-          <Route path="/services/teeth-whitening" element={<Services_last />} />
+          <Route path="/services/teeth-whitening" element={<Hero />} />
           <Route path="/services/orthodontics" element={<Services />} />
           <Route path="/services/oral-prophylaxis" element={<OralTop />} />
           <Route path="/services/dental-crowns-and-veneers" element={<DentalCrownsAndVeneers />} />

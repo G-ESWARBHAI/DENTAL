@@ -1,17 +1,57 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import logo from './assets/SASHA SMILES LOGO.svg'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const servicesDropdownRef = useRef(null)
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const toggleSearch = () => setIsSearchOpen(!isSearchOpen)
   const closeOverlays = () => {
     setIsMenuOpen(false)
     setIsSearchOpen(false)
+    setIsServicesOpen(false)
   }
+
+  // Close dropdown when clicking outside (only for desktop)
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Only handle click outside on desktop (screen width >= 768px)
+      if (window.innerWidth >= 768 && servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target)) {
+        setIsServicesOpen(false)
+      }
+    }
+
+    // Use mouseleave for better desktop experience
+    const handleMouseLeave = () => {
+      if (window.innerWidth >= 768) {
+        setTimeout(() => {
+          if (servicesDropdownRef.current && !servicesDropdownRef.current.matches(':hover')) {
+            setIsServicesOpen(false)
+          }
+        }, 200)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
+  // Services data - easy to add more later
+  const services = [
+    { name: 'Dental Restorations & Fillings', path: '/services' },
+    { name: 'Teeth Whitening', path: '/services/teeth-whitening' },
+    { name: 'Orthodontics', path: '/services/orthodontics' },
+    { name: 'Oral Prophylaxis', path: '/services/oral-prophylaxis' },
+    {name:"Dental Crowns & Veneers", path:"/services/dental-crowns-and-veneers"},
+    {name:"Root Canal", path:"/services/root-canal"},
+    {name:"Tooth Surgery", path:"/services/tooth-surgery"}
+  ]
 
   return (
     <nav className="bg-white shadow-sm fixed w-full top-0 z-50">
@@ -39,13 +79,68 @@ const Navbar = () => {
                 </svg>
               </a>
             </div>
-            <div className="relative group">
-              <Link to="/services" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium flex items-center" onClick={closeOverlays}>
-                Services
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {/* Services Dropdown - Desktop */}
+            <div 
+              className="relative group" 
+              ref={servicesDropdownRef}
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
+              <div className="flex items-center cursor-pointer pb-2">
+                <Link 
+                  to="/services" 
+                  className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium flex items-center"
+                  onClick={closeOverlays}
+                >
+                  Services
+                </Link>
+                <svg 
+                  className={`w-4 h-4 ml-1 transition-transform duration-200 text-dental-dark-blue ${isServicesOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </Link>
+              </div>
+              
+              {/* Dropdown Menu with bridge */}
+              <div 
+                className={`absolute left-0 top-full pt-2 transition-all duration-300 ${isServicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                onMouseEnter={() => setIsServicesOpen(true)}
+                onMouseLeave={() => setIsServicesOpen(false)}
+              >
+                <div 
+                  className="w-72 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 z-50 overflow-hidden"
+                  style={{
+                    animation: isServicesOpen ? 'fadeInDown 0.3s ease-out' : 'none',
+                    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)'
+                  }}
+                >
+                  {services.map((service, index) => (
+                    <Link
+                      key={index}
+                      to={service.path}
+                      className="block px-5 py-3.5 text-sm text-dental-dark-blue hover:bg-gradient-to-r hover:from-dental-teal hover:to-blue-500 hover:text-white transition-all duration-200 font-medium relative group/item"
+                      onClick={closeOverlays}
+                      style={{
+                        transition: 'all 0.2s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateX(4px)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateX(0)'
+                      }}
+                    >
+                      <span className="flex items-center">
+                        <span className="w-1.5 h-1.5 rounded-full bg-white mr-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-200"></span>
+                        {service.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
             <a href="#" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
               Blog
@@ -128,9 +223,48 @@ const Navbar = () => {
               <a href="#" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
                 About us
               </a>
-              <Link to="/services" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
-                Services
-              </Link>
+              {/* Services with Dropdown - Mobile */}
+              <div className="border-b border-gray-200">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setIsServicesOpen(!isServicesOpen)
+                  }}
+                  className="w-full flex items-center justify-between px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium text-left"
+                  aria-expanded={isServicesOpen}
+                  aria-haspopup="true"
+                >
+                  <span>Services</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform flex-shrink-0 ${isServicesOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {/* Mobile Dropdown Items */}
+                {isServicesOpen && (
+                  <div className="bg-gray-50 py-2">
+                    {services.map((service, index) => (
+                      <Link
+                        key={index}
+                        to={service.path}
+                        className="block px-6 py-2 text-sm text-dental-blue hover:text-dental-teal hover:bg-white transition-colors font-medium"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          closeOverlays()
+                        }}
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
               <a href="#" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
                 Blog
               </a>

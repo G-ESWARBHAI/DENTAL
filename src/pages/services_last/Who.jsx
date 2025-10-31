@@ -11,6 +11,7 @@ export default function WhoIts() {
     "Brides, grooms, or anyone preparing for a big event",
     "Individuals with yellowed, stained, or dull teeth",
     "Post-orthodontic patients (braces or aligners)",
+    
   ];
 
   const container = {

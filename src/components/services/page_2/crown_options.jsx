@@ -1,4 +1,6 @@
 import React from 'react';
+import StainlessIcon from '../../../assets/Stainless.png';
+import TickIcon from '../../../assets/TICK.png';
 
 const CrownOptions = () => {
   const crownOptions = [
@@ -50,7 +52,7 @@ const CrownOptions = () => {
           <div className="p-10 mb-0 shadow-lg relative" style={{backgroundColor: '#F1F9FD', borderRadius: '25.2px'}}>
             <div className="mb-5 flex items-center gap-4">
               <img 
-                src="/src/components/assets/Stainless.png" 
+                src={StainlessIcon} 
                 alt="stainless-steel-crown-icon"
                 className="w-12 h-12"
               />
@@ -75,19 +77,19 @@ const CrownOptions = () => {
                 <ul className="list-none p-0 m-0">
                   <li className="flex items-center mb-3 text-base text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif'}}>
                     <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/TICK.png" alt="tick" className="w-3 h-3" />
+                      <img src={TickIcon} alt="tick" className="w-3 h-3" />
                     </span>
                     Budget-friendly
                   </li>
                   <li className="flex items-center mb-3 text-base text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif'}}>
                     <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/TICK.png" alt="tick" className="w-3 h-3" />
+                      <img src={TickIcon} alt="tick" className="w-3 h-3" />
                     </span>
                     Quick placement
                   </li>
                   <li className="flex items-center mb-3 text-base text-gray-700" style={{fontFamily: 'Montserrat, sans-serif'}}>
                     <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/TICK.png" alt="tick" className="w-3 h-3" />
+                      <img src={TickIcon} alt="tick" className="w-3 h-3" />
                     </span>
                     Primarily for temporary use in children
                   </li>
@@ -100,7 +102,7 @@ const CrownOptions = () => {
           <div className="p-10 mb-0 shadow-lg relative" style={{backgroundColor: '#F1F9FD', borderRadius: '25.2px'}}>
             <div className="mb-5 flex items-center gap-4">
               <img 
-                src="/src/components/assets/TICK.png" 
+                src={TickIcon} 
                 alt="dmls-crown-icon"
                 className="w-12 h-12"
               />
@@ -125,19 +127,19 @@ const CrownOptions = () => {
                 <ul className="list-none p-0 m-0">
                   <li className="flex items-center mb-3 text-base text-gray-700" style={{fontFamily: 'Montserrat, sans-serif'}}>
                     <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/TICK.png" alt="tick" className="w-3 h-3" />
+                      <img src={TickIcon} alt="tick" className="w-3 h-3" />
                     </span>
                     Strong and reliable
                   </li>
                   <li className="flex items-center mb-3 text-base text-gray-700" style={{fontFamily: 'Montserrat, sans-serif'}}>
                     <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/TICK.png" alt="tick" className="w-3 h-3" />
+                      <img src={TickIcon} alt="tick" className="w-3 h-3" />
                     </span>
                     Ideal for molars and back teeth
                   </li>
                   <li className="flex items-center mb-3 text-base text-gray-700" style={{fontFamily: 'Montserrat, sans-serif'}}>
                     <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/TICK.png" alt="tick" className="w-3 h-3" />
+                      <img src={TickIcon} alt="tick" className="w-3 h-3" />
                     </span>
                     Backed by a 10-year warranty
                   </li>
@@ -150,7 +152,7 @@ const CrownOptions = () => {
           <div className="p-10 mb-0 shadow-lg relative" style={{backgroundColor: '#F1F9FD', borderRadius: '25.2px'}}>
             <div className="mb-5 flex items-center gap-4">
               <img 
-                src="/src/components/assets/TICK.png" 
+                src={TickIcon} 
                 alt="zirconium-crown-icon"
                 className="w-12 h-12"
               />
@@ -175,19 +177,19 @@ const CrownOptions = () => {
                 <ul className="list-none p-0 m-0">
                   <li className="flex items-center mb-3 text-base text-gray-700" style={{fontFamily: 'Montserrat, sans-serif'}}>
                     <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/TICK.png" alt="tick" className="w-3 h-3" />
+                      <img src={TickIcon} alt="tick" className="w-3 h-3" />
                     </span>
                     Metal-free and biocompatible
                   </li>
                   <li className="flex items-center mb-3 text-base text-gray-700" style={{fontFamily: 'Montserrat, sans-serif'}}>
                     <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/TICK.png" alt="tick" className="w-3 h-3" />
+                      <img src={TickIcon} alt="tick" className="w-3 h-3" />
                     </span>
                     Superior aesthetics
                   </li>
                   <li className="flex items-center mb-3 text-base text-gray-700" style={{fontFamily: 'Montserrat, sans-serif'}}>
                     <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/TICK.png" alt="tick" className="w-3 h-3" />
+                      <img src={TickIcon} alt="tick" className="w-3 h-3" />
                     </span>
                     Multiple warranty options available
                   </li>

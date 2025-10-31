@@ -1,5 +1,11 @@
 import React from 'react';
 import StainlessSteelCrownIcon from '../../components/assets/Page2/Stainless.svg';
+import TickIcon from '../../components/assets/Page2/TICK.svg';
+import DMLSIcon from '../../components/assets/Page2/DMLS.svg';
+import ZirconiumIcon from '../../components/assets/Page2/Zirconium.svg';
+import EmaxCrownsIcon from '../../components/assets/Page2/Emax Crowns.svg';
+import PostCoreIcon from '../../components/assets/Page2/POST AND CORE.svg';
+import CheckmarkIcon from '../../components/assets/Page2/checkmark (1) 1.svg';
 
 const CrownOptions = () => {
   const crownOptions = [
@@ -76,19 +82,19 @@ const CrownOptions = () => {
                 <ul className="list-none p-0 m-0">
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Budget-friendly
                   </li>
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700  text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif' ,fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Quick placement
                   </li>
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700  text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif' ,fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Primarily for temporary use in children
                   </li>
@@ -101,7 +107,7 @@ const CrownOptions = () => {
           <div className="p-16 mb-0 relative" style={{backgroundColor: '#F1F9FD', borderRadius: '25.2px'}}>
             <div className="mb-6 flex items-center gap-4">
               <img 
-                src="/src/components/assets/Page2/DMLS.svg" 
+                src={DMLSIcon} 
                 alt="dmls-crown-icon"
                 className="w-12 h-12"
               />
@@ -126,19 +132,19 @@ const CrownOptions = () => {
                 <ul className="list-none p-0 m-0">
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Strong and reliable
                   </li>
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Ideal for molars and back teeth
                   </li>
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Backed by a 10-year warranty
                   </li>
@@ -151,7 +157,7 @@ const CrownOptions = () => {
           <div className="p-16 mb-0 relative" style={{backgroundColor: '#F1F9FD', borderRadius: '25.2px'}}>
             <div className="mb-6 flex items-center gap-4">
               <img 
-                src="/src/components/assets/Page2/Zirconium.svg" 
+                src={ZirconiumIcon} 
                 alt="zirconium-crown-icon"
                 className="w-12 h-12"
               />
@@ -178,19 +184,19 @@ const CrownOptions = () => {
                 <ul className="list-none p-0 m-0">
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Metal-free and biocompatible
                   </li>
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Superior aesthetics
                   </li>
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Multiple warranty options available
                   </li>
@@ -202,19 +208,19 @@ const CrownOptions = () => {
                     <ul className="list-none p-0 m-0">
                       <li className="flex items-start mb-4 text-base text-gray-700" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '22px',letterSpacing: '0.6px'}}>
                         <span className="flex items-start justify-start mr-3 flex-shrink-0 ">
-                          <img src="/src/components/assets/Page2/checkmark (1) 1.svg" alt="checkmark" className="w-7 h-7" />
+                          <img src={CheckmarkIcon} alt="checkmark" className="w-7 h-7" />
                         </span>
                         <span><strong>5-Year Zirconia:</strong> Durable and aesthetic for mid-term use</span>
                       </li>
                       <li className="flex items-start mb-4 text-base text-gray-700" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '22px',letterSpacing: '0.6px'}}>
                         <span className="flex items-start justify-start mr-3 flex-shrink-0 ">
-                          <img src="/src/components/assets/Page2/checkmark (1) 1.svg" alt="checkmark" className="w-7 h-7" />
+                          <img src={CheckmarkIcon} alt="checkmark" className="w-7 h-7" />
                         </span>
                         <span><strong>10-Year Zirconia:</strong> Enhanced longevity with natural appearance</span>
                       </li>
                       <li className="flex items-start mb-0 text-base text-gray-700" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '22px',letterSpacing: '0.6px'}}>
                         <span className="flex items-start justify-start mr-3 flex-shrink-0 ">
-                          <img src="/src/components/assets/Page2/checkmark (1) 1.svg" alt="checkmark" className="w-7 h-7" />
+                          <img src={CheckmarkIcon} alt="checkmark" className="w-7 h-7" />
                         </span>
                         <span><strong>15-Year Zirconia:</strong> Elite-grade, ultra-durable, and highly aesthetic</span>
                       </li>
@@ -226,7 +232,7 @@ const CrownOptions = () => {
           <div className="p-16 mb-0 relative" style={{backgroundColor: '#F1F9FD', borderRadius: '25.2px'}}>
             <div className="mb-4 flex items-center gap-4">
               <img 
-                src="/src/components/assets/Page2/Emax Crowns.svg" 
+                src={EmaxCrownsIcon} 
                 alt="emax-crown-icon"
                 className="w-18 h-18"
               />
@@ -251,19 +257,19 @@ const CrownOptions = () => {
                 <ul className="list-none p-0 m-0">
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Ultra-natural appearance
                   </li>
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Strong and metal-free
                   </li>
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Ideal for cosmetic upgrades
                   </li>
@@ -276,7 +282,7 @@ const CrownOptions = () => {
           <div className="p-16 mb-0 relative" style={{backgroundColor: '#F1F9FD', borderRadius: '25.2px'}}>
             <div className="mb-5 flex items-center gap-4">
               <img 
-                src="/src/components/assets/Page2/POST AND CORE.svg" 
+                src={PostCoreIcon} 
                 alt="post-core-icon"
                 className="w-18 h-18"
               />
@@ -301,19 +307,19 @@ const CrownOptions = () => {
                 <ul className="list-none p-0 m-0">
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Rebuilds and reinforces tooth structure
                   </li>
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Provides strong base for crown
                   </li>
                   <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
                     <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src="/src/components/assets/Page2/TICK.svg" alt="tick" className="w-27 h-27" />
+                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
                     </span>
                     Custom-fitted for maximum stability
                   </li>

@@ -228,6 +228,7 @@ const Navbar = () => {
                 <button
                   type="button"
                   onClick={(e) => {
+                    e.preventDefault()
                     e.stopPropagation()
                     setIsServicesOpen(!isServicesOpen)
                   }}
@@ -237,7 +238,7 @@ const Navbar = () => {
                 >
                   <span>Services</span>
                   <svg 
-                    className={`w-4 h-4 transition-transform flex-shrink-0 ${isServicesOpen ? 'rotate-180' : ''}`} 
+                    className={`w-4 h-4 transition-transform duration-200 flex-shrink-0 ${isServicesOpen ? 'rotate-180' : ''}`} 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"
@@ -247,13 +248,17 @@ const Navbar = () => {
                 </button>
                 
                 {/* Mobile Dropdown Items */}
-                {isServicesOpen && (
+                <div 
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isServicesOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
                   <div className="bg-gray-50 py-2">
                     {services.map((service, index) => (
                       <Link
                         key={index}
                         to={service.path}
-                        className="block px-6 py-2 text-sm text-dental-blue hover:text-dental-teal hover:bg-white transition-colors font-medium"
+                        className="block px-6 py-2.5 text-sm text-dental-blue hover:text-dental-teal hover:bg-white transition-colors font-medium border-l-2 border-transparent hover:border-dental-teal"
                         onClick={(e) => {
                           e.stopPropagation()
                           closeOverlays()
@@ -263,7 +268,7 @@ const Navbar = () => {
                       </Link>
                     ))}
                   </div>
-                )}
+                </div>
               </div>
               <a href="#" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
                 Blog

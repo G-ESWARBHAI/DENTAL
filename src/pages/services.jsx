@@ -8,7 +8,7 @@ import OurClient from '../components/services/page_2/clients'
 
 const services = () => {
   return (
-    <div className="pt-16">
+    <div className="pt-16 overflow-x-hidden w-full max-w-full">
         <HeroSection />
         <ContentSection />
         <WhyChoose />

@@ -1,5 +1,5 @@
 import React from 'react';
-import BnrBackground from '../../components/assets/Bnr.svg';
+import BnrBackground from '../../components/assets/BNR.svg';
 import Restorations from './Restorations';
 import Benefits from './Benifits';
 import WhyChoose from './WhyChoose';

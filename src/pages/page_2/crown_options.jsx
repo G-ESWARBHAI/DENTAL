@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import StainlessSteelCrownIcon from '../../components/assets/Page2/Stainless.svg';
 import TickIcon from '../../components/assets/Page2/TICK.svg';
 import DMLSIcon from '../../components/assets/Page2/DMLS.svg';
@@ -8,12 +9,87 @@ import PostCoreIcon from '../../components/assets/Page2/POST AND CORE.svg';
 import CheckmarkIcon from '../../components/assets/Page2/checkmark (1) 1.svg';
 
 const CrownOptions = () => {
-  const crownOptions = [
+  const shouldReduceMotion = useReducedMotion();
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.15,
+        delayChildren: shouldReduceMotion ? 0 : 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: shouldReduceMotion ? 0 : 30 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const headingVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.4
+      }
+    }
+  };
+
+  const iconVariants = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 200,
+        damping: 15,
+        delay: shouldReduceMotion ? 0 : 0.2
+      }
+    },
+    hover: {
+      scale: shouldReduceMotion ? 1 : 1.1,
+      rotate: shouldReduceMotion ? 0 : 5,
+      transition: { duration: 0.2 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: shouldReduceMotion ? 0 : -20 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.3
+      }
+    },
+    hover: {
+      x: shouldReduceMotion ? 0 : 5,
+      transition: { duration: 0.2 }
+    }
+  };
+
+  const crownCards = [
     {
       id: 1,
       title: "Stainless Steel Crown",
-      icon: "stainless-steel-crown-icon",
-      description: "Durable Protection for Young Smiles. Often used in pediatric dentistry, stainless steel crowns are cost-effective, pre-fabricated solutions ideal for restoring baby teeth.",
+      icon: StainlessSteelCrownIcon,
+      subtitle: "Durable Protection for Young Smiles.",
+      description: "Often used in pediatric dentistry, stainless steel crowns are cost-effective, pre-fabricated solutions ideal for restoring baby teeth.",
       features: [
         "Budget-friendly",
         "Quick placement", 
@@ -23,8 +99,9 @@ const CrownOptions = () => {
     {
       id: 2,
       title: "DMLS (Metal-Ceramic) Crown - 10-Year Warranty",
-      icon: "dmls-crown-icon",
-      description: "Strength Meets Aesthetics. This crown combines a strong metal base with a ceramic exterior for a natural appearance and lasting durability.",
+      icon: DMLSIcon,
+      subtitle: "Strength Meets Aesthetics.",
+      description: "This crown combines a strong metal base with a ceramic exterior for a natural appearance and lasting durability.",
       features: [
         "Strong and reliable",
         "Ideal for molars and back teeth",
@@ -34,300 +111,208 @@ const CrownOptions = () => {
     {
       id: 3,
       title: "Zirconium Crowns 5, 10, & 15-Year Warranty",
-      icon: "zirconium-crown-icon",
-      description: "Our Most Popular Premium Option. Zirconia crowns offer exceptional strength and longevity with a natural appearance that blends seamlessly with your smile.",
+      icon: ZirconiumIcon,
+      subtitle: "Our Most Popular Premium Option.",
+      description: "Zirconia crowns offer exceptional strength and longevity with a natural appearance that blends seamlessly with your smile.",
       features: [
         "Metal-free and biocompatible",
         "Superior aesthetics",
         "Multiple warranty options available"
+      ],
+      warrantyOptions: [
+        { period: "5-Year Zirconia", desc: "Durable and aesthetic for mid-term use" },
+        { period: "10-Year Zirconia", desc: "Enhanced longevity with natural appearance" },
+        { period: "15-Year Zirconia", desc: "Elite-grade, ultra-durable, and highly aesthetic" }
+      ]
+    },
+    {
+      id: 4,
+      title: "Emax Crowns",
+      icon: EmaxCrownsIcon,
+      subtitle: "The Crown of Choice for Smile Makeovers.",
+      description: "Made from lithium disilicate ceramic, Emax crowns offer unmatched translucency perfect for visible teeth.",
+      features: [
+        "Ultra-natural appearance",
+        "Strong and metal-free",
+        "Ideal for cosmetic upgrades"
+      ]
+    },
+    {
+      id: 5,
+      title: "Post and Core (Per Tooth)",
+      icon: PostCoreIcon,
+      subtitle: "Structural Reinforcement for Damaged Teeth.",
+      description: "For severely damaged or root canal-treated teeth, a post and core provides internal support before crown placement.",
+      features: [
+        "Rebuilds and reinforces tooth structure",
+        "Provides strong base for crown",
+        "Custom-fitted for maximum stability"
       ]
     }
   ];
 
   return (
-    <div className="w-full min-h-screen flex justify-center items-start py-10 px-5 ">
+    <div className="w-full min-h-screen flex justify-center items-start py-8 sm:py-10 px-4 sm:px-5 lg:px-8 overflow-x-hidden">
       <div className="w-full max-w-[1150px] mx-auto">
-        <h1 className="text-[42px] font-bold text-[#0267AC] text-center mb-6 relative" style={{fontFamily: 'Montserrat, sans-serif',}}>
+        {/* Main Heading */}
+        <motion.h1 
+          className="text-3xl sm:text-4xl md:text-[42px] font-bold text-[#0267AC] text-center mb-6 sm:mb-8 md:mb-10 relative"
+          style={{fontFamily: 'Montserrat, sans-serif'}}
+          variants={headingVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           Our Crown Options
-         
-        </h1>
+        </motion.h1>
         
-        <div className="flex flex-col gap-8">
-          {/* Stainless Steel Crown */}
-          <div className="p-16 mb-0 relative" style={{backgroundColor: '#F1F9FD', borderRadius: '25.2px'}}>
-            <div className="mb-5 flex items-center gap-4 ">
-              <img 
-                src={StainlessSteelCrownIcon} 
-                alt="stainless-steel-crown-icon"
-                className="w-12 h-12"
-              />
-              <h2 className="font-bold text-black leading-tight text-[#392D44]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '29px'}}>
-                Stainless Steel Crown
+        {/* Cards Container */}
+        <motion.div 
+          className="flex flex-col gap-6 sm:gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          {crownCards.map((card, index) => (
+            <motion.div
+              key={card.id}
+              className="p-6 sm:p-10 md:p-16 mb-0 relative overflow-hidden"
+              style={{
+                backgroundColor: '#F1F9FD',
+                borderRadius: '25.2px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)'
+              }}
+              variants={cardVariants}
+              whileHover={shouldReduceMotion ? {} : {
+                y: -5,
+                boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
+                transition: { duration: 0.3 }
+              }}
+            >
+              {/* Header Section */}
+              <motion.div 
+                className="mb-5 md:mb-6 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4"
+                variants={itemVariants}
+              >
+                <motion.img
+                  src={card.icon}
+                  alt={`${card.title} icon`}
+                  className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0"
+                  variants={iconVariants}
+                  whileHover="hover"
+                />
+                <h2 
+                  className="font-bold text-black leading-tight text-[#392D44] text-xl sm:text-2xl md:text-[29px]"
+                  style={{fontFamily: 'Montserrat, sans-serif'}}
+                >
+                  {card.title}
               </h2>
-            </div>
-            
-            <div className="flex gap-12 ">
+              </motion.div>
+              
+              {/* Content Grid */}
+              <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12">
               {/* Left side - Content/Description */}
-                <div className="flex-1 ">
-                  <p className="text-gray-700 leading-relaxed font-bold text-[#0392D44] mb-2" style={{fontSize: '22px'}}>
-                    Durable Protection for Young Smiles.
+                <motion.div 
+                  className="flex-1"
+                  variants={itemVariants}
+                >
+                  <p 
+                    className="text-gray-700 leading-relaxed font-bold text-[#0267AC] mb-2 text-lg sm:text-xl md:text-[22px]"
+                    style={{fontFamily: 'Montserrat, sans-serif'}}
+                  >
+                    {card.subtitle}
                   </p>
-                  <p className="text-gray-700 leading-relaxed text-[#0267AC]" style={{fontSize: '20px',letterSpacing: '0.6px'}}>
-                    Often used in pediatric dentistry, stainless steel crowns are cost-effective, pre-fabricated solutions ideal for restoring baby teeth.
+                  <p 
+                    className="text-gray-700 leading-relaxed text-[#0267AC] text-base sm:text-lg md:text-[20px]"
+                    style={{fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.6px'}}
+                  >
+                    {card.description}
                   </p>
-                </div>
+                </motion.div>
               
               {/* Right side - Points/Features */}
-              <div className="flex-1  -mt-6 -mr-6">
+                <motion.div 
+                  className="flex-1 lg:-mt-11 lg:-mr-6"
+                  variants={itemVariants}
+                >
                 <ul className="list-none p-0 m-0">
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Budget-friendly
-                  </li>
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700  text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif' ,fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Quick placement
-                  </li>
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700  text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif' ,fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Primarily for temporary use in children
-                  </li>
+                    {card.features.map((feature, idx) => (
+                      <motion.li
+                        key={idx}
+                        className="flex items-center mb-4 sm:mb-6 text-base font-bold text-gray-700 text-[#0267AC]"
+                        style={{
+                          fontFamily: 'Montserrat, sans-serif',
+                          fontSize: '17px'
+                        }}
+                        variants={itemVariants}
+                        whileHover="hover"
+                      >
+                        <motion.span
+                          className="text-white rounded-full w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0"
+                          whileHover={shouldReduceMotion ? {} : { scale: 1.1 }}
+                          transition={{ type: "spring", stiffness: 400 }}
+                        >
+                          <img 
+                            src={TickIcon} 
+                            alt="tick" 
+                            className="w-full h-full object-contain"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </motion.span>
+                        <span className="flex-1">{feature}</span>
+                      </motion.li>
+                    ))}
                 </ul>
-              </div>
-            </div>
+                </motion.div>
           </div>
 
-          {/* DMLS Crown */}
-          <div className="p-16 mb-0 relative" style={{backgroundColor: '#F1F9FD', borderRadius: '25.2px'}}>
-            <div className="mb-6 flex items-center gap-4">
-              <img 
-                src={DMLSIcon} 
-                alt="dmls-crown-icon"
-                className="w-12 h-12"
-              />
-              <h2 className="font-bold text-black  text-[#392D44]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '29px', lineHeight: '1.1'}}>
-                DMLS (Metal-Ceramic)<br />Crown - 10-Year Warranty
-              </h2>
-            </div>
-            
-            <div className="flex gap-12">
-              {/* Left side - Content/Description */}
-                <div className="flex-1">
-                  <p className="text-gray-700 leading-relaxed font-bold text-[#0392D44] mb-2" style={{fontSize: '22px'}}>
-                    Strength Meets Aesthetics.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed text-[#0267AC]" style={{fontSize: '20px',letterSpacing: '0.6px'}}>
-                    This crown combines a strong metal base with a ceramic exterior for a natural appearance and lasting durability.
-                  </p>
-                </div>
-              
-              {/* Right side - Points/Features */}
-              <div className="flex-1 -mt-11 -mr-6">
-                <ul className="list-none p-0 m-0">
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Strong and reliable
-                  </li>
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Ideal for molars and back teeth
-                  </li>
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Backed by a 10-year warranty
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Zirconium Crown */}
-          <div className="p-16 mb-0 relative" style={{backgroundColor: '#F1F9FD', borderRadius: '25.2px'}}>
-            <div className="mb-6 flex items-center gap-4">
-              <img 
-                src={ZirconiumIcon} 
-                alt="zirconium-crown-icon"
-                className="w-12 h-12"
-              />
-              <h2 className="font-bold text-black  text-[#392D44]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '29px', lineHeight: '1.1'}}>
-              Zirconium Crowns<br />5, 10, & 15-Year Warranty
-              </h2>
-            </div>
-            
-            <div className="flex gap-12">
-              {/* Left side - Content/Description */}
-                <div className="flex-1">
-                  <p className="text-gray-700 leading-relaxed font-bold text-[#0392D44] mb-2" style={{fontSize: '22px'}}>
-                    Our Most Popular Premium Option.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed text-[#0267AC] mb-4" style={{fontSize: '20px',letterSpacing: '0.6px'}}>
-                    Zirconia crowns offer exceptional strength and longevity with a natural appearance that blends seamlessly with your smile.
-                  </p>
-                  
-              
-                </div>
-              
-              {/* Right side - Points/Features */}
-              <div className="flex-1 -mt-11 -mr-6">
-                <ul className="list-none p-0 m-0">
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Metal-free and biocompatible
-                  </li>
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Superior aesthetics
-                  </li>
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Multiple warranty options available
-                  </li>
-                </ul>
-              </div>
-            </div>
-                {/* Warranty Options Section */}
-                <div className="mt-6 ml-8">
-                    <ul className="list-none p-0 m-0">
-                      <li className="flex items-start mb-4 text-base text-gray-700" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '22px',letterSpacing: '0.6px'}}>
-                        <span className="flex items-start justify-start mr-3 flex-shrink-0 ">
-                          <img src={CheckmarkIcon} alt="checkmark" className="w-7 h-7" />
+              {/* Warranty Options Section (only for Zirconium Crown) */}
+              {card.warrantyOptions && (
+                <motion.div 
+                  className="mt-6 sm:mt-8 ml-0 sm:ml-4 md:ml-8"
+                  variants={itemVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  <ul className="list-none p-0 m-0">
+                    {card.warrantyOptions.map((option, idx) => (
+                      <motion.li
+                        key={idx}
+                        className="flex items-start mb-3 sm:mb-4 text-base sm:text-lg md:text-[22px] text-gray-700"
+                        style={{
+                          fontFamily: 'Montserrat, sans-serif',
+                          letterSpacing: '0.6px'
+                        }}
+                        variants={itemVariants}
+                        whileHover="hover"
+                      >
+                        <motion.span
+                          className="flex items-start justify-start mr-3 flex-shrink-0"
+                          whileHover={shouldReduceMotion ? {} : { scale: 1.1 }}
+                          transition={{ type: "spring", stiffness: 400 }}
+                        >
+                          <img 
+                            src={CheckmarkIcon} 
+                            alt="checkmark" 
+                            className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </motion.span>
+                        <span>
+                          <strong>{option.period}:</strong> {option.desc}
                         </span>
-                        <span><strong>5-Year Zirconia:</strong> Durable and aesthetic for mid-term use</span>
-                      </li>
-                      <li className="flex items-start mb-4 text-base text-gray-700" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '22px',letterSpacing: '0.6px'}}>
-                        <span className="flex items-start justify-start mr-3 flex-shrink-0 ">
-                          <img src={CheckmarkIcon} alt="checkmark" className="w-7 h-7" />
-                        </span>
-                        <span><strong>10-Year Zirconia:</strong> Enhanced longevity with natural appearance</span>
-                      </li>
-                      <li className="flex items-start mb-0 text-base text-gray-700" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '22px',letterSpacing: '0.6px'}}>
-                        <span className="flex items-start justify-start mr-3 flex-shrink-0 ">
-                          <img src={CheckmarkIcon} alt="checkmark" className="w-7 h-7" />
-                        </span>
-                        <span><strong>15-Year Zirconia:</strong> Elite-grade, ultra-durable, and highly aesthetic</span>
-                      </li>
+                      </motion.li>
+                    ))}
                     </ul>
-                  </div>
-          </div>
-
-          {/* Emax Crowns */}
-          <div className="p-16 mb-0 relative" style={{backgroundColor: '#F1F9FD', borderRadius: '25.2px'}}>
-            <div className="mb-4 flex items-center gap-4">
-              <img 
-                src={EmaxCrownsIcon} 
-                alt="emax-crown-icon"
-                className="w-18 h-18"
-              />
-              <h2 className="font-bold text-black text-[#392D44] -ml-1" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '29px'}}>
-                Emax Crowns
-              </h2>
-            </div>
-            
-            <div className="flex gap-12">
-              {/* Left side - Content/Description */}
-                <div className="flex-1">
-                  <p className="text-gray-700 leading-relaxed font-bold text-[#0392D44] mb-2" style={{fontSize: '22px'}}>
-                    The Crown of Choice for Smile Makeovers.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed text-[#0267AC] mb-4" style={{fontSize: '20px',letterSpacing: '0.6px'}}>
-                    Made from lithium disilicate ceramic, Emax crowns offer unmatched translucency perfect for visible teeth.
-                  </p>
-                </div>
-              
-              {/* Right side - Points/Features */}
-              <div className="flex-1 -mt-11 -mr-6">
-                <ul className="list-none p-0 m-0">
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Ultra-natural appearance
-                  </li>
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Strong and metal-free
-                  </li>
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Ideal for cosmetic upgrades
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Post and Core */}
-          <div className="p-16 mb-0 relative" style={{backgroundColor: '#F1F9FD', borderRadius: '25.2px'}}>
-            <div className="mb-5 flex items-center gap-4">
-              <img 
-                src={PostCoreIcon} 
-                alt="post-core-icon"
-                className="w-18 h-18"
-              />
-              <h2 className="font-bold text-black text-[#392D44] -ml-2" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '29px'}}>
-                Post and Core (Per Tooth)
-              </h2>
-            </div>
-            
-            <div className="flex gap-12">
-              {/* Left side - Content/Description */}
-                <div className="flex-1">
-                  <p className="text-gray-700 leading-relaxed font-bold text-[#0392D44] mb-2" style={{fontSize: '22px'}}>
-                    Structural Reinforcement for Damaged Teeth.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed text-[#0267AC] mb-4" style={{fontSize: '20px',letterSpacing: '0.6px'}}>
-                    For severely damaged or root canal-treated teeth, a post and core provides internal support before crown placement.
-                  </p>
-                </div>
-              
-              {/* Right side - Points/Features */}
-              <div className="flex-1 -mt-11 -mr-6">
-                <ul className="list-none p-0 m-0">
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Rebuilds and reinforces tooth structure
-                  </li>
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Provides strong base for crown
-                  </li>
-                  <li className="flex items-center mb-6 text-base font-bold text-gray-700 text-[#0267AC]" style={{fontFamily: 'Montserrat, sans-serif',fontSize: '19px'}}>
-                    <span className=" text-white rounded-full w-27 h-27 flex items-center justify-center text-sm mr-4 flex-shrink-0">
-                      <img src={TickIcon} alt="tick" className="w-27 h-27" />
-                    </span>
-                    Custom-fitted for maximum stability
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+                </motion.div>
+              )}
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </div>
   );

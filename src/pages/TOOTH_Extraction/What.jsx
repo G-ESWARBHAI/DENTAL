@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const WhatIsTooth = () => {
+const What = () => {
   return (
     <SectionWrapper>
       <Heading>What Is a Tooth Extraction?</Heading>
@@ -84,4 +84,4 @@ const Paragraph = styled.p`
   }
 `;
 
-export default WhatIsTooth;
+export default What;

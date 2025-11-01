@@ -1,6 +1,6 @@
 import React from 'react'
 import HeroTooth from './HeroTooth'
-import WhatIsTooth from './WhatIsTooth'
+import What from './What'
 import ToothServices from './ToothServices'
 import Benefitsoftooth from './Benfitsoftooth'
 import WhyChooseTooth from './WhyChooseTooth'
@@ -14,7 +14,7 @@ const Tooth_Extra = () => {
     <>
 
      <HeroTooth />
-     <WhatIsTooth />
+     <What />
      <ToothServices />
      <Benefitsoftooth />
      <WhyChooseTooth />

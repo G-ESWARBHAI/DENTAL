@@ -50,7 +50,12 @@ const Navbar = () => {
     { name: 'Oral Prophylaxis', path: '/services/oral-prophylaxis' },
     {name:"Dental Crowns & Veneers", path:"/services/dental-crowns-and-veneers"},
     {name:"Root Canal", path:"/services/root-canal"},
-    {name:"Tooth Surgery", path:"/services/tooth-surgery"}
+    {name:"Flap Surgery", path:"/services/flap-surgery"},
+    {name:"Tooth Surgery", path:"/services/tooth-surgery"},
+    {name:"Laser Gum", path:"/services/laser-gum"},
+    {name:"Tooth Extraction", path:"/services/tooth-extraction"},
+    {name:"Dental Implants", path:"/services/dental-implants"},
+
   ]
 
   return (

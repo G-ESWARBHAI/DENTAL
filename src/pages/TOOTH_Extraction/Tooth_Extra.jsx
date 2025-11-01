@@ -1,6 +1,6 @@
 import React from 'react'
 import HeroTooth from './HeroTooth'
-import WhatIsTooth from './WhatIsTooth'
+import WhatIsTooth from './Whatistooth'
 import ToothServices from './ToothServices'
 import Benefitsoftooth from './Benfitsoftooth'
 import WhyChooseTooth from './WhyChooseTooth'

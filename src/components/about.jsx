@@ -4,7 +4,7 @@ import FrameImage from '../components/assets/Frame 1984078762.svg'
 
 const AboutSasha = () => {
   return (
-    <div className="bg-white-90 lg:-mt-7">
+    <div className="bg-white-90 mt-6 lg:-mt-7">
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-9 pt-6 pb-10 md:py-16">
         {/* Header Section */}
@@ -13,8 +13,8 @@ const AboutSasha = () => {
             {/* Left Side - About Sasha Smiles */}
             <div className="flex-1 -mt-14 lg:mt-5 lg:-translate-x-4 -mb-3">
               <motion.h1 className="font-bold leading-tight font-sans" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: 0.1 }}>
-                <span className="block text-xl sm:text-4xl md:text-5xl lg:text-6xl  sm:mb-2" style={{ color: '#0267AC' }}>About</span>
-                <span className="block text-2xl sm:text-5xl md:text-6xl lg:text-7xl" style={{ color: '#4D4D4D' }}>Sasha Smiles</span>
+                <span className="block text-md sm:text-4xl md:text-5xl lg:text-6xl  sm:mb-2" style={{ color: '#0267AC' }}>About</span>
+                <span className="block text-xl sm:text-5xl md:text-6xl lg:text-7xl" style={{ color: '#4D4D4D' }}>Sasha Smiles</span>
               </motion.h1>
             </div>
 

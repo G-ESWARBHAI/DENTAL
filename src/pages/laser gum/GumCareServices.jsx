@@ -1,51 +1,204 @@
 import React from "react";
 import styled from "styled-components";
+import { motion, useReducedMotion } from "framer-motion";
 
 const GumCareServices = () => {
   const icon = "/ARROW LASER.svg";
+  const shouldReduceMotion = useReducedMotion();
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.15,
+        delayChildren: shouldReduceMotion ? 0 : 0.1,
+      },
+    },
+  };
+
+  const headingVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const slideVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: shouldReduceMotion ? 1 : 0.9, x: shouldReduceMotion ? 0 : -30 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      x: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const imageVariantsRight = {
+    hidden: { opacity: 0, scale: shouldReduceMotion ? 1 : 0.9, x: shouldReduceMotion ? 0 : 30 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      x: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0, x: shouldReduceMotion ? 0 : 30 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const contentVariantsLeft = {
+    hidden: { opacity: 0, x: shouldReduceMotion ? 0 : -30 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: shouldReduceMotion ? 0 : -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.4,
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
-    <MainContainer>
-      <Heading>Our Laser &amp; Gum Care Services</Heading>
+    <MainContainer
+      as={motion.div}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+    >
+      <Heading as={motion.h1} variants={headingVariants}>
+        Our Laser &amp; Gum Care Services
+      </Heading>
 
       {/* SLIDE 1 — Image Left / Content Right */}
-      <Slide>
-        <LeftImage src="/Gingival.svg" alt="Gingival Depigmentation" />
-        <RightContent>
+      <Slide
+        as={motion.div}
+        variants={slideVariants}
+      >
+        <LeftImage
+          as={motion.img}
+          src="/Gingival.svg"
+          alt="Gingival Depigmentation"
+          variants={imageVariants}
+        />
+        <RightContent
+          as={motion.div}
+          variants={contentVariants}
+        >
           <ServiceTitle>Gingival Depigmentation</ServiceTitle>
           <ServiceParagraph>
             Target dark or patchy gum pigmentation caused by excess melanin or lifestyle factors.
             This cosmetic procedure gently removes discolored tissue to reveal even toned, pink gums.
           </ServiceParagraph>
           <Points>
-            <Point><PointIcon src={icon} alt="icon" /> Aesthetic gum lightening</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Ideal for darker-toned gums</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Lasting cosmetic improvement</Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Aesthetic gum lightening
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Ideal for darker-toned gums
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Lasting cosmetic improvement
+            </Point>
           </Points>
         </RightContent>
       </Slide>
 
       {/* SLIDE 2 — Content Left / Image Right */}
-      <Slide>
-        <LeftContent>
+      <Slide
+        as={motion.div}
+        variants={slideVariants}
+      >
+        <LeftContent
+          as={motion.div}
+          variants={contentVariantsLeft}
+        >
           <ServiceTitle>Gingival Depigmentation with Laser</ServiceTitle>
           <ServiceParagraph>
             Using <strong>diode or soft-tissue lasers</strong>, we precisely remove pigmented gum tissue <br />
             with <strong>minimal bleeding, no sutures, and rapid healing</strong>.
           </ServiceParagraph>
           <Points>
-            <Point><PointIcon src={icon} alt="icon" /> Non-surgical & virtually painless</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Uniform, natural-looking gum tone</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Quick recovery, long-lasting results</Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Non-surgical & virtually painless
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Uniform, natural-looking gum tone
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Quick recovery, long-lasting results
+            </Point>
           </Points>
         </LeftContent>
-        <RightImage src="/GingivaLaser.svg" alt="Laser Crown Lengthening" />
+        <RightImage
+          as={motion.img}
+          src="/GingivaLaser.svg"
+          alt="Laser Crown Lengthening"
+          variants={imageVariantsRight}
+        />
       </Slide>
 
       {/* SLIDE 3 */}
-      <Slide>
-        <LeftImage src="/GUM RESHAPING.svg" alt="Gum Reshaping / Contouring Per Tooth" />
-        <RightContent>
+      <Slide
+        as={motion.div}
+        variants={slideVariants}
+      >
+        <LeftImage
+          as={motion.img}
+          src="/GUM RESHAPING.svg"
+          alt="Gum Reshaping / Contouring Per Tooth"
+          variants={imageVariants}
+        />
+        <RightContent
+          as={motion.div}
+          variants={contentVariants}
+        >
           <ServiceTitle>Gum Reshaping / Contouring Per Tooth</ServiceTitle>
           <ServiceParagraph>
             Correct uneven gum lines, excess gum display, or overgrown soft tissue. This <br />
@@ -53,16 +206,28 @@ const GumCareServices = () => {
             attractive smile.
           </ServiceParagraph>
           <Points>
-            <Point><PointIcon src={icon} alt="icon" /> Ideal for gummy smiles</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Enhances tooth proportions</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Aesthetic smile design</Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Ideal for gummy smiles
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Enhances tooth proportions
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Aesthetic smile design
+            </Point>
           </Points>
         </RightContent>
       </Slide>
 
       {/* SLIDE 4 */}
-      <Slide>
-        <LeftContent>
+      <Slide
+        as={motion.div}
+        variants={slideVariants}
+      >
+        <LeftContent
+          as={motion.div}
+          variants={contentVariantsLeft}
+        >
           <ServiceTitle>Gum Reshaping / Contouring Per Tooth with Laser</ServiceTitle>
           <ServiceParagraph>
             Laser contouring offers a <strong>bloodless, stitch-free solution</strong> with precision control <br />
@@ -70,18 +235,40 @@ const GumCareServices = () => {
             makeover.
           </ServiceParagraph>
           <Points>
-            <Point><PointIcon src={icon} alt="icon" /> Minimal post-op swelling</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Seamless gum margins</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Faster, cleaner healing</Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Minimal post-op swelling
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Seamless gum margins
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Faster, cleaner healing
+            </Point>
           </Points>
         </LeftContent>
-        <RightImage src="/GUMreshape.svg" alt="Laser Crown Lengthening" />
+        <RightImage
+          as={motion.img}
+          src="/GUMreshape.svg"
+          alt="Laser Crown Lengthening"
+          variants={imageVariantsRight}
+        />
       </Slide>
 
       {/* SLIDE 5 */}
-      <Slide>
-        <LeftImage src="/Full Mouth.svg" alt="Curettage – Full Mouth" />
-        <RightContent>
+      <Slide
+        as={motion.div}
+        variants={slideVariants}
+      >
+        <LeftImage
+          as={motion.img}
+          src="/Full Mouth.svg"
+          alt="Curettage – Full Mouth"
+          variants={imageVariants}
+        />
+        <RightContent
+          as={motion.div}
+          variants={contentVariants}
+        >
           <ServiceTitle>Curettage – Full Mouth</ServiceTitle>
           <ServiceParagraph>
             A therapeutic procedure to remove <strong>infected gingival epithelium</strong> in periodontal <br />
@@ -89,50 +276,96 @@ const GumCareServices = () => {
             advanced gum disease.
           </ServiceParagraph>
           <Points>
-            <Point><PointIcon src={icon} alt="icon" /> Treats chronic periodontitis</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Improves periodontal health</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Supports long-term gum stability</Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Treats chronic periodontitis
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Improves periodontal health
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Supports long-term gum stability
+            </Point>
           </Points>
         </RightContent>
       </Slide>
 
       {/* SLIDE 6 */}
-      <Slide>
-        <LeftContent>
+      <Slide
+        as={motion.div}
+        variants={slideVariants}
+      >
+        <LeftContent
+          as={motion.div}
+          variants={contentVariantsLeft}
+        >
           <ServiceTitle>Curettage – Full Mouth with Laser</ServiceTitle>
           <ServiceParagraph>
             Laser-assisted full-mouth curettage targets diseased tissue and bacteria more <br />
             effectively, promoting faster healing and enhanced regeneration.
           </ServiceParagraph>
           <Points>
-            <Point><PointIcon src={icon} alt="icon" /> Superior bacterial control</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Less invasive than traditional methods</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Reduced discomfort and bleeding</Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Superior bacterial control
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Less invasive than traditional methods
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Reduced discomfort and bleeding
+            </Point>
           </Points>
         </LeftContent>
-        <RightImage src="/CurettageLaser-1.svg" alt="Laser Crown Lengthening" />
+        <RightImage
+          as={motion.img}
+          src="/CurettageLaser-1.svg"
+          alt="Laser Crown Lengthening"
+          variants={imageVariantsRight}
+        />
       </Slide>
 
       {/* SLIDE 7 */}
-      <Slide>
-        <LeftImage src="/Curettage – Per Tooth.svg" alt="Curettage – Per Tooth" />
-        <RightContent>
+      <Slide
+        as={motion.div}
+        variants={slideVariants}
+      >
+        <LeftImage
+          as={motion.img}
+          src="/Curettage – Per Tooth.svg"
+          alt="Curettage – Per Tooth"
+          variants={imageVariants}
+        />
+        <RightContent
+          as={motion.div}
+          variants={contentVariants}
+        >
           <ServiceTitle>Curettage – Per Tooth</ServiceTitle>
           <ServiceParagraph>
             Focused periodontal therapy to treat isolated areas of inflammation or infection. <br />
             Ideal for early-stage gum disease or site-specific deep pockets.
           </ServiceParagraph>
           <Points>
-            <Point><PointIcon src={icon} alt="icon" /> Preserves healthy surrounding tissue</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Boosts local healing</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Quick, targeted intervention</Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Preserves healthy surrounding tissue
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Boosts local healing
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Quick, targeted intervention
+            </Point>
           </Points>
         </RightContent>
       </Slide>
 
       {/* SLIDE 8 */}
-      <Slide>
-        <LeftContent>
+      <Slide
+        as={motion.div}
+        variants={slideVariants}
+      >
+        <LeftContent
+          as={motion.div}
+          variants={contentVariantsLeft}
+        >
           <ServiceTitle>Curettage – Per Tooth with Laser</ServiceTitle>
           <ServiceParagraph>
             Precision laser technology enhances per-tooth curettage by gently debriding the <br />
@@ -140,12 +373,23 @@ const GumCareServices = () => {
             structures.
           </ServiceParagraph>
           <Points>
-            <Point><PointIcon src={icon} alt="icon" /> Effective on localized pockets</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Pain-free, suture-free treatment</Point>
-            <Point><PointIcon src={icon} alt="icon" /> Immediate return to daily activities</Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Effective on localized pockets
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Pain-free, suture-free treatment
+            </Point>
+            <Point as={motion.li} variants={itemVariants}>
+              <PointIcon src={icon} alt="icon" /> Immediate return to daily activities
+            </Point>
           </Points>
         </LeftContent>
-        <RightImage src="/Curettage with Laser.svg" alt="Laser Crown Lengthening" />
+        <RightImage
+          as={motion.img}
+          src="/Curettage with Laser.svg"
+          alt="Laser Crown Lengthening"
+          variants={imageVariantsRight}
+        />
       </Slide>
     </MainContainer>
   );
@@ -174,8 +418,8 @@ const Heading = styled.h1`
   margin: 70px 0 60px 0;
 
   @media (max-width: 768px) {
-    font-size: 28px;
-    margin: 40px 0 30px 0;
+    font-size: 20px;
+    margin: 2px 0 30px 0;
   }
 `;
 
@@ -214,11 +458,15 @@ const LeftImage = styled.img`
   }
 
   @media (max-width: 576px) {
-    width: 100%;
+    width: 90%;
   }
 `;
 
-const RightImage = styled(LeftImage)``;
+const RightImage = styled(LeftImage)`
+  @media (max-width: 992px) {
+    order: -1; /* Display image first on mobile */
+  }
+`;
 
 const RightContent = styled.div`
   width: 755px;
@@ -227,11 +475,15 @@ const RightContent = styled.div`
 
   @media (max-width: 992px) {
     width: 100%;
-    align-items: center;
+    
   }
 `;
 
-const LeftContent = styled(RightContent)``;
+const LeftContent = styled(RightContent)`
+  @media (max-width: 992px) {
+    order: 1; /* Display content after image on mobile */
+  }
+`;
 
 const ServiceTitle = styled.h2`
   font-family: "Montserrat", sans-serif;
@@ -243,12 +495,11 @@ const ServiceTitle = styled.h2`
   text-align: left;
 
   @media (max-width: 992px) {
-    text-align: center;
     font-size: 24px;
   }
 
   @media (max-width: 576px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 `;
 
@@ -261,14 +512,26 @@ const ServiceParagraph = styled.p`
   margin-bottom: 15px;
   text-align: left;
 
+  br {
+    display: block;
+  }
+
   @media (max-width: 992px) {
-    text-align: center;
     font-size: 16px;
     line-height: 30px;
+    
+    br {
+      display: none;
+    }
   }
 
   @media (max-width: 576px) {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 26px;
+    margin-top:-8px;
+    br {
+      display: none;
+    }
   }
 `;
 
@@ -280,7 +543,7 @@ const Points = styled.ul`
   @media (max-width: 992px) {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
   }
 `;
 
@@ -295,12 +558,11 @@ const Point = styled.li`
   color: #392d44;
 
   @media (max-width: 992px) {
-    justify-content: center;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   @media (max-width: 576px) {
-    font-size: 15px;
+    font-size: 14px;
   }
 `;
 

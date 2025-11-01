@@ -36,7 +36,7 @@ const faqData = [
   },
 ];
 
-const FrequentlyAskedQuestions = () => {
+const FlapAskedQuestions = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 25 }}
@@ -180,4 +180,4 @@ const FrequentlyAskedQuestions = () => {
   );
 };
 
-export default FrequentlyAskedQuestions;
+export default FlapAskedQuestions;

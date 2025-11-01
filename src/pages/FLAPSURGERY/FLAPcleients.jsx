@@ -1,6 +1,6 @@
 import React from "react";
 
-const Clients = () => {
+const FLAPcleients = () => {
   return (
     <div style={{ backgroundColor: "#FFFFFF" }}>
       {/* Media query for desktop-only left alignment */}
@@ -361,4 +361,4 @@ const Clients = () => {
   );
 };
 
-export default Clients;
+export default FLAPcleients;

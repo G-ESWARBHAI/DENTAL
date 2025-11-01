@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const WhatToExpect = () => {
+const ExpectFlap = () => {
   // Reusable card component with hover + fade-in animation
   const InfoCard = ({ text }) => (
     <motion.div
@@ -151,4 +151,4 @@ const WhatToExpect = () => {
   );
 };
 
-export default WhatToExpect;
+export default ExpectFlap;

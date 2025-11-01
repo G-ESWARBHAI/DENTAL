@@ -24,7 +24,7 @@ const faqData = [
   },
 ];
 
-const FrequentlyAskedQuestions = () => {
+const Askedquestions = () => {
   return (
     <div
       style={{
@@ -186,4 +186,4 @@ const FrequentlyAskedQuestions = () => {
   );
 };
 
-export default FrequentlyAskedQuestions;
+export default Askedquestions;

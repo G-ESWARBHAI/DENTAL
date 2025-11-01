@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const LaserHeroSection = () => {
+const HeroLaser = () => {
   return (
     <HeroContainer>
       <HeroHeading>Laser Gum Treatments</HeroHeading>
@@ -159,4 +159,4 @@ const ButtonText = styled.span`
   }
 `;
 
-export default LaserHeroSection;
+export default HeroLaser;

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion"; // ✅ Add this
 
-const WhatToExpect = () => {
+const Expect = () => {
   // Animation Variants
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
@@ -145,4 +145,4 @@ const WhatToExpect = () => {
   );
 };
 
-export default WhatToExpect;
+export default Expect;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import zoomImage from '../../components/assets/Teeth Whitening/Zoom Teeth Whitening.svg';
-import laserImage from '../../components/assets/Teeth Whitening/Laser Teeth Whitening.svg';
-import arrowIcon from '../../components/assets/Teeth Whitening/ARROW.svg';
+import zoomImage from '../../components/assets/TeethWhitening/Zoom Teeth Whitening.svg';
+import laserImage from '../../components/assets/TeethWhitening/Laser Teeth Whitening.svg';
+import arrowIcon from '../../components/assets/TeethWhitening/ARROW.svg';
 
 const ImageContentSection = () => {
   const prefersReducedMotion = useReducedMotion();

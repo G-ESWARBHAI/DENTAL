@@ -1,5 +1,5 @@
 import React from "react";
-import BnrSvg from "../../components/assets/Teeth Whitening/BNR.svg";
+import BnrSvg from "../../components/assets/TeethWhitening/BNR.svg";
 import Content from "../../pages/services_last/content";
 import ImageContent from "../../pages/services_last/image_content";
 import WhyChoose from "../../pages/services_last/WhyChoose";

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Import the SVG image
-import IdealForImage from "../../components/assets/Teeth Whitening/WhoIts.svg";
+import IdealForImage from "../../components/assets/TeethWhitening/WhoIts.svg";
 
 export default function WhoIts() {
   const idealFor = [

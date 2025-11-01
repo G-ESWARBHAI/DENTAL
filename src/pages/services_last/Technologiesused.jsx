@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ArrowIcon from "../../components/assets/Teeth Whitening/ARROW.svg";
+import ArrowIcon from "../../components/assets/TeethWhitening/ARROW.svg";
 
 export default function Technologiesused() {
   const technologies = [

@@ -1,5 +1,5 @@
 import React from "react";
-import RestoreComport from "../../components/assets/Teeth Whitening/Frame 1984078773.svg";
+import RestoreComport from "../../components/assets/TeethWhitening/Frame 1984078773.svg";
 
 export default function Ready() {
   return (

@@ -9,12 +9,12 @@ import Services from './pages/services'
 import OralTop from './pages/Oral/OralTop'
 import DentalCrownsAndVeneers from './pages/page_2/hero'
 import RootTop from './pages/RootCanal/RootTop'
-import ToothTop from './pages/Tooth/ToothTop'
+// import ToothTop from './pages/Tooth/ToothTop'
 import Hero from './pages/services_last/hero'
-import FlapSurgery from './pages/FLAPSURGERY/FlapSurgery'
-import LaserGum from './pages/laser gum/LaserGum'
-import Tooth_Extra from './pages/TOOTH_Extraction/Tooth_Extra'
-import Dental_Implents from './pages/Dental_Implants/Dental_Implents'
+// import FlapSurgery from './pages/FLAPSURGERY/FlapSurgery'
+// import LaserGum from './pages/laser gum/LaserGum'
+// import Tooth_Extra from './pages/TOOTH_Extraction/Tooth_Extra'
+// import Dental_Implents from './pages/Dental_Implants/Dental_Implents'
 
 const App = () => {
   return (

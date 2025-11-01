@@ -91,7 +91,7 @@ const Navbar = () => {
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
-              <div className="flex items-center cursor-pointer pb-2">
+              <div className="flex items-center cursor-pointer">
                 <Link 
                   to="/services" 
                   className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium flex items-center"
@@ -109,41 +109,64 @@ const Navbar = () => {
                 </svg>
               </div>
               
-              {/* Dropdown Menu with bridge */}
+              {/* Dropdown Menu - Horizontal Grid Layout */}
               <div 
-                className={`absolute left-0 top-full pt-2 transition-all duration-300 ${isServicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                className={`absolute left-1/2 transform -translate-x-1/2 top-full pt-4 transition-all duration-300 ${isServicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
               >
                 <div 
-                  className="w-72 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 z-50 overflow-hidden"
+                  className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-5 md:p-6 z-50 overflow-hidden"
                   style={{
                     animation: isServicesOpen ? 'fadeInDown 0.3s ease-out' : 'none',
-                    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)'
+                    boxShadow: '0 25px 80px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.1)',
+                    minWidth: 'min(900px, 95vw)',
+                    width: 'max-content',
+                    maxWidth: '95vw'
                   }}
                 >
-                  {services.map((service, index) => (
-                    <Link
-                      key={index}
-                      to={service.path}
-                      className="block px-5 py-3.5 text-sm text-dental-dark-blue hover:bg-gradient-to-r hover:from-dental-teal hover:to-blue-500 hover:text-white transition-all duration-200 font-medium relative group/item"
-                      onClick={closeOverlays}
-                      style={{
-                        transition: 'all 0.2s ease'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'translateX(4px)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'translateX(0)'
-                      }}
-                    >
-                      <span className="flex items-center">
-                        <span className="w-1.5 h-1.5 rounded-full bg-white mr-3 opacity-0 group-hover/item:opacity-100 transition-opacity duration-200"></span>
-                        {service.name}
-                      </span>
-                    </Link>
-                  ))}
+                  {/* Decorative background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-dental-teal/5 via-blue-50/30 to-purple-50/20 pointer-events-none"></div>
+                  
+                  {/* Horizontal Grid: 3 columns on large, 2 on medium, 2 on small */}
+                  <div className="relative grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-4">
+                    {services.map((service, index) => (
+                      <Link
+                        key={index}
+                        to={service.path}
+                        className="group/item relative block px-4 py-4 md:px-5 md:py-4 rounded-xl bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 hover:border-dental-teal hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                        onClick={closeOverlays}
+                      >
+                        {/* Service Icon/Indicator */}
+                        <div className="flex items-start space-x-3 mb-2">
+                          <div className="flex-shrink-0 w-2 h-2 rounded-full bg-dental-teal opacity-0 group-hover/item:opacity-100 transition-all duration-300 transform group-hover/item:scale-150 mt-2"></div>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-xs md:text-sm font-bold text-dental-dark-blue group-hover/item:text-dental-teal transition-colors duration-300 leading-tight">
+                              {service.name}
+                            </p>
+                          </div>
+                          {/* Arrow indicator */}
+                          <svg 
+                            className="w-4 h-4 text-dental-teal opacity-0 group-hover/item:opacity-100 transform translate-x-0 group-hover/item:translate-x-1 transition-all duration-300 flex-shrink-0 mt-0.5" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                        
+                        {/* Animated underline */}
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-dental-teal to-blue-500 transform scale-x-0 group-hover/item:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        
+                        {/* Shimmer effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover/item:translate-x-[200%] transition-transform duration-1000"></div>
+                        
+                        {/* Hover glow */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-dental-teal/5 to-blue-500/5 rounded-xl opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 -z-10"></div>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -252,26 +275,37 @@ const Navbar = () => {
                   </svg>
                 </button>
                 
-                {/* Mobile Dropdown Items */}
+                {/* Mobile Dropdown Items - Horizontal Grid */}
                 <div 
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    isServicesOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                    isServicesOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="bg-gray-50 py-2">
-                    {services.map((service, index) => (
-                      <Link
-                        key={index}
-                        to={service.path}
-                        className="block px-6 py-2.5 text-sm text-dental-blue hover:text-dental-teal hover:bg-white transition-colors font-medium border-l-2 border-transparent hover:border-dental-teal"
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          closeOverlays()
-                        }}
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
+                  <div className="bg-gradient-to-br from-gray-50 to-blue-50/30 py-3 px-2">
+                    {/* 2 columns grid for mobile */}
+                    <div className="grid grid-cols-2 gap-2">
+                      {services.map((service, index) => (
+                        <Link
+                          key={index}
+                          to={service.path}
+                          className="group/item relative block px-3 py-3 rounded-lg bg-white border-2 border-gray-200 hover:border-dental-teal hover:shadow-md transition-all duration-200 active:scale-95"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            closeOverlays()
+                          }}
+                        >
+                          <div className="flex flex-col items-center space-y-1.5">
+                            {/* Indicator dot */}
+                            <div className="w-1.5 h-1.5 rounded-full bg-dental-teal opacity-0 group-hover/item:opacity-100 transition-opacity duration-200"></div>
+                            <p className="text-xs font-bold text-dental-dark-blue group-hover/item:text-dental-teal transition-colors duration-200 leading-tight text-center">
+                              {service.name}
+                            </p>
+                          </div>
+                          {/* Hover background */}
+                          <div className="absolute inset-0 bg-gradient-to-br from-dental-teal/5 to-blue-500/5 rounded-lg opacity-0 group-hover/item:opacity-100 transition-opacity duration-200 -z-10"></div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

@@ -216,7 +216,7 @@ export default function WhyChoose() {
 
   return (
     <motion.div 
-      className="py-16 px-4 bg-white -mt-5 mb-10"
+      className="py-8 md:py-16 px-4 bg-white -mt-5 mb-6 md:mb-10"
       initial={initialAnim}
       animate={animateAnim}
       whileInView={whileInViewAnim}
@@ -226,8 +226,8 @@ export default function WhyChoose() {
       <div className="max-w-5xl mx-auto">
         {/* Main Heading */}
         <motion.h2 
-          className="text-center mb-12 font-bold" 
-          style={{color: '#0267AC', fontSize: '38px', letterSpacing: '0.5px'}}
+          className="text-center mb-8 md:mb-12 font-bold text-xl md:text-2xl lg:text-3xl" 
+          style={{color: '#0267AC', letterSpacing: '0.5px'}}
           variants={headingVariants}
         >
           Why Choose Sasha Luxe?
@@ -235,30 +235,30 @@ export default function WhyChoose() {
         
         {/* Features Grid - Two columns */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
           variants={containerVariants}
         >
           {/* Left Column - 3 items */}
-          <motion.div className="space-y-4" variants={columnVariants}>
+          <motion.div className="space-y-3 md:space-y-4" variants={columnVariants}>
             {leftColumnFeatures.map((feature, index) => (
               <motion.div 
                 key={index}
-                className="rounded-2xl p-3 overflow-hidden cursor-pointer"
-                style={{ backgroundColor: '#F1F9FD', height: '90px' }}
+                className="rounded-2xl p-2 md:p-3 overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]"
+                style={{ backgroundColor: '#F1F9FD' }}
                 variants={featureBoxVariants}
                 whileHover="hover"
               >
-                <div className="flex items-center h-full px-2">
+                <div className="flex items-center h-full px-1 md:px-2">
                   {/* Icon */}
                   <motion.div 
-                    className="flex-shrink-0 mr-3"
+                    className="flex-shrink-0 mr-2 md:mr-3"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >
                     <img 
                       src={feature.icon} 
                       alt={feature.title}
-                      className="w-14 h-14"
+                      className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14"
                       loading="lazy"
                       decoding="async"
                       fetchpriority="low"
@@ -269,10 +269,10 @@ export default function WhyChoose() {
                   
                   {/* Text */}
                   <div className="flex-1 overflow-hidden">
-                    <h3 className="font-bold text-gray-800 mb-0.5" style={{fontSize: '16.88px', letterSpacing: '0.3px', lineHeight: '1.2'}}>
+                    <h3 className="font-bold text-gray-800 mb-0.5 text-sm md:text-base" style={{letterSpacing: '0.3px', lineHeight: '1.2', fontSize: 'clamp(14px, 2vw, 16.88px)'}}>
                       {feature.title}
                     </h3>
-                    <p className="text-gray-700" style={{fontSize: '16.88px', letterSpacing: '0.3px', lineHeight: '1.3'}}>
+                    <p className="text-gray-700 text-xs md:text-sm lg:text-base" style={{letterSpacing: '0.3px', lineHeight: '1.3', fontSize: 'clamp(12px, 1.8vw, 16.88px)'}}>
                       {feature.text}
                     </p>
                   </div>
@@ -282,26 +282,26 @@ export default function WhyChoose() {
           </motion.div>
 
           {/* Right Column - 2 items */}
-          <motion.div className="space-y-4" variants={columnVariants}>
+          <motion.div className="space-y-3 md:space-y-4" variants={columnVariants}>
             {rightColumnFeatures.map((feature, index) => (
               <motion.div 
                 key={index}
-                className="rounded-2xl p-3 overflow-hidden cursor-pointer"
-                style={{ backgroundColor: '#F1F9FD', height: '90px' }}
+                className="rounded-2xl p-2 md:p-3 overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]"
+                style={{ backgroundColor: '#F1F9FD' }}
                 variants={featureBoxRightVariants}
                 whileHover="hover"
               >
-                <div className="flex items-center h-full px-2">
+                <div className="flex items-center h-full px-1 md:px-2">
                   {/* Icon */}
                   <motion.div 
-                    className="flex-shrink-0 mr-3"
+                    className="flex-shrink-0 mr-2 md:mr-3"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >
                     <img 
                       src={feature.icon} 
                       alt={feature.title}
-                      className="w-14 h-14"
+                      className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14"
                       loading="lazy"
                       decoding="async"
                       fetchpriority="low"
@@ -312,10 +312,10 @@ export default function WhyChoose() {
                   
                   {/* Text */}
                   <div className="flex-1 overflow-hidden">
-                    <h3 className="font-bold text-gray-800 mb-0.5" style={{fontSize: '16.88px', letterSpacing: '0.3px', lineHeight: '1.2'}}>
+                    <h3 className="font-bold text-gray-800 mb-0.5 text-sm md:text-base" style={{letterSpacing: '0.3px', lineHeight: '1.2', fontSize: 'clamp(14px, 2vw, 16.88px)'}}>
                       {feature.title}
                     </h3>
-                    <p className="text-gray-700" style={{fontSize: '16.88px', letterSpacing: '0.3px', lineHeight: '1.3'}}>
+                    <p className="text-gray-700 text-xs md:text-sm lg:text-base" style={{letterSpacing: '0.3px', lineHeight: '1.3', fontSize: 'clamp(12px, 1.8vw, 16.88px)'}}>
                       {feature.text}
                     </p>
                   </div>
@@ -327,44 +327,44 @@ export default function WhyChoose() {
 
         {/* What to Expect During Treatment Section */}
         <motion.div 
-          className="mt-16"
+          className="mt-8 md:mt-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
           <motion.h2 
-            className="text-center mb-12 font-bold" 
-            style={{color: '#0267AC', fontSize: '38px', letterSpacing: '0.5px'}}
+            className="text-center mb-8 md:mb-12 font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl" 
+            style={{color: '#0267AC', letterSpacing: '0.5px', fontSize: 'clamp(20px, 4vw, 38px)'}}
             variants={headingVariants}
           >
             What to Expect During Treatment
           </motion.h2>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6"
             variants={columnStaggerVariants}
           >
             {/* Column 1: BEFORE YOU BEGIN */}
             <motion.div variants={columnVariantsExpect}>
               <motion.h3 
-                className="font-bold text-[#0267AC] mb-6" 
-                style={{fontSize: '20px', letterSpacing: '0.5px'}}
+                className="font-bold text-[#0267AC] mb-4 md:mb-6 text-base md:text-lg lg:text-xl" 
+                style={{letterSpacing: '0.5px', fontSize: 'clamp(16px, 2.5vw, 20px)'}}
                 variants={columnHeadingVariants}
               >
                 BEFORE YOU BEGIN
               </motion.h3>
-              <motion.div className="space-y-4" variants={bulletBoxStaggerVariants}>
+              <motion.div className="space-y-3 md:space-y-4" variants={bulletBoxStaggerVariants}>
                 <motion.div 
-                  className="p-4 flex items-center overflow-hidden cursor-pointer" 
-                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px', height: '90px' }}
+                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
                 >
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0 mt-1"
                     loading="lazy"
                     decoding="async"
                     fetchpriority="low"
@@ -373,20 +373,20 @@ export default function WhyChoose() {
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span className="text-gray-800" style={{fontSize: '14px', letterSpacing: '0.5px'}}>
+                  <span className="text-gray-800 text-xs md:text-sm" style={{letterSpacing: '0.5px', fontSize: 'clamp(12px, 1.8vw, 14px)'}}>
                     Clinical exam, X-rays & scans
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-4 flex items-center overflow-hidden cursor-pointer" 
-                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px', height: '90px' }}
+                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
                 >
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0 mt-1"
                     loading="lazy"
                     decoding="async"
                     fetchpriority="low"
@@ -395,20 +395,20 @@ export default function WhyChoose() {
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span className="text-gray-800" style={{fontSize: '14px', letterSpacing: '0.5px'}}>
+                  <span className="text-gray-800 text-xs md:text-sm" style={{letterSpacing: '0.5px', fontSize: 'clamp(12px, 1.8vw, 14px)'}}>
                     Digital smile preview & treatment plan
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-4 flex items-center overflow-hidden cursor-pointer" 
-                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px', height: '90px' }}
+                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
                 >
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0 mt-1"
                     loading="lazy"
                     decoding="async"
                     fetchpriority="low"
@@ -417,20 +417,20 @@ export default function WhyChoose() {
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span className="text-gray-800" style={{fontSize: '14px', letterSpacing: '0.5px'}}>
+                  <span className="text-gray-800 text-xs md:text-sm" style={{letterSpacing: '0.5px', fontSize: 'clamp(12px, 1.8vw, 14px)'}}>
                     Explanation of all available options
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-4 flex items-center overflow-hidden cursor-pointer" 
-                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px', height: '90px' }}
+                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
                 >
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0 mt-1"
                     loading="lazy"
                     decoding="async"
                     fetchpriority="low"
@@ -439,7 +439,7 @@ export default function WhyChoose() {
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span className="text-gray-800" style={{fontSize: '14px', letterSpacing: '0.5px'}}>
+                  <span className="text-gray-800 text-xs md:text-sm" style={{letterSpacing: '0.5px', fontSize: 'clamp(12px, 1.8vw, 14px)'}}>
                     Payment plans and treatment timeline discussion
                   </span>
                 </motion.div>
@@ -449,23 +449,23 @@ export default function WhyChoose() {
             {/* Column 2: DURING TREATMENT */}
             <motion.div variants={columnVariantsExpect}>
               <motion.h3 
-                className="font-bold text-[#0267AC] mb-6" 
-                style={{fontSize: '20px', letterSpacing: '0.5px'}}
+                className="font-bold text-[#0267AC] mb-4 md:mb-6 text-base md:text-lg lg:text-xl" 
+                style={{letterSpacing: '0.5px', fontSize: 'clamp(16px, 2.5vw, 20px)'}}
                 variants={columnHeadingVariants}
               >
                 DURING TREATMENT
               </motion.h3>
-              <motion.div className="space-y-4" variants={bulletBoxStaggerVariants}>
+              <motion.div className="space-y-3 md:space-y-4" variants={bulletBoxStaggerVariants}>
                 <motion.div 
-                  className="p-4 flex items-center overflow-hidden cursor-pointer" 
-                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px', height: '90px' }}
+                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
                 >
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0 mt-1"
                     loading="lazy"
                     decoding="async"
                     fetchpriority="low"
@@ -474,20 +474,20 @@ export default function WhyChoose() {
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span className="text-gray-800" style={{fontSize: '14px', letterSpacing: '0.5px'}}>
+                  <span className="text-gray-800 text-xs md:text-sm" style={{letterSpacing: '0.5px', fontSize: 'clamp(12px, 1.8vw, 14px)'}}>
                     Monthly check-ins for braces or aligners
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-4 flex items-center overflow-hidden cursor-pointer" 
-                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px', height: '90px' }}
+                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
                 >
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0 mt-1"
                     loading="lazy"
                     decoding="async"
                     fetchpriority="low"
@@ -496,41 +496,41 @@ export default function WhyChoose() {
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span className="text-gray-800" style={{fontSize: '14px', letterSpacing: '0.5px'}}>
+                  <span className="text-gray-800 text-xs md:text-sm" style={{letterSpacing: '0.5px', fontSize: 'clamp(12px, 1.8vw, 14px)'}}>
                     Maintain excellent oral hygiene
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-4 flex items-center overflow-hidden cursor-pointer" 
-                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px', height: '90px' }}
+                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
                 >
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0 mt-1"
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span className="text-gray-800" style={{fontSize: '14px', letterSpacing: '0.5px'}}>
+                  <span className="text-gray-800 text-xs md:text-sm" style={{letterSpacing: '0.5px', fontSize: 'clamp(12px, 1.8vw, 14px)'}}>
                     Wear aligners 20-22 hours/day (for clear aligner cases)
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-4 flex items-center overflow-hidden cursor-pointer" 
-                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px', height: '90px' }}
+                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
                 >
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0 mt-1"
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span className="text-gray-800" style={{fontSize: '14px', letterSpacing: '0.5px'}}>
+                  <span className="text-gray-800 text-xs md:text-sm" style={{letterSpacing: '0.5px', fontSize: 'clamp(12px, 1.8vw, 14px)'}}>
                     Dietary guidance (for fixed braces patients)
                   </span>
                 </motion.div>
@@ -540,61 +540,61 @@ export default function WhyChoose() {
             {/* Column 3: AFTER TREATMENT */}
             <motion.div variants={columnVariantsExpect}>
               <motion.h3 
-                className="font-bold text-[#0267AC] mb-6" 
-                style={{fontSize: '20px', letterSpacing: '0.5px'}}
+                className="font-bold text-[#0267AC] mb-4 md:mb-6 text-base md:text-lg lg:text-xl" 
+                style={{letterSpacing: '0.5px', fontSize: 'clamp(16px, 2.5vw, 20px)'}}
                 variants={columnHeadingVariants}
               >
                 AFTER TREATMENT
               </motion.h3>
-              <motion.div className="space-y-4" variants={bulletBoxStaggerVariants}>
+              <motion.div className="space-y-3 md:space-y-4" variants={bulletBoxStaggerVariants}>
                 <motion.div 
-                  className="p-4 flex items-center overflow-hidden cursor-pointer" 
-                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px', height: '90px' }}
+                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
                 >
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0 mt-1"
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span className="text-gray-800" style={{fontSize: '14px', letterSpacing: '0.5px'}}>
+                  <span className="text-gray-800 text-xs md:text-sm" style={{letterSpacing: '0.5px', fontSize: 'clamp(12px, 1.8vw, 14px)'}}>
                     Final results review and smile assessment
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-4 flex items-center overflow-hidden cursor-pointer" 
-                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px', height: '90px' }}
+                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
                 >
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0 mt-1"
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span className="text-gray-800" style={{fontSize: '14px', letterSpacing: '0.5px'}}>
+                  <span className="text-gray-800 text-xs md:text-sm" style={{letterSpacing: '0.5px', fontSize: 'clamp(12px, 1.8vw, 14px)'}}>
                     Retainers provided to maintain alignment
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-4 flex items-center overflow-hidden cursor-pointer" 
-                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px', height: '90px' }}
+                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
                 >
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-5 h-5 mr-3 flex-shrink-0 mt-1"
+                    className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0 mt-1"
                     whileHover={{ x: 5, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span className="text-gray-800" style={{fontSize: '14px', letterSpacing: '0.5px'}}>
+                  <span className="text-gray-800 text-xs md:text-sm" style={{letterSpacing: '0.5px', fontSize: 'clamp(12px, 1.8vw, 14px)'}}>
                     Long-term follow-up and maintenance guidance
                   </span>
                 </motion.div>

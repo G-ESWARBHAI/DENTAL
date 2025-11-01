@@ -90,7 +90,7 @@ export default function Frequently() {
 
   return (
     <motion.div 
-      className="py-6 sm:py-8 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8 bg-white -mt-20"
+      className="py-6 sm:py-8 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8 bg-white mt-3 lg:-mt-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}

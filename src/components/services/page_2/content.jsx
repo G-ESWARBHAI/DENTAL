@@ -106,7 +106,7 @@ const ContentSection = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 md:py-12">
+    <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 md:py-12 -mt-12 lg:-mt-4">
       {/* What Is Orthodontic Treatment Section */}
       <motion.div 
         className="bg-white py-6 md:py-8"
@@ -118,7 +118,7 @@ const ContentSection = () => {
       >
         {/* Heading */}
         <motion.h2 
-          className="text-2xl md:text-4xl font-bold text-[#0267AC] mb-6 md:mb-8 text-center" 
+          className="text-[19px] md:text-4xl font-bold text-[#0267AC] mb-3 md:mb-8 text-center" 
           style={{ fontFamily: 'Poppins, sans-serif' }}
           variants={headingVariants}
         >
@@ -128,19 +128,19 @@ const ContentSection = () => {
         {/* Content */}
         <motion.div variants={contentVariants}>
           <motion.p 
-            className="text-gray-700 leading-relaxed"
+            className="text-gray-700 text-center lg:text-left text-[12px]  md:text-sm lg:text-[26px]"
             variants={contentVariants} 
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(16px, 3vw, 22px)' }}
+            style={{ fontFamily: 'Montserrat, sans-serif',lineHeight: '1.5' }}
           >
-            Orthodontics focuses on aligning teeth and jaws to improve <strong style={{ color: '#272727', fontWeight: '600' }}>function, health, and aesthetics.</strong> Whether you're dealing with crowding, spacing, bite issues, or misalignment, orthodontic treatment can transform your smile and your confidence.
+            Orthodontics focuses on aligning teeth and jaws to improve <strong style={{ color: '#272727' }}>function, health, and aesthetics.</strong> Whether you're dealing with crowding, spacing, bite issues, or misalignment, orthodontic treatment can transform your smile and your confidence.
           </motion.p>
           <br />
           <motion.p 
-            className="text-gray-700 leading-relaxed" 
-            style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(16px, 3vw, 22px)' }}
+            className="text-gray-700 text-center lg:text-left text-[12px] md:text-sm lg:text-[26px]" 
+            style={{ fontFamily: 'Montserrat, sans-serif',lineHeight: '1.5' }}
             variants={contentVariants}
           >
-            At <strong style={{ color: '#272727', fontWeight: '600' }}>Sasha Luxe</strong>, we offer a full range of orthodontic options including <strong style={{ color: '#272727', fontWeight: '600' }}>Fixed Braces, Custom Clear Aligners, and Invisalign®</strong>, tailored to your needs, lifestyle, and goals. Expect <strong style={{ color: '#272727', fontWeight: '600' }}>precise planning, comfortable treatment, and beautiful results.</strong>
+            At <strong style={{ color: '#272727'}}>Sasha Luxe</strong>, we offer a full range of orthodontic options including <strong style={{ color: '#272727', fontWeight: '600' }}>Fixed Braces, Custom Clear Aligners, and Invisalign®</strong>, tailored to your needs, lifestyle, and goals. Expect <strong style={{ color: '#272727', fontWeight: '600' }}>precise planning, comfortable treatment, and beautiful results.</strong>
           </motion.p>
         </motion.div>
       </motion.div>
@@ -154,7 +154,7 @@ const ContentSection = () => {
         variants={containerVariants}
       >
         <motion.h2 
-          className="text-2xl md:text-4xl font-bold text-[#0267AC] font-size:36px mb-6 md:mb-8 text-center" 
+          className="text-2xl md:text-4xl font-bold text-[#0267AC] text-[19px] md:text-[36px] mb-2 md:mb-8 text-center" 
           style={{ fontFamily: 'Poppins, sans-serif' }}
           variants={headingVariants}
         >
@@ -166,7 +166,7 @@ const ContentSection = () => {
           <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8">
             {/* Image - Left Side */}
             <motion.div 
-              className="w-full lg:w-[400px] flex-shrink-0 flex justify-center lg:justify-start"
+              className="w-[280px] md:w-[300px] lg:w-[400px] flex-shrink-0 flex justify-center lg:justify-start"
               variants={imageVariants}
             >
               <motion.img 
@@ -181,7 +181,7 @@ const ContentSection = () => {
             {/* Text Content - Right Side */}
             <div className="flex-1 w-full lg:w-auto">
               <motion.h3 
-                className="text-lg sm:text-xl md:text-3xl font-bold text-[#0267AC] mb-3 sm:mb-4 md:mb-6" 
+                className="text-md sm:text-xl md:text-3xl font-bold text-[#0267AC] mb-3 sm:mb-4 md:mb-6" 
                 style={{ fontFamily: 'Poppins, sans-serif' }}
                 variants={headingVariants}
               >
@@ -191,7 +191,7 @@ const ContentSection = () => {
               <motion.p
                 variants={contentVariants}
                 className="text-gray-700 leading-relaxed mb-4 sm:mb-6" 
-                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(14px, 2.5vw, 21px)', letterSpacing: '0.5px' }}
+                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(13px, 2.5vw, 21px)', letterSpacing: '0.5px' }}
               >
                 Tried, tested, and highly effective—fixed metal or ceramic braces correct complex alignment issues with precision and control.
               </motion.p>
@@ -207,11 +207,11 @@ const ContentSection = () => {
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                    className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                     whileHover={{ x: 3, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                     Ideal for teens and adults
                   </span>
                 </motion.li>
@@ -222,11 +222,11 @@ const ContentSection = () => {
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                    className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                     whileHover={{ x: 3, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                     Corrects severe crowding, bite problems
                   </span>
                 </motion.li>
@@ -237,11 +237,11 @@ const ContentSection = () => {
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                    className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                     whileHover={{ x: 3, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                     Option of metal or tooth-colored brackets
                   </span>
                 </motion.li>
@@ -251,9 +251,9 @@ const ContentSection = () => {
         </div>
 
         {/* What to Expect Section */}
-        <div className="bg-white py-6 md:py-8 mt-8">
+        <div className="bg-white py-6 md:py-8 mt-1 lg:mt-8">
           <motion.h3 
-            className="text-2xl md:text-3xl font-bold text-[#0267AC] mb-10 text-center" 
+            className="text-[19px] md:text-3xl font-bold text-[#0267AC] mb-3 lg:mb-10 text-center" 
             style={{ fontFamily: 'Poppins, sans-serif' }}
             variants={headingVariants}
           >
@@ -275,11 +275,11 @@ const ContentSection = () => {
                 <motion.img 
                   src={arrowIcon} 
                   alt="arrow" 
-                  className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                  className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                   whileHover={{ x: 3, scale: 1.1 }}
                   transition={{ duration: 0.2 }}
                 />
-                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif',letterSpacing: '0.5px', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif',letterSpacing: '0.5px', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                   Brackets and wires gently move teeth over time
                 </span>
               </motion.div>
@@ -293,11 +293,11 @@ const ContentSection = () => {
                 <motion.img 
                   src={arrowIcon} 
                   alt="arrow" 
-                  className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                  className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                   whileHover={{ x: 3, scale: 1.1 }}
                   transition={{ duration: 0.2 }}
                 />
-                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif',letterSpacing: '0.5px', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif',letterSpacing: '0.5px', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                   Visible, reliable, and cost-effective treatment
                 </span>
               </motion.div>
@@ -314,11 +314,11 @@ const ContentSection = () => {
                 <motion.img 
                   src={arrowIcon} 
                   alt="arrow" 
-                  className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                  className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                   whileHover={{ x: 3, scale: 1.1 }}
                   transition={{ duration: 0.2 }}
                 />
-                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif',letterSpacing: '0.5px', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif',letterSpacing: '0.5px', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                   Regular adjustments every 4-6 weeks
                 </span>
               </motion.div>
@@ -332,7 +332,7 @@ const ContentSection = () => {
             {/* Text Content - Left Side */}
             <div className="flex-1 w-full lg:w-auto">
               <motion.h3 
-                className="text-lg sm:text-xl md:text-3xl font-bold text-[#0267AC] mb-3 sm:mb-4 md:mb-6" 
+                className="text-md sm:text-xl md:text-3xl font-bold text-[#0267AC] mb-3 sm:mb-4 md:mb-6" 
                 style={{ fontFamily: 'Poppins, sans-serif' }}
                 variants={headingVariants}
               >
@@ -342,7 +342,7 @@ const ContentSection = () => {
               <motion.p
                 variants={contentVariants}
                 className="text-gray-700 leading-relaxed mb-4 sm:mb-6" 
-                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(14px, 2.5vw, 21px)', letterSpacing: '0.5px' }}
+                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(13px, 2.5vw, 21px)', letterSpacing: '0.5px' }}
               >
                 Sasha Luxe offers in-house clear aligners custom-designed for your teeth. Perfect for minor to moderate alignment cases with added affordability.
               </motion.p>
@@ -358,11 +358,11 @@ const ContentSection = () => {
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                    className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                     whileHover={{ x: 3, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                     Discreet and removable
                   </span>
                 </motion.li>
@@ -373,11 +373,11 @@ const ContentSection = () => {
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                    className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                     whileHover={{ x: 3, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                     Ideal for gaps, mild crowding, relapse cases
                   </span>
                 </motion.li>
@@ -388,20 +388,20 @@ const ContentSection = () => {
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                    className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                     whileHover={{ x: 3, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                     Made locally, with personalized monitoring
                   </span>
                 </motion.li>
               </motion.ul>
-          </div>
+            </div>
 
             {/* Image - Right Side */}
             <motion.div 
-              className="w-full lg:w-[400px] flex-shrink-0 flex justify-center lg:justify-start"
+              className="w-[280px] md:w-[300px] lg:w-[400px] flex-shrink-0 flex justify-center lg:justify-start"
               variants={imageRightVariants}
             >
               <motion.img 
@@ -413,12 +413,12 @@ const ContentSection = () => {
               />
             </motion.div>
           </div>
-      </div>
+        </div>
 
         {/* Second What to Expect Section */}
-        <div className="bg-white py-6 md:py-8 mt-8">
+        <div className="bg-white py-6 md:py-8 mt-1 lg:mt-8">
           <motion.h3 
-            className="text-2xl md:text-3xl font-bold text-[#0267AC] mb-10 text-center" 
+            className="text-[19px] md:text-3xl font-bold text-[#0267AC] mb-3 lg:mb-10 text-center" 
             style={{ fontFamily: 'Poppins, sans-serif' }}
             variants={headingVariants}
           >
@@ -440,11 +440,11 @@ const ContentSection = () => {
                 <motion.img 
                   src={arrowIcon} 
                   alt="arrow" 
-                  className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                  className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                   whileHover={{ x: 3, scale: 1.1 }}
                   transition={{ duration: 0.2 }}
                 />
-                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.5px', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.5px', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                   Series of custom aligners changed every 10-14 days
                 </span>
               </motion.div>
@@ -458,11 +458,11 @@ const ContentSection = () => {
                 <motion.img 
                   src={arrowIcon} 
                   alt="arrow" 
-                  className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                  className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                   whileHover={{ x: 3, scale: 1.1 }}
                   transition={{ duration: 0.2 }}
                 />
-                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.5px', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.5px', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                 Affordable option with flexible treatment plans
                 </span>
               </motion.div>
@@ -479,11 +479,11 @@ const ContentSection = () => {
                 <motion.img 
                   src={arrowIcon} 
                   alt="arrow" 
-                  className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                  className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                   whileHover={{ x: 3, scale: 1.1 }}
                   transition={{ duration: 0.2 }}
                 />
-                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.5px', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.5px', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                   Easy to remove for eating and brushing
                 </span>
               </motion.div>
@@ -496,7 +496,7 @@ const ContentSection = () => {
           <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8">
             {/* Image - Left Side */}
             <motion.div 
-              className="w-full lg:w-[400px] flex-shrink-0 flex justify-center lg:justify-start"
+              className="w-[280px] md:w-[300px] lg:w-[400px] flex-shrink-0 flex justify-center lg:justify-start"
               variants={imageVariants}
             >
               <motion.img 
@@ -511,7 +511,7 @@ const ContentSection = () => {
             {/* Text Content - Right Side */}
             <div className="flex-1 w-full lg:w-auto">
               <motion.h3 
-                className="text-lg sm:text-xl md:text-3xl font-bold text-[#0267AC] mb-3 sm:mb-4 md:mb-6" 
+                className="text-md sm:text-xl md:text-3xl font-bold text-[#0267AC] mb-3 sm:mb-4 md:mb-6" 
                 style={{ fontFamily: 'Poppins, sans-serif' }}
                 variants={headingVariants}
               >
@@ -521,7 +521,7 @@ const ContentSection = () => {
               <motion.p
                 variants={contentVariants}
                 className="text-gray-700 leading-relaxed mb-4 sm:mb-6" 
-                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(14px, 2.5vw, 20.5px)', letterSpacing: '0.5px' }}
+                style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(13px, 2.5vw, 21px)', letterSpacing: '0.5px' }}
               >
                 Globally trusted, Invisalign® offers virtually invisible orthodontic treatment with advanced technology and world-class precision.
               </motion.p>
@@ -537,11 +537,11 @@ const ContentSection = () => {
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                    className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                     whileHover={{ x: 3, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                     Digitally mapped and 3D printed
                   </span>
                 </motion.li>
@@ -552,11 +552,11 @@ const ContentSection = () => {
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                    className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                     whileHover={{ x: 3, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                     Treats mild to complex cases
                   </span>
                 </motion.li>
@@ -567,23 +567,23 @@ const ContentSection = () => {
                   <motion.img 
                     src={arrowIcon} 
                     alt="arrow" 
-                    className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                    className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                     whileHover={{ x: 3, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   />
-                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                     Comfortable, removable, and lifestyle-friendly
                   </span>
                 </motion.li>
               </motion.ul>
+            </div>
           </div>
         </div>
-      </div>
 
         {/* Third What to Expect Section */}
-        <div className="bg-white py-6 md:py-8 mt-8">
+        <div className="bg-white py-6 md:py-8 mt-1 lg:mt-8">
           <motion.h3 
-            className="text-2xl md:text-3xl font-bold text-[#0267AC] mb-10 text-center" 
+            className="text-[19px] md:text-3xl font-bold text-[#0267AC] mb-3 lg:mb-10 text-center" 
             style={{ fontFamily: 'Poppins, sans-serif' }}
             variants={headingVariants}
           >
@@ -605,11 +605,11 @@ const ContentSection = () => {
                 <motion.img 
                   src={arrowIcon} 
                   alt="arrow" 
-                  className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                  className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                   whileHover={{ x: 3, scale: 1.1 }}
                   transition={{ duration: 0.2 }}
                 />
-                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.5px', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.5px', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                 SmartTrack® material for faster, gentler movement
                 </span>
               </motion.div>
@@ -623,11 +623,11 @@ const ContentSection = () => {
                 <motion.img 
                   src={arrowIcon} 
                   alt="arrow" 
-                  className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                  className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                   whileHover={{ x: 3, scale: 1.1 }}
                   transition={{ duration: 0.2 }}
                 />
-                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.5px', fontSize: 'clamp(14px, 2.5vw, 19px)' }}>
+                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.5px', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                 Aesthetic, premium treatment option with global support
                 </span>
               </motion.div>
@@ -644,11 +644,11 @@ const ContentSection = () => {
                 <motion.img 
                   src={arrowIcon} 
                   alt="arrow" 
-                  className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5"
+                  className="w-4 h-4 md:w-6 md:h-6 mr-3 flex-shrink-0 mt-0.5"
                   whileHover={{ x: 3, scale: 1.1 }}
                   transition={{ duration: 0.2 }}
                 />
-                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.5px', fontSize: 'clamp(14px, 2.5vw, 21px)' }}>
+                <span className="text-gray-700" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.5px', fontSize: 'clamp(13px, 2.5vw, 21px)' }}>
                 Digital progress tracking and remote monitoring
                 </span>
               </motion.div>

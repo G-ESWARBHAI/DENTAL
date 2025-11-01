@@ -1,5 +1,5 @@
 import React from 'react'
-import FlapHero from './FlapHero'
+import HeroTooth from './FlapHero'
 import WhatIsFlap from './WhatIsFlap'
 import OurFlapSurgery from './OurFlapSurgery'
 import WhyChooseFlap from './WhyChooseFlap'
@@ -10,7 +10,7 @@ import FLAPcleients from './FLAPcleients'
 const FlapSurgery = () => {
   return (
     <>
-      <FlapHero />
+      <HeroTooth />
       <WhatIsFlap />
       <OurFlapSurgery />  
       <WhyChooseFlap />

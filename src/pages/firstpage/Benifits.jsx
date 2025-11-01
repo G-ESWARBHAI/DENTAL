@@ -1,78 +1,167 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import ArrowIcon from '../../components/assets/arrow.svg';
 
 export default function Benefits() {
+  // Animation variants
+  const headingVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const iconVariants = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <div className="py-16 px-4 -mt-6 ">
+    <div className="py-16 px-4 -mt-7 lg:-mt-6 ">
       <div className="">
         {/* Main Heading */}
-        <h2 className="text-center mb-8 font-bold" style={{color: '#0267AC', fontSize: '36px'}}>
+        <motion.h2 
+          className="text-center mb-8 font-bold text-[20px] lg:text-[36px]" 
+          style={{color: '#0267AC'}}
+          variants={headingVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           Benefits of Restorative Treatment
-        </h2>
+        </motion.h2>
         
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-full py-16 px-10 mx-auto" style={{backgroundColor: '#EBF7FF'}}>
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-full py-8 md:py-16 px-4 md:px-10 mx-auto" 
+          style={{backgroundColor: '#EBF7FF'}}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {/* Left Column */}
-          <div className="space-y-8 ml-40">
-            <div className="flex items-center">
-              <img 
+          <motion.div 
+            className="space-y-4 md:space-y-8 ml-0 md:ml-40"
+            variants={containerVariants}
+          >
+            <motion.div 
+              className="flex items-start"
+              variants={itemVariants}
+            >
+              <motion.img 
                 src={ArrowIcon} 
                 alt="Arrow icon"
-                className="w-8 h-8 mr-8 flex-shrink-0"
+                className="w-5 h-5 md:w-8 md:h-8 mr-3 md:mr-8 flex-shrink-0 mt-1 md:mt-0"
+                variants={iconVariants}
               />
-              <span style={{color: '#392D44', fontSize: '23px', letterSpacing: '0.5px'}}>
+              <span className='text-sm md:text-[16px] lg:text-[23px] leading-relaxed' style={{color: '#392D44', letterSpacing: '0.5px'}}>
                 Natural-looking, long-lasting results
               </span>
-            </div>
+            </motion.div>
             
-            <div className="flex items-center">
-              <img 
+            <motion.div 
+              className="flex items-start"
+              variants={itemVariants}
+            >
+              <motion.img 
                 src={ArrowIcon} 
                 alt="Arrow icon"
-                className="w-8 h-8 mr-8 flex-shrink-0"
+                className="w-5 h-5 md:w-8 md:h-8 mr-3 md:mr-8 flex-shrink-0 mt-1 md:mt-0"
+                variants={iconVariants}
               />
-              <span style={{color: '#392D44', fontSize: '23px', letterSpacing: '0.5px'}}>
+              <span className='text-sm md:text-base lg:text-[23px] leading-relaxed' style={{color: '#392D44', letterSpacing: '0.5px'}}>
                 Restores bite strength and tooth function
               </span>
-            </div>
+            </motion.div>
             
-            <div className="flex items-center">
-              <img 
+            <motion.div 
+              className="flex items-start"
+              variants={itemVariants}
+            >
+              <motion.img 
                 src={ArrowIcon} 
                 alt="Arrow icon"
-                className="w-8 h-8 mr-8 flex-shrink-0"
+                className="w-5 h-5 md:w-8 md:h-8 mr-3 md:mr-8 flex-shrink-0 mt-1 md:mt-0"
+                variants={iconVariants}
               />
-              <span style={{color: '#392D44', fontSize: '23px', letterSpacing: '0.5px'}}>
+              <span className='text-sm md:text-base lg:text-[23px] leading-relaxed' style={{color: '#392D44', letterSpacing: '0.5px'}}>
                 Personalized approach for every smile
               </span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
           
           {/* Right Column */}
-          <div className="space-y-8">
-            <div className="flex items-center">
-              <img 
+          <motion.div 
+            className="space-y-4 md:space-y-8"
+            variants={containerVariants}
+          >
+            <motion.div 
+              className="flex items-start"
+              variants={itemVariants}
+            >
+              <motion.img 
                 src={ArrowIcon} 
                 alt="Arrow icon"
-                className="w-8 h-8 mr-8 flex-shrink-0"
+                className="w-5 h-5 md:w-8 md:h-8 mr-3 md:mr-8 flex-shrink-0 mt-1 md:mt-0"
+                variants={iconVariants}
               />
-              <span style={{color: '#392D44', fontSize: '23px', letterSpacing: '0.5px'}}>
+              <span className='text-sm md:text-base lg:text-[23px] leading-relaxed' style={{color: '#392D44', letterSpacing: '0.5px'}}>
                 Prevents further tooth decay or damage
               </span>
-            </div>
+            </motion.div>
             
-            <div className="flex items-center">
-              <img 
+            <motion.div 
+              className="flex items-start"
+              variants={itemVariants}
+            >
+              <motion.img 
                 src={ArrowIcon} 
                 alt="Arrow icon"
-                className="w-8 h-8 mr-8 flex-shrink-0"
+                className="w-5 h-5 md:w-8 md:h-8 mr-3 md:mr-8 flex-shrink-0 mt-1 md:mt-0"
+                variants={iconVariants}
               />
-              <span style={{color: '#392D44', fontSize: '23px', letterSpacing: '0.5px'}}>
+              <span className='text-sm md:text-base lg:text-[23px] leading-relaxed' style={{color: '#392D44', letterSpacing: '0.5px'}}>
                 Minimally invasive techniques
               </span>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

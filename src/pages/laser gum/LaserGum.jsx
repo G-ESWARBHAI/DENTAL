@@ -5,7 +5,7 @@ import GumCareServices from './GumCareServices'
 import WhyChooseLaser from './WhyChooseLaser'
 import Expect from './Expect'
 import Askedquestions from './Askedquestions'
-import Clients from './Clients'
+import Clients from './clients'
 
 const LaserGum = () => {
   return (

@@ -10,7 +10,7 @@ import Clients from './Clients'
 const LaserGum = () => {
   return (
     <>
-        <HeroLaser  />
+      <HeroLaser  />
       <WhatAreLaser />
       <GumCareServices />
       <WhyChooseLaser />

@@ -11,8 +11,8 @@ import DentalCrownsAndVeneers from './pages/page_2/hero'
 import RootTop from './pages/RootCanal/RootTop'
 import ToothTop from './pages/Tooth/ToothTop'
 import Hero from './pages/services_last/hero'
-// import FlapSurgery from './pages/FLAPSURGERY/FlapSurgery'
-import LaserGum from './pages/laser gum/LaserGum'
+import FlapSurgery from './pages/FLAPSURGERY/FlapSurgery'
+// import LaserGum from './pages/laser gum/LaserGum'
 import Tooth_Extra from './pages/TOOTH_Extraction/Tooth_Extra'
 import Dental_Implents from './pages/Dental_Implants/Dental_Implents'
 
@@ -31,8 +31,8 @@ const App = () => {
           <Route path="/services/dental-crowns-and-veneers" element={<DentalCrownsAndVeneers />} />
           <Route path="/services/root-canal" element={<RootTop />} />
           <Route path="/services/tooth-surgery" element={<ToothTop />} />
-          {/* <Route path="/services/flap-surgery" element={<FlapSurgery />} /> */}
-          <Route path="/services/laser-gum" element={<LaserGum />} />
+          <Route path="/services/flap-surgery" element={<FlapSurgery />} />
+          {/* <Route path="/services/laser-gum" element={<LaserGum />} /> */}
           <Route path="/services/tooth-extraction" element={<Tooth_Extra />} />
            <Route path="/services/dental-implants" element={<Dental_Implents />} />
         </Routes>

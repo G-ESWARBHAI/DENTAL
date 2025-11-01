@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const HeroTooth = () => {
+const FlapHero = () => {
   return (
     <HeroContainer>
       <HeroHeading>Flap Surgery</HeroHeading>
@@ -112,4 +112,4 @@ const ButtonText = styled.span`
   }
 `;
 
-export default HeroTooth;
+export default FlapHero;

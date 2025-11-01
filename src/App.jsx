@@ -30,11 +30,11 @@ const App = () => {
           <Route path="/services/oral-prophylaxis" element={<OralTop />} />
           <Route path="/services/dental-crowns-and-veneers" element={<DentalCrownsAndVeneers />} />
           <Route path="/services/root-canal" element={<RootTop />} />
-          <Route path="/services/tooth-surgery" element={<ToothTop />} />
-          <Route path="/services/flap-surgery" element={<FlapSurgery />} />
+          {/* <Route path="/services/tooth-surgery" element={<ToothTop />} /> */}
+          {/* <Route path="/services/flap-surgery" element={<FlapSurgery />} />
           <Route path="/services/laser-gum" element={<LaserGum />} />
           <Route path="/services/tooth-extraction" element={<Tooth_Extra />} />
-          <Route path="/services/dental-implants" element={<Dental_Implents />} />
+          <Route path="/services/dental-implants" element={<Dental_Implents />} /> */}
         </Routes>
         <Footer />
       </div>

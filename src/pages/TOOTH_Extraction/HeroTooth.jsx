@@ -8,7 +8,7 @@ const HeroTooth = () => {
         <HeroHeading>Tooth Extractions</HeroHeading>
         <HeroSubheading> Gentle. Safe. Professional Tooth</HeroSubheading>
                 <HeroSubheading>Removal When You Need It Most.</HeroSubheading>
-
+{/* <hi></hi> */}
       </TextBlock>
     
       <HeroButton>

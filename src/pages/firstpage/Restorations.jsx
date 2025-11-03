@@ -114,7 +114,7 @@ export default function Restorations() {
         >
           {/* First Paragraph */}
           <motion.p 
-            className="text-xs text-center lg:text-left lg:text-[22px] mb-4" 
+            className="text-xs text-left lg:text-[22px] mb-4" 
             style={{color: '#392D44', letterSpacing: '1px', lineHeight: '1.8'}}
             variants={paragraphVariants}
           >
@@ -123,7 +123,7 @@ export default function Restorations() {
           
           {/* Second Paragraph */}
           <motion.p 
-            className="text-xs text-center lg:text-left lg:text-[22px] space-y-8" 
+            className="text-xs text-left lg:text-[22px] space-y-8" 
             style={{color: '#392D44', letterSpacing: '1px', lineHeight: '1.8'}}
             variants={paragraphVariants}
           >

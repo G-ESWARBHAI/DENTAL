@@ -13,16 +13,52 @@ import BnrBackground from '../../../public/ToothBNR.svg';
 
 
 export default function HeroTooth() {
-  // Minimal animation variants - simple fade-in only
-  const fadeIn = {
+  // Animation Variants
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.3,
-        ease: "easeOut"
-      }
-    }
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const headingVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -44,14 +80,14 @@ export default function HeroTooth() {
           {/* Left Side Content */}
           <motion.div 
             className="max-w-[240px] lg:max-w-[600px] xl:max-w-2xl ml-2 md:ml-10 lg:ml-28 z-10 relative flex-shrink-0 pr-2 md:pr-4 lg:pr-8"
-            variants={fadeIn}
+            variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
             {/* Main Title */}
             <motion.h1 
               className="font-bold text-[#0267AC] leading-tight mb-1 lg:mb-7 tracking-tight text-[14px] sm:text-base md:text-2xl lg:text-[54px]"
-              variants={fadeIn}
+              variants={headingVariants}
             >
               Tooth Extractions
             </motion.h1>
@@ -60,7 +96,7 @@ export default function HeroTooth() {
             <motion.p 
               className="text-[#272727] font-medium leading-relaxed lg:mb-8 lg:leading-relaxed text-[7px] sm:text-[10px] md:text-sm lg:text-[28px]" 
               style={{letterSpacing: '0.5px'}}
-              variants={fadeIn}
+              variants={textVariants}
             >
               Gentle. Safe. Professional Tooth
               <br />
@@ -69,8 +105,10 @@ export default function HeroTooth() {
 
             {/* Call to Action Button */}
             <motion.button 
-              className="bg-[#0267AC] text-white px-1.5 py-0.5 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-xl font-medium hover:bg-[#0056a3] transition-colors duration-300 shadow-lg text-[7px] sm:text-[10px] md:text-base lg:text-[26px] w-auto md:w-auto mt-2 md:mt-4"
-              variants={fadeIn}
+              className="bg-[#0267AC] text-white px-1.5 py-0.5 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-xl font-medium transition-colors duration-300 shadow-lg text-[7px] sm:text-[10px] md:text-base lg:text-[26px] w-auto md:w-auto mt-2 md:mt-4"
+              variants={buttonVariants}
+              whileHover={{ scale: 1.05, backgroundColor: "#0056a3", boxShadow: "0 10px 25px rgba(0,0,0,0.2)" }}
+              whileTap={{ scale: 0.95 }}
             >
               Book Your Consultation Today
             </motion.button>

@@ -83,7 +83,7 @@ const OurClientsLove = () => {
               <div
                 style={{
                   width: "294px",
-                  height: "270px",
+                  height: "210px",
                   backgroundColor: "#FFFFFF",
                   borderRadius: "12px",
                   boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
@@ -156,7 +156,7 @@ const OurClientsLove = () => {
               <div
                 style={{
                   width: "294px",
-                  height: "270px",
+                  height: "210px",
                   backgroundColor: "#FFFFFF",
                   borderRadius: "12px",
                   boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",

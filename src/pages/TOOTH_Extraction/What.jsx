@@ -130,7 +130,7 @@ const Paragraph = styled.p`
   }
 
   @media (min-width: 769px) {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 45px;
     margin-bottom: 25px;
     padding: 0;

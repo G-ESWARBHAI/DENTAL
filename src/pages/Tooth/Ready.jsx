@@ -20,7 +20,7 @@ export default function Ready() {
           <div className="flex items-center justify-between px-3 md:px-12 py-1 md:py-12 h-full">
             {/* Left Side - Text Content */}
             <div className="flex-1 ml-1 md:ml-8 -mt-1 md:-mt-3 pr-2 md:pr-0">
-              <h2 className="text-white font-bold mb-2 md:mb-5 lg:mb-4 text-[10px] md:text-3xl lg:text-[36px] whitespace-nowrap" style={{letterSpacing: '0.3px'}}>
+              <h2 className="text-white font-bold mb-1 md:mb-5 lg:mb-4 text-[11px] md:text-3xl lg:text-[36px] whitespace-nowrap" style={{letterSpacing: '0.3px'}}>
               Restore Comfort & Confidence
               </h2>
               <p className="text-white mb-1 md:mb-6 text-[6px] md:text-lg lg:text-[22px] w-[190px] lg:w-[630px]" style={{letterSpacing: '1.2px',lineHeight: '1.5'}}>

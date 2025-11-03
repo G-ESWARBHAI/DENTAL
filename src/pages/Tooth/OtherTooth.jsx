@@ -109,7 +109,7 @@ export default function OtherTooth() {
         </motion.div>
 
         <motion.p
-          className="lg:text-left text-center text-gray-700 text-[14px] sm:text-[16px] lg:text-[20px] mt-6 md:mt-10 lg:max-w-[970px] mx-auto "
+          className=" text-left text-gray-700 text-[14px] sm:text-[16px] lg:text-[20px] mt-6 md:mt-10 lg:max-w-[970px] mx-auto "
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

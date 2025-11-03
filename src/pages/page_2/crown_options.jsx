@@ -233,7 +233,7 @@ const CrownOptions = () => {
               
               {/* Right side - Points/Features */}
                 <motion.div 
-                  className="flex-1 lg:-mt-11 lg:-mr-6"
+                  className="flex-1 lg:-mt-2 lg:-mr-6"
                   variants={itemVariants}
                 >
                 <ul className="list-none p-0 m-0">

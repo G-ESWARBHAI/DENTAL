@@ -128,7 +128,7 @@ const ContentSection = () => {
         {/* Content */}
         <motion.div variants={contentVariants}>
           <motion.p 
-            className="text-gray-700 text-center lg:text-left text-[12px]  md:text-sm lg:text-[26px]"
+            className="text-gray-700 text-left text-[12px]  md:text-sm lg:text-[26px]"
             variants={contentVariants} 
             style={{ fontFamily: 'Montserrat, sans-serif',lineHeight: '1.5' }}
           >
@@ -136,7 +136,7 @@ const ContentSection = () => {
           </motion.p>
           <br />
           <motion.p 
-            className="text-gray-700 text-center lg:text-left text-[12px] md:text-sm lg:text-[26px]" 
+            className="text-gray-700 text-left text-[12px] md:text-sm lg:text-[26px]" 
             style={{ fontFamily: 'Montserrat, sans-serif',lineHeight: '1.5' }}
             variants={contentVariants}
           >

@@ -1,9 +1,59 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import SkilledIcon from '../../components/assets/skillled.svg';
 // import GentleTechIcon from '../../components/assets/RootCanal/gentle tech.svg'; 
 import TrustedIcon from '../../components/assets/trusted.svg';
 import HighQualityIcon from '../../components/assets/high quality.svg';
 import SpaLikeIcon from '../../components/assets/spa like.svg';
+
+// Animation Variants
+const titleVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const paragraphVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+      delay: 0.6,
+    },
+  },
+};
 
 export default function WhyChoose() {
   const features = [
@@ -29,7 +79,7 @@ export default function WhyChoose() {
     //   text: " Pain-free, digital precision techniques"
     // },
    
- 
+
    
   ];
 
@@ -37,16 +87,32 @@ export default function WhyChoose() {
     <div className="py-16 px-4 bg-white -mt-10">
       <div className="max-w-5xl mx-auto">
         {/* Main Heading */}
-        <h2 className="text-center mb-8 font-bold text-xl sm:text-3xl lg:text-[38px]" style={{color: '#0267AC', letterSpacing: '0.5px'}}>
+        <motion.h2 
+          className="text-center mb-8 font-bold text-xl sm:text-3xl lg:text-[38px]" 
+          style={{color: '#0267AC', letterSpacing: '0.5px'}}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={titleVariants}
+        >
           Why Choose Sasha Luxe?
-        </h2>
+        </motion.h2>
         
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-6">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
           {features.map((feature, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className="bg-gradient-to-br from-blue-50 to-blue-50 rounded-2xl p-5 lg:p-6 hover:shadow-md transition-shadow"
+              className="bg-gradient-to-br from-blue-50 to-blue-50 rounded-2xl p-5 lg:p-6"
+              variants={cardVariants}
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0,0,0,0.1)" }}
+              transition={{ duration: 0.2 }}
             >
               <div className="flex items-center">
                 {/* Icon */}
@@ -65,11 +131,20 @@ export default function WhyChoose() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-        <p className="text-center mt-5 lg:mt-12 text-gray-600  leading-relaxed text-[16px] sm:text-[17px] lg:text-[23px]" style={{letterSpacing: '0.7px',lineHeight: '1.9'}}> We use <strong> rotary instruments, digital X-rays,</strong> and <strong> apex locators </strong> to deliver efficient
-        and comfortable root canal procedures, all in a calming, spa-inspired dental setting.</p>
+        </motion.div>
+        <motion.p 
+          className="text-center mt-5 lg:mt-12 text-gray-600  leading-relaxed text-[14px] sm:text-[17px] lg:text-[23px]" 
+          style={{letterSpacing: '0.7px',lineHeight: '1.9'}}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={paragraphVariants}
+        >
+          We use <strong> rotary instruments, digital X-rays,</strong> and <strong> apex locators </strong> to deliver efficient
+          and comfortable root canal procedures, all in a calming, spa-inspired dental setting.
+        </motion.p>
       </div>
     </div>
   );

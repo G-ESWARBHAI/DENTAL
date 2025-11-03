@@ -111,31 +111,49 @@ const Clients = () => {
                 <TestimonialName>Ravi K.</TestimonialName>
               </MotionTestimonialCard>
             </TestimonialsWrapper>
+            
+            {/* Button placed below the testimonials - Desktop only */}
+            <DesktopButtonWrapper>
+              <MotionClickMoreButton
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Click More
+              </MotionClickMoreButton>
+            </DesktopButtonWrapper>
           </TestimonialsContainer>
 
           {/* Right: Video/Image Section */}
-          <MotionVideoContainer variants={scaleVariants}>
-            <VideoImage src="/ourclient.svg" alt="Client Video" />
+          <VideoWrapper>
+            <MotionVideoContainer variants={scaleVariants}>
+              <VideoImage src="/ourclient.svg" alt="Client Video" />
 
-            <PlayButton>
-              <PlayIcon></PlayIcon>
-            </PlayButton>
+              <PlayButton>
+                <PlayIcon></PlayIcon>
+              </PlayButton>
 
-            <ClosingQuote src="/quotes.svg" alt="closing quote" />
-          </MotionVideoContainer>
+              <ClosingQuote src="/quotes.svg" alt="closing quote" />
+            </MotionVideoContainer>
+            
+            {/* Button placed after video/image - Mobile only */}
+            <MobileButtonWrapper>
+              <MotionClickMoreButton
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Click More
+              </MotionClickMoreButton>
+            </MobileButtonWrapper>
+          </VideoWrapper>
         </MotionMainSection>
-
-        {/* Button placed below the SVG section */}
-        <MotionClickMoreButton
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={itemVariants}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Click More
-        </MotionClickMoreButton>
       </MainContainer>
 
       <FooterSpacer></FooterSpacer>
@@ -312,7 +330,7 @@ const TestimonialText = styled.p`
     margin: 0 0 27px 0;
 
     &.second-testimonial {
-      margin: 0 0 55px 0;
+      margin: 0 0 30px 0;
     }
   }
 `;
@@ -333,9 +351,6 @@ const VideoContainer = styled.div`
   border-radius: 12px;
   overflow: visible;
   position: relative;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  flex: 1 1 400px;
-  margin: 0 auto;
 
   @media (min-width: 768px) {
     height: 270px;
@@ -403,8 +418,36 @@ const ClosingQuote = styled.img`
   }
 `;
 
-const ClickMoreButton = styled.button`
+const VideoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 446.08px;
+  flex: 1 1 400px;
+  margin: 0 auto;
+`;
+
+const DesktopButtonWrapper = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;
+
+const MobileButtonWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
   margin-top: 24px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const ClickMoreButton = styled.button`
+  margin-top: 0;
   width: 120px;
   height: 40px;
   background-color: #0267AC;

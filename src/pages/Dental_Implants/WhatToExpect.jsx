@@ -127,7 +127,7 @@ export default WhatToExpect;
 
 const Wrapper = styled.div`
   width: 962px;
-  margin: 80px auto;
+  margin: 10px auto;
   background-color: #ffffff;
   padding: 24px;
   border-radius: 16.88px;

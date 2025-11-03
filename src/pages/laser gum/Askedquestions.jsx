@@ -1,4 +1,66 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+// Animation Variants
+const titleVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, x: 30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+};
+
+const readMoreVariants = {
+  hidden: { opacity: 0, x: 20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+      delay: 0.6,
+    },
+  },
+};
 
 const faqData = [
   {
@@ -46,12 +108,15 @@ const Askedquestions = () => {
               white-space: normal !important;
               text-align: center !important;
             }
+            .faq-image {
+              max-width: 220px !important;
+            }
           }
         `}
       </style>
 
       {/* Heading */}
-      <h1
+      <motion.h1
         className="faq-heading"
         style={{
           maxWidth: "100%",
@@ -64,9 +129,13 @@ const Askedquestions = () => {
           margin: "0 auto 20px auto",
           whiteSpace: "normal", // ✅ allow wrapping
         }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={titleVariants}
       >
         Frequently Asked Questions
-      </h1>
+      </motion.h1>
 
       {/* Main content */}
       <div
@@ -79,20 +148,28 @@ const Askedquestions = () => {
         }}
       >
         {/* Left Image */}
-        <img
-          src="/Frequently Asked.svg"
-          alt="FAQ Illustration"
-          style={{
-            width: "100%",
-            maxWidth: "300px",
-            height: "auto",
-            objectFit: "cover",
-            marginTop: "20px",
-          }}
-        />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={imageVariants}
+        >
+          <img
+            src="/Frequently Asked.svg"
+            alt="FAQ Illustration"
+            className="faq-image"
+            style={{
+              width: "100%",
+              maxWidth: "300px",
+              height: "auto",
+              objectFit: "cover",
+              marginTop: "20px",
+            }}
+          />
+        </motion.div>
 
         {/* Right FAQ Cards */}
-        <div
+        <motion.div
           style={{
             display: "flex",
             flexDirection: "column",
@@ -100,9 +177,13 @@ const Askedquestions = () => {
             flex: 1,
             minWidth: "300px",
           }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
         >
           {faqData.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               style={{
                 borderRadius: "16.88px",
@@ -112,6 +193,9 @@ const Askedquestions = () => {
                 padding: "18px 24px",
                 background: "linear-gradient(90deg, #F0F4FF 0%, #FFFFFF 350%)",
               }}
+              variants={cardVariants}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
             >
               <div
                 style={{
@@ -132,11 +216,11 @@ const Askedquestions = () => {
                   +
                 </div>
 
-                <h3
+                <h3 className=" text-[13px] lg:text-[16.04px]"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
                     fontWeight: 600,
-                    fontSize: "16.04px",
+                    // fontSize: "16.04px",
                     margin: 0,
                   }}
                 >
@@ -144,7 +228,7 @@ const Askedquestions = () => {
                 </h3>
               </div>
 
-              <p
+              <p className=" text-[10px] lg:text-[12.03px]"
                 style={{
                   fontFamily: "Montserrat, sans-serif",
                   fontWeight: 400,
@@ -158,29 +242,33 @@ const Askedquestions = () => {
                 <br />
                 {item.answerLine2}
               </p>
-            </div>
+            </motion.div>
           ))}
 
-          <div
+          <motion.div
             style={{
               display: "flex",
               alignItems: "center",
               marginTop: "12px",
               paddingLeft: "5px",
             }}
+            variants={readMoreVariants}
           >
-            <span
+            <motion.span
               style={{
                 fontFamily: "Roboto, sans-serif",
                 fontWeight: 500,
                 fontSize: "22.94px",
                 color: "#0267AC",
+                cursor: "pointer",
               }}
+              whileHover={{ color: "#0056a3", x: 5 }}
+              transition={{ duration: 0.2 }}
             >
               Read More →
-            </span>
-          </div>
-        </div>
+            </motion.span>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

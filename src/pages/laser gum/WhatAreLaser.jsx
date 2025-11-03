@@ -159,7 +159,7 @@ const Paragraph1 = styled.p`
   @media (max-width: 480px) {
     font-size: 14px;
     line-height: 28px;
-    text-align: center;
+    text-align: left;
     
     br {
       display: none;
@@ -204,7 +204,7 @@ const Paragraph2 = styled.p`
   @media (max-width: 480px) {
     font-size: 14px;
     line-height: 28px;
-    text-align: center;
+    text-align: left;
     
     br {
       display: none;

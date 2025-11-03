@@ -1,4 +1,41 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+// Animation Variants
+const titleVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 export default function WhatToExpect() {
   const steps = [
@@ -28,16 +65,32 @@ export default function WhatToExpect() {
     <div className="py-8 md:py-16 px-4 bg-white -mt-7">
       <div className="max-w-[1180px] mx-auto">
         {/* Main Heading */}
-        <h2 className="text-center mb-6 md:mb-12 font-bold text-xl md:text-3xl lg:text-[36px]" style={{color: '#0267AC'}}>
+        <motion.h2 
+          className="text-center mb-6 md:mb-12 font-bold text-xl md:text-3xl lg:text-[36px]" 
+          style={{color: '#0267AC'}}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={titleVariants}
+        >
           What to Expect During Your Visit
-        </h2>
+        </motion.h2>
         
         {/* Steps Grid - 4 cards in a row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
           {steps.map((step, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className="bg-gradient-to-br from-blue-50 to-blue-50 rounded-2xl p-3 md:p-4 shadow-lg w-full h-auto md:w-[270px] md:h-[255px] hover:scale-105 transition-all duration-300 ease-in-out"
+              className="bg-gradient-to-br from-blue-50 to-blue-50 rounded-2xl p-3 md:p-4 shadow-lg w-full h-auto md:w-[270px] md:h-[255px]"
+              variants={cardVariants}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
             >
                {/* Number */}
               <div className="ml-2 md:ml-4">
@@ -55,9 +108,9 @@ export default function WhatToExpect() {
               <p className="leading-relaxed ml-2 md:ml-4 text-xs md:text-sm lg:text-[16px]" style={{color: '#392D44',letterSpacing: '0.5px',lineHeight: '1.3'}}>
                 {step.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

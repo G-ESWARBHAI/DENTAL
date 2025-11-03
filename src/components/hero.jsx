@@ -172,13 +172,13 @@ export default function FlapHero() {
 
             {/* Call to Action Button */}
             <motion.button 
-              className=" text-white  md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-xl font-medium hover:bg-[#0056a3] transition-colors duration-300 text-[7px] sm:text-[10px] md:text-base lg:text-[26px] w-auto md:w-auto"
+              className=" text-white  md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-xl font-medium  transition-colors duration-300 text-[7px] sm:text-[10px] md:text-base lg:text-[26px] w-auto md:w-auto"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
             >
           <button
-            className="bg-[#FF642F] text-white rounded-full flex flex-inline lg:-ml-10 items-center justify-center gap-2 font-semibold shadow-lg p px-2 py-0.5  lg:px-10 lg:py-[7px] text-[6px] sm:text-base md:text-3xl lg:text-[17px] transition-all duration-300 hover:bg-[#0056a3] hover:scale-105 hover:shadow-xl"
+            className="bg-[#FF642F] text-white rounded-full flex flex-inline lg:-ml-10 items-center justify-center gap-2 font-semibold  p px-2 py-0.5  lg:px-10 lg:py-[7px] text-[6px] sm:text-base md:text-3xl lg:text-[17px] transition-all  "
             >
               Book Consultation <ArrowRight className="w-2 h-2 sm:w-4 sm:h-4 md:w-5 md:h-5" />
           </button>            </motion.button>

@@ -353,7 +353,6 @@ const VideoContainer = styled.div`
   border-radius: 12px;
   overflow: visible;
   position: relative;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 768px) {
     width: 100%;
@@ -437,6 +436,7 @@ const DesktopButton = styled(motion.button)`
             cursor: pointer;
             margin-top: 16px;
             text-align: left;
+            // margin-left: 9px;
 
   @media (max-width: 768px) {
     display: none;
@@ -446,10 +446,10 @@ const DesktopButton = styled(motion.button)`
 const MobileButton = styled(motion.button)`
   display: none;
 
-        @media (max-width: 768px) {
+  @media (max-width: 768px) {
     display: block;
     width: 90%;
-    max-width: 300px;
+    max-width: 150px;
     height: 45px;
     background-color: #0267AC;
     color: #FFFFFF;
@@ -461,7 +461,9 @@ const MobileButton = styled(motion.button)`
     line-height: 30.59px;
     cursor: pointer;
     margin-top: 24px;
+    margin-left: 0;
     text-align: center;
+    align-self: flex-start;
   }
 `;
 

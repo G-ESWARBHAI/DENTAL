@@ -136,7 +136,7 @@ const SectionHeading = motion(styled.h2`
   color: #0267AC;
   text-transform: uppercase;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 
   @media (min-width: 768px) {
     margin-bottom: 24px;
@@ -151,7 +151,7 @@ const SectionHeadingAfter = motion(styled.h2`
   color: #0267AC;
   text-transform: uppercase;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 
   @media (min-width: 768px) {
     margin-bottom: 24px;

@@ -66,17 +66,16 @@ const ContentSection = () => {
 
           {/* Content Paragraphs - Left Aligned */}
           <motion.div 
-            className="space-y-2 md:space-y-8 "
+            className="space-y-4 md:space-y-8 "
             variants={contentVariants}
           >
             {/* First Paragraph */}
             <motion.p 
-              className=" text-center lg:text-left text-[15px] lg:text-[24px] "
+              className=" text-left text-[15px] lg:text-[24px] leading-[29px] md:leading-[45px] "
               style={{ 
                 fontFamily: 'Montserrat, sans-serif',
                 fontWeight: 400,
                 // fontSize: '24px',
-                lineHeight: '45px',
                 letterSpacing: '0.6px',
                 color: '#392D44'
               }}
@@ -87,12 +86,11 @@ const ContentSection = () => {
 
             {/* Second Paragraph */}
             <motion.p 
-              className=" text-center lg:text-left text-[15px] lg:text-[24px] "
+              className=" text-left text-[15px] lg:text-[24px] leading-[29px] md:leading-[45px] "
               style={{ 
                 fontFamily: 'Montserrat, sans-serif',
                 fontWeight: 400,
                 // fontSize: '24px',
-                lineHeight: '45px',
                 letterSpacing: '0.6%',
                 color: '#392D44'
               }}

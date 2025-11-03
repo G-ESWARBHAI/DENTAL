@@ -1,10 +1,58 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import SkilledIcon from '../../components/assets/skillled.svg';
 import GentleTechIcon from '../../components/assets/gentle tech.svg';
 import TrustedIcon from '../../components/assets/trusted.svg';
 import HighQualityIcon from '../../components/assets/high quality.svg';
 import SpaLikeIcon from '../../components/assets/spa like.svg';
 
+// Animation Variants
+const titleVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const paragraphVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 export default function WhyChoose() {
   const features = [
@@ -40,20 +88,43 @@ export default function WhyChoose() {
     <div className="py-8 md:py-16 px-4 bg-white -mt-10">
       <div className="max-w-5xl mx-auto">
         {/* Main Heading */}
-        <h2 className="text-center mb-4 md:mb-5 font-bold text-xl md:text-3xl lg:text-[38px]" style={{color: '#0267AC', letterSpacing: '0.5px'}}>
+        <motion.h2 
+          className="text-center mb-4 md:mb-5 font-bold text-xl md:text-3xl lg:text-[38px]" 
+          style={{color: '#0267AC', letterSpacing: '0.5px'}}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={titleVariants}
+        >
           Why Choose Sasha Luxe Dental?
-        </h2>
+        </motion.h2>
         
-        <p className="text-center md:text-left text-gray-700 mb-6 md:mb-8 ml-0 md:ml-12 lg:ml-24 text-sm md:text-base lg:text-[24px]" style={{letterSpacing: '0.7px', lineHeight: '1.8', color: '#374151',maxWidth: '950px'}}>
+        <motion.p 
+          className="text-left text-gray-700 mb-6 md:mb-8 ml-0 md:ml-12 lg:ml-24 text-sm md:text-base lg:text-[24px]" 
+          style={{letterSpacing: '0.7px', lineHeight: '1.8', color: '#374151',maxWidth: '950px'}}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={paragraphVariants}
+        >
           We offer more than just a basic dental cleaning—we provide a full-service, patient-focused experience designed to maximize both comfort and results.
-        </p>
+        </motion.p>
         
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
           {features.map((feature, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className="bg-gradient-to-br from-blue-50 to-blue-50 rounded-2xl p-4 md:p-6 hover:shadow-md hover:scale-105 transition-all duration-300 ease-in-out"
+              className="bg-gradient-to-br from-blue-50 to-blue-50 rounded-2xl p-4 md:p-6"
+              variants={cardVariants}
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0,0,0,0.1)" }}
+              transition={{ duration: 0.2 }}
             >
               <div className="flex items-center">
                 {/* Icon */}
@@ -72,9 +143,9 @@ export default function WhyChoose() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

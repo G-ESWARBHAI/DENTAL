@@ -104,7 +104,7 @@ const Veneer = () => {
         >
           <div className="max-w-[1150px] w-full">
             <p 
-              className="text-sm md:text-xl lg:text-[23px] text-gray-700 font-normal mx-auto text-center lg:text-left px-4 sm:px-6"
+              className="text-sm md:text-xl lg:text-[23px] text-gray-700 font-normal mx-auto text-left px-4 sm:px-6"
               style={{ 
                 fontFamily: 'Montserrat, sans-serif',
                 letterSpacing: '0.9px',

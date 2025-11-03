@@ -132,7 +132,7 @@ const MotionParagraph1 = motion(styled.p`
   /* ✅ Remove manual line breaks on mobile */
   @media (max-width: 767px) {
     white-space: normal;
-    text-align: center;
+    text-align: left;
   }
 `);
 
@@ -158,7 +158,7 @@ const MotionParagraph2 = motion(styled.p`
   /* ✅ Remove manual line breaks on mobile */
   @media (max-width: 767px) {
     white-space: normal;
-    text-align: center;
+    text-align: left;
   }
 `);
 

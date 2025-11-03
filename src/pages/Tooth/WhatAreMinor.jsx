@@ -12,7 +12,7 @@ export default function WhatAreMinor() {
         </h2>
 
         <p
-          className=" text-center lg:text-left text-gray-700  text-[12px] sm:text-base md:text-xl lg:text-[24px] leading-7 md:leading-9 lg:leading-[46px] tracking-wide"
+          className=" text-left text-gray-700  text-[12px] sm:text-base md:text-xl lg:text-[24px] leading-7 md:leading-9 lg:leading-[46px] tracking-wide"
           style={{letterSpacing: '0.7px'}}
         >
           Minor oral surgeries per tooth address localized dental concerns that require
@@ -23,7 +23,7 @@ export default function WhatAreMinor() {
         </p>
 
          <p
-          className=" text-center lg:text-left text-gray-700  text-[12px] sm:text-base md:text-xl lg:text-[24px] leading-7 md:leading-9 lg:leading-[46px] tracking-wide mt-3 lg:mt-5"
+          className=" text-left text-gray-700  text-[12px] sm:text-base md:text-xl lg:text-[24px] leading-7 md:leading-9 lg:leading-[46px] tracking-wide mt-3 lg:mt-5"
           style={{letterSpacing: '0.7px'}}
         >
           At <span className="font-extrabold" style={{ color: "#2A2333" }}>Sasha Luxe</span>, our experienced

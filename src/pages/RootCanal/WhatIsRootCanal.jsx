@@ -56,7 +56,7 @@ export default function WhatIsRootCanal() {
           {paragraphs.map((text, index) => (
             <motion.p 
               key={index}
-              className="text-center md:text-left leading-relaxed text-gray-700 text-sm md:text-lg lg:text-[24px]" 
+              className="text-left leading-relaxed text-gray-700 text-sm md:text-lg lg:text-[24px]" 
               style={{lineHeight: '1.9',letterSpacing: '0.7px'}}
               variants={itemVariants}
             >

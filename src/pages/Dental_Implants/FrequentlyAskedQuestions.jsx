@@ -30,6 +30,46 @@ const faqData = [
   },
 ];
 
+// Animation Variants
+const titleVariants = {
+  hidden: { opacity: 0, y: -30, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, scale: 0.9, x: -30 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const readMoreVariants = {
+  hidden: { opacity: 0, x: 20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+      delay: 0.6,
+    },
+  },
+};
+
 const FrequentlyAskedQuestions = () => {
   return (
     <Wrapper
@@ -38,20 +78,24 @@ const FrequentlyAskedQuestions = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <Heading>Frequently Asked Questions</Heading>
+      <MotionHeading
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={titleVariants}
+      >
+        Frequently Asked Questions
+      </MotionHeading>
 
       <ContentWrapper>
-        <ImageWrapper>
-          <img
-            src="/Frequently Asked.svg"
-            alt="FAQ Illustration"
-            style={{
-              width: "310px",
-              height: "310px",
-              objectFit: "cover",
-            }}
-          />
-        </ImageWrapper>
+        <MotionImageWrapper
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={imageVariants}
+        >
+          <FAQImage src="/Frequently Asked.svg" alt="FAQ Illustration" />
+        </MotionImageWrapper>
 
         <CardsContainer>
           {faqData.map((item, index) => (
@@ -77,7 +121,14 @@ const FrequentlyAskedQuestions = () => {
             </Card>
           ))}
 
-          <ReadMore>Read More →</ReadMore>
+          <MotionReadMore
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={readMoreVariants}
+          >
+            Read More →
+          </MotionReadMore>
         </CardsContainer>
       </ContentWrapper>
     </Wrapper>
@@ -90,7 +141,7 @@ export default FrequentlyAskedQuestions;
 
 const Wrapper = styled(motion.div)`
   width: 1133px;
-  margin: 20px auto; /* Reduced gap */
+  margin: 20px auto;
   padding: 25px 24px;
   background: #ffffff;
   box-sizing: border-box;
@@ -101,7 +152,7 @@ const Wrapper = styled(motion.div)`
 
   @media (max-width: 768px) {
     width: 95%;
-    padding: 15px;
+    padding: 20px 16px;
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -114,13 +165,16 @@ const Heading = styled.h1`
   color: #0267ac;
   text-align: center;
   margin-bottom: 20px;
-  white-space: nowrap; /* Mobile single line */
+  white-space: nowrap;
 
   @media (max-width: 768px) {
-    font-size: 24px;
-    white-space: nowrap;
+    font-size: clamp(20px, 5vw, 24px);
+    white-space: normal;
+    margin-bottom: 16px;
   }
 `;
+
+const MotionHeading = motion(Heading);
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -129,7 +183,7 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
   }
 `;
 
@@ -137,15 +191,27 @@ const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  /* Desktop spacing fix */
-
   @media (min-width: 1025px) {
-    margin-top: 80px; /* ✅ moves image slightly down on desktop */
+    margin-top: 80px;
   }
 
   @media (max-width: 768px) {
     width: 100%;
-    margin-top: 0; /* ✅ mobile stays same */
+    margin-top: 0;
+  }
+`;
+
+const MotionImageWrapper = motion(ImageWrapper);
+
+const FAQImage = styled.img`
+  width: 310px;
+  height: 310px;
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    width: clamp(200px, 50vw, 310px);
+    height: clamp(200px, 50vw, 310px);
+    max-width: 100%;
   }
 `;
 
@@ -155,6 +221,10 @@ const CardsContainer = styled.div`
   flex-direction: column;
   gap: 12px;
   flex: 1;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
 `;
 
 const Card = styled.div`
@@ -164,7 +234,8 @@ const Card = styled.div`
   transition: 0.3s;
 
   @media (max-width: 768px) {
-    padding: 18px 15px;
+    padding: 16px 14px;
+    border-radius: 12px;
   }
 `;
 
@@ -172,6 +243,10 @@ const QuestionRow = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 6px;
+  }
 `;
 
 const Plus = styled.div`
@@ -179,6 +254,12 @@ const Plus = styled.div`
   font-weight: 600;
   font-size: 16px;
   color: #392d44;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    font-size: clamp(14px, 3.5vw, 16px);
+    margin-right: 8px;
+  }
 `;
 
 const QuestionText = styled.h3`
@@ -186,6 +267,11 @@ const QuestionText = styled.h3`
   font-family: Montserrat, sans-serif;
   font-size: 16px;
   color: #392d44;
+
+  @media (max-width: 768px) {
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.4;
+  }
 `;
 
 const Answer = styled.p`
@@ -195,6 +281,12 @@ const Answer = styled.p`
   line-height: 18px;
   color: #392d44;
   padding-left: 28px;
+
+  @media (max-width: 768px) {
+    font-size: clamp(11px, 2.8vw, 12px);
+    line-height: clamp(16px, 4vw, 18px);
+    padding-left: 22px;
+  }
 `;
 
 const ReadMore = styled.div`
@@ -203,5 +295,19 @@ const ReadMore = styled.div`
   font-size: 22px;
   font-weight: 500;
   color: #0267ac;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    font-size: clamp(16px, 4vw, 22px);
+    margin-top: 8px;
+    text-align: center;
+  }
 `;
+
+const MotionReadMore = motion(ReadMore);
 

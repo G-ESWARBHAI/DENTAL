@@ -82,6 +82,13 @@ const Wrapper = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   padding-top: 50px;
+  padding-bottom: 40px;
+
+  @media (max-width: 768px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    min-height: auto;
+  }
 `;
 
 const Heading = styled.h1`
@@ -98,9 +105,12 @@ const Heading = styled.h1`
 
   @media (max-width: 768px) {
     width: 100%;
-    font-size: 26px;
-    white-space: nowrap;
+    height: auto;
+    font-size: clamp(20px, 5vw, 23px);
+    white-space: normal;
     text-align: center;
+    margin-bottom: 20px;
+    padding: 0 16px;
   }
 `;
 
@@ -116,8 +126,11 @@ const Card = styled(motion.div)`
 
   @media (max-width: 768px) {
     width: 90%;
+    min-height: auto;
     flex-direction: column;
-    padding: 20px;
+    padding: 16px;
+    margin-bottom: 24px;
+    border-radius: 16px;
   }
 `;
 
@@ -129,10 +142,11 @@ const MobileSlideHeading = styled.h2`
     width: 100%;
     font-family: Montserrat, sans-serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: clamp(16px, 4vw, 20px);
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: #0267ac;
+    line-height: 1.3;
   }
 `;
 
@@ -140,11 +154,15 @@ const CardImage = styled.img`
   width: 209px;
   height: 199px;
   object-fit: cover;
+  border-radius: 12px;
 
   @media (max-width: 768px) {
-    width: 150px;
+    width: clamp(120px, 25vw, 150px);
     height: auto;
-    margin: 0 auto 12px auto;
+    max-height: 150px;
+    margin: 0 auto 16px auto;
+    display: block;
+    border-radius: 12px;
   }
 `;
 
@@ -155,6 +173,7 @@ const TextBox = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     padding: 0;
+    text-align: center;
   }
 `;
 
@@ -183,8 +202,10 @@ const CardContent = styled.p`
 
   @media (max-width: 768px) {
     width: 100%;
+    font-size: clamp(14px, 3.5vw, 18.35px);
     text-align: left;
-    line-height: 28px;
+    line-height: clamp(22px, 5vw, 28px);
     margin-top: 0;
+    padding: 0;
   }
 `;

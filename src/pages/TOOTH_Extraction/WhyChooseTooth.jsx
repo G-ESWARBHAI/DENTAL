@@ -2,26 +2,67 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+// Animation Variants
+const titleVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
 const WhyChooseFlap = () => {
   return (
-    <MainContainer
-      as={motion.div}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      viewport={{ once: true }}
-    >
-      <Heading>Why Choose Sasha Luxe?</Heading>
+    <MainContainer>
+      <MotionHeading
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={titleVariants}
+      >
+        Why Choose Sasha Luxe?
+      </MotionHeading>
 
       <CardsBox>
-        <CardsWrapper>
+        <MotionCardsWrapper
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
           {cardsData.map((item, index) => (
             <MotionCard
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.12 }}
-              viewport={{ once: true }}
+              variants={cardVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
             >
               <CardIcon src={item.icon} alt={item.alt} />
               <CardContent>
@@ -29,7 +70,7 @@ const WhyChooseFlap = () => {
               </CardContent>
             </MotionCard>
           ))}
-        </CardsWrapper>
+        </MotionCardsWrapper>
       </CardsBox>
     </MainContainer>
   );
@@ -50,7 +91,7 @@ const MainContainer = styled.div`
   width: 962px;
   height: 432px;
   border-radius: 16.88px;
-  margin: 10px auto 0 auto;
+  margin: 30px auto 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,6 +117,8 @@ const Heading = styled.h1`
     font-size: 26px;
   }
 `;
+
+const MotionHeading = motion(Heading);
 
 const CardsBox = styled.div`
   width: 962px;
@@ -107,11 +150,9 @@ const CardsWrapper = styled.div`
   }
 `;
 
-/* ✅ Hover speed increased (duration: 0.15) */
-const MotionCard = styled(motion.div).attrs(() => ({
-  whileHover: { scale: 1.05 },
-  transition: { duration: 0.15, ease: "easeOut" }
-}))`
+const MotionCardsWrapper = motion(CardsWrapper);
+
+const Card = styled.div`
   width: 471px;
   height: 105px;
   border-radius: 16.88px;
@@ -129,6 +170,8 @@ const MotionCard = styled(motion.div).attrs(() => ({
     gap: 16px;
   }
 `;
+
+const MotionCard = motion(Card);
 
 const CardIcon = styled.img`
   width: 50px;

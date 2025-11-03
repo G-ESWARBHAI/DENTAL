@@ -1,97 +1,292 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
+// Animation Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const titleVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const slideVariants = {
+  hidden: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const slideVariantsRight = {
+  hidden: { opacity: 0, x: 30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const imageVariantsRight = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+      delay: 0.2,
+    },
+  },
+};
+
+const contentVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const contentVariantsLeft = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+      delay: 0.2,
+    },
+  },
+};
+
+const pointsVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const pointVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+};
 
 const ToothServices = () => {
   return (
     <MainContainer>
-      <Heading>Our Extraction Services</Heading>
+      <MotionHeading
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={titleVariants}
+      >
+        Our Extraction Services
+      </MotionHeading>
 
       {/* SLIDE 1 */}
-      <Slide>
-        <LeftImage1 src="/Extraction Per Tooth.svg" alt="Extraction Per Tooth" />
-        <RightContent>
-          <ServiceTitle_Exact>Extraction Per Tooth</ServiceTitle_Exact>
+      <MotionSlide
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={slideVariants}
+      >
+        <MotionLeftImage1 
+          src="/Extraction Per Tooth.svg" 
+          alt="Extraction Per Tooth"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={imageVariants}
+        />
+        <MotionRightContent 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={contentVariants}
+        >
+          <MotionServiceTitle>Extraction Per Tooth</MotionServiceTitle>
           <LeftImage1Mobile src="/Extraction Per Tooth.svg" alt="Extraction Per Tooth" />
-          <ServiceParagraph_Exact>
-            This is a standard, non-surgical procedure to remove a visible tooth that’s damaged, decayed,
-            or beyond saving. Whether it’s due to trauma, infection, or overcrowding, our gentle approach
+          <MotionServiceParagraph>
+            This is a standard, non-surgical procedure to remove a visible tooth that's damaged, decayed,
+            or beyond saving. Whether it's due to trauma, infection, or overcrowding, our gentle approach
             ensures a quick and comfortable recovery.
-          </ServiceParagraph_Exact>
-          <IdealHeading>Ideal For:</IdealHeading>
-          <Points_Exact>
-            <Point_Exact>
+          </MotionServiceParagraph>
+          <MotionIdealHeading>Ideal For:</MotionIdealHeading>
+          <MotionPoints_Exact 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={pointsVariants}
+          >
+            <MotionPoint_Exact variants={pointVariants}>
               <PointIcon src="/arrow.svg" alt="" />
               Severely decayed teeth
-            </Point_Exact>
-            <Point_Exact>
+            </MotionPoint_Exact>
+            <MotionPoint_Exact variants={pointVariants}>
               <PointIcon src="/arrow.svg" alt="" />
               Teeth affected by gum disease
-            </Point_Exact>
-            <Point_Exact>
+            </MotionPoint_Exact>
+            <MotionPoint_Exact variants={pointVariants}>
               <PointIcon src="/arrow.svg" alt="" />
               Preparation for orthodontic treatment
-            </Point_Exact>
-          </Points_Exact>
-        </RightContent>
-      </Slide>
+            </MotionPoint_Exact>
+          </MotionPoints_Exact>
+        </MotionRightContent>
+      </MotionSlide>
 
       {/* SLIDE 2 */}
-      <Slide>
-        <RightContent>
-          <ServiceTitle_Exact>Extraction of Molar</ServiceTitle_Exact>
+      <MotionSlide
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={slideVariantsRight}
+      >
+        <MotionRightContent 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={contentVariants}
+        >
+          <MotionServiceTitle>Extraction of Molar</MotionServiceTitle>
           <SlideLargeImageMobile src="/molar.svg" alt="Extraction of Molar" />
-          <ServiceParagraph_Exact>
+          <MotionServiceParagraph>
             Molars, located at the back of your mouth, can be challenging to remove due to their size and
             location. We perform careful molar extractions with precision to reduce discomfort and prevent
             complications.
-          </ServiceParagraph_Exact>
-          <IdealHeading>Why Clients Trust Us for Molar Extractions:</IdealHeading>
-          <Points_Exact>
-            <Point_Exact>
+          </MotionServiceParagraph>
+          <MotionIdealHeading>Why Clients Trust Us for Molar Extractions:</MotionIdealHeading>
+          <MotionPoints_Exact 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={pointsVariants}
+          >
+            <MotionPoint_Exact variants={pointVariants}>
               <PointIcon src="/arrow.svg" alt="" />
               Pain-controlled and efficient procedure
-            </Point_Exact>
-            <Point_Exact>
+            </MotionPoint_Exact>
+            <MotionPoint_Exact variants={pointVariants}>
               <PointIcon src="/arrow.svg" alt="" />
               Minimal swelling or downtime
-            </Point_Exact>
-            <Point_Exact>
+            </MotionPoint_Exact>
+            <MotionPoint_Exact variants={pointVariants}>
               <PointIcon src="/arrow.svg" alt="" />
               Expert post-extraction care
-            </Point_Exact>
-          </Points_Exact>
-        </RightContent>
-        <SlideLargeImage src="/molar.svg" alt="Extraction of Molar" />
-      </Slide>
+            </MotionPoint_Exact>
+          </MotionPoints_Exact>
+        </MotionRightContent>
+        <MotionSlideLargeImage 
+          src="/molar.svg" 
+          alt="Extraction of Molar"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={imageVariantsRight}
+        />
+      </MotionSlide>
 
       {/* SLIDE 3 - Desktop: image left, content right */}
-      <SlideReverse>
-        <SlideLargeImage src="/Extraction Surgical.svg" alt="Post Extraction Care" />
-        <RightContentThird>
-          <ServiceTitle_Exact>Extraction Surgical (Wisdom Tooth)</ServiceTitle_Exact>
+      <MotionSlideReverse
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={slideVariants}
+      >
+        <MotionSlideLargeImage 
+          src="/Extraction Surgical.svg" 
+          alt="Post Extraction Care"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={imageVariants}
+        />
+        <MotionRightContentThird 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={contentVariantsLeft}
+        >
+          <MotionServiceTitle>Extraction Surgical (Wisdom Tooth)</MotionServiceTitle>
           <SlideLargeImageMobile src="/Extraction Surgical.svg" alt="Post Extraction Care" />
-          <ServiceParagraph_Exact>
+          <MotionServiceParagraph>
             Impacted or partially erupted wisdom teeth often require <strong>surgical extraction </strong>to
             Prevent infection, crowding, or discomfort. We specialize in <strong>Extraction Surgical</strong>
             <strong> (Wisdom Tooth)</strong> procedures that are safe, effective, and minimally invasive.
-          </ServiceParagraph_Exact>
-          <IdealHeading>Why It’s Often Needed:</IdealHeading>
-          <Points_Exact>
-            <Point_Exact>
+          </MotionServiceParagraph>
+          <MotionIdealHeading>Why It's Often Needed:</MotionIdealHeading>
+          <MotionPoints_Exact 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={pointsVariants}
+          >
+            <MotionPoint_Exact variants={pointVariants}>
               <PointIcon src="/arrow.svg" alt="" />
               Wisdom teeth growing sideways or impacted
-            </Point_Exact>
-            <Point_Exact>
+            </MotionPoint_Exact>
+            <MotionPoint_Exact variants={pointVariants}>
               <PointIcon src="/arrow.svg" alt="" />
               Pain, swelling, or gum inflammation
-            </Point_Exact>
-            <Point_Exact>
+            </MotionPoint_Exact>
+            <MotionPoint_Exact variants={pointVariants}>
               <PointIcon src="/arrow.svg" alt="" />
               Preventive removal to avoid future complications
-            </Point_Exact>
-          </Points_Exact>
-        </RightContentThird>
-      </SlideReverse>
+            </MotionPoint_Exact>
+          </MotionPoints_Exact>
+        </MotionRightContentThird>
+      </MotionSlideReverse>
     </MainContainer>
   );
 };
@@ -121,10 +316,12 @@ const Heading = styled.h1`
 
   @media (max-width: 768px) {
     text-align: center;
-    margin-bottom: 38px;
-    font-size: 30px;
+    margin-bottom: 28px;
+    font-size: 24px;
   }
 `;
+
+const MotionHeading = motion(Heading);
 
 const Slide = styled.div`
   width: 100%;
@@ -150,6 +347,9 @@ const SlideReverse = styled(Slide)`
     flex-direction: column;
   }
 `;
+
+const MotionSlide = motion(Slide);
+const MotionSlideReverse = motion(SlideReverse);
 
 const LeftImage1 = styled.img`
   width: 317px;
@@ -187,6 +387,9 @@ const SlideLargeImage = styled.img`
   }
 `;
 
+const MotionLeftImage1 = motion(LeftImage1);
+const MotionSlideLargeImage = motion(SlideLargeImage);
+
 const SlideLargeImageMobile = styled.img`
   display: none;
 
@@ -219,6 +422,9 @@ const RightContentThird = styled(RightContent)`
   padding-top: 8px;
 `;
 
+const MotionRightContent = motion(RightContent);
+const MotionRightContentThird = motion(RightContentThird);
+
 const ServiceTitle_Exact = styled.h2`
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -249,6 +455,9 @@ const ServiceParagraph_Exact = styled.p`
   }
 `;
 
+const MotionServiceTitle = motion(ServiceTitle_Exact);
+const MotionServiceParagraph = motion(ServiceParagraph_Exact);
+
 const IdealHeading = styled.h3`
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
@@ -277,6 +486,9 @@ const Points_Exact = styled.ul`
   }
 `;
 
+const MotionIdealHeading = motion(IdealHeading);
+const MotionPoints_Exact = motion(Points_Exact);
+
 const Point_Exact = styled.li`
   display: flex;
   align-items: center;
@@ -292,6 +504,8 @@ const Point_Exact = styled.li`
     margin-bottom: 5px;
   }
 `;
+
+const MotionPoint_Exact = motion(Point_Exact);
 
 const PointIcon = styled.img`
   width: 20px;

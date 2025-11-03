@@ -5,13 +5,25 @@ import { motion } from "framer-motion";
 const DentalImplants = () => {
   return (
     <Container>
-      <Title>What Are Dental Implants?</Title>
+      <MotionTitle
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={titleVariants}
+      >
+        What Are Dental Implants?
+      </MotionTitle>
 
-      <Paragraph>
+      <MotionParagraph
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={paragraphVariants}
+      >
         A <Bold>Dental Implant</Bold> is a titanium post surgically placed in your jawbone to act as an artificial root for a 
         missing tooth. A <Bold>custom-crafted crown</Bold> is then attached to restore the appearance and function of 
         your natural tooth.
-      </Paragraph>
+      </MotionParagraph>
 
       <CardsWrapper
         variants={wrapperVariants}
@@ -45,6 +57,32 @@ const cardsData = [
 ];
 
 /* Motion Variants */
+const titleVariants = {
+  hidden: { opacity: 0, y: -30, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
+const paragraphVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      delay: 0.2
+    }
+  }
+};
+
 const wrapperVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -70,13 +108,14 @@ const cardVariants = {
 const Container = styled.div`
   width: 100%;
   max-width: 1440px;
-  margin: 40px auto 0 auto; /* reduced from 100px */
+  margin: 50px auto 0 auto; /* reduced from 100px */
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #ffffff;
   text-align: center;
   padding-bottom: 100px;
+  margin-top: 60px;
 
   @media (max-width: 768px) {
     padding: 40px 20px;
@@ -94,10 +133,12 @@ const Title = styled.h2`
 
   @media (max-width: 768px) {
     width: 100%;
-    font-size: 28px;
+    font-size: 24px;
     text-align: center;
   }
 `;
+
+const MotionTitle = motion(Title);
 
 const Paragraph = styled.p`
   width: 1105px;
@@ -115,6 +156,8 @@ const Paragraph = styled.p`
     white-space: normal;
   }
 `;
+
+const MotionParagraph = motion(Paragraph);
 
 const Bold = styled.span`
   font-weight: 700;

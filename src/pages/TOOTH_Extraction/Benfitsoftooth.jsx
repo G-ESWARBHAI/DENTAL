@@ -1,5 +1,42 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
+// Animation Variants
+const titleVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 const BenefitsOfExtractions = () => {
   const arrowIcon = "/arrow.svg";
@@ -14,17 +51,29 @@ const BenefitsOfExtractions = () => {
 
   return (
     <Wrapper>
-      <Heading>Benefits of Professional Extractions at Sasha Luxe</Heading>
+      <MotionHeading
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={titleVariants}
+      >
+        Benefits of Professional Extractions at Sasha Luxe
+      </MotionHeading>
 
       <BlueSection>
-        <ContentBox>
+        <MotionContentBox
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
           {benefits.map((item, index) => (
-            <ListItem key={index}>
+            <MotionListItem key={index} variants={itemVariants}>
               <Icon src={arrowIcon} alt="arrow" />
               <Text>{item}</Text>
-            </ListItem>
+            </MotionListItem>
           ))}
-        </ContentBox>
+        </MotionContentBox>
       </BlueSection>
     </Wrapper>
   );
@@ -48,15 +97,17 @@ const Heading = styled.h2`
   margin: -100px 0 40px;
 
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: 26px;
     margin-bottom: 25px;
   }
 
   @media (max-width: 480px) {
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 18px;
   }
 `;
+
+const MotionHeading = motion(Heading);
 
 const BlueSection = styled.div`
   width: 100vw;
@@ -73,6 +124,8 @@ const ContentBox = styled.div`
   max-width: 95%;
 `;
 
+const MotionContentBox = motion(ContentBox);
+
 const ListItem = styled.div`
   display: flex;
   align-items: center;
@@ -82,6 +135,8 @@ const ListItem = styled.div`
     margin-bottom: 14px;
   }
 `;
+
+const MotionListItem = motion(ListItem);
 
 const Icon = styled.img`
   width: 30px;

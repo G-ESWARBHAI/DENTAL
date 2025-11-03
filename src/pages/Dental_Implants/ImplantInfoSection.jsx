@@ -21,7 +21,7 @@ const ImplantInfoSection = () => {
 const SectionWrapper = styled.div`
   width: 100%;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 30 auto;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
   color: #392D44;
@@ -43,7 +43,7 @@ const Paragraph = styled.p`
   white-space: normal;
 
   /* ✅ Mobile ONLY — Left align & proper spacing */
-  font-size: 16px;
+  font-size: 15px;
   line-height: 26px;
   text-align: left;   /* <-- changed from center */
   display: block;

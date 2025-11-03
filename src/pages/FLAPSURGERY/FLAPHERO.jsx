@@ -90,7 +90,7 @@ export default function FlapHero() {
           >
             {/* Main Title */}
             <motion.h1 
-              className="font-bold text-[#0267AC] leading-tight mb-1 lg:mb-7 tracking-tight text-[14px] sm:text-base md:text-2xl lg:text-[51px]"
+              className="font-bold text-[#0267AC] leading-tight mb-1 lg:mb-7 tracking-tight text-[20px] sm:text-base md:text-2xl lg:text-[58px]"
               variants={titleVariants}
             >
               Flap Surgery

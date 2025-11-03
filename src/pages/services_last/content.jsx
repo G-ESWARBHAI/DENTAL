@@ -50,7 +50,7 @@ const ContentSection = () => {
         >
           {/* Main Heading - Centered */}
           <motion.h2 
-            className="text-center mb-2 md:mb-10 text-[22px] lg:text-[42px] lg:mb-12"
+            className="text-center mb-2 md:mb-10 text-[20px] lg:text-[42px] lg:mb-12"
             style={{ 
               color: '#0267AC',
               fontFamily: 'Montserrat, sans-serif',
@@ -71,7 +71,7 @@ const ContentSection = () => {
           >
             {/* First Paragraph */}
             <motion.p 
-              className=" text-center lg:text-left text-[17px] lg:text-[24px] "
+              className=" text-center lg:text-left text-[15px] lg:text-[24px] "
               style={{ 
                 fontFamily: 'Montserrat, sans-serif',
                 fontWeight: 400,
@@ -87,7 +87,7 @@ const ContentSection = () => {
 
             {/* Second Paragraph */}
             <motion.p 
-              className=" text-center lg:text-left text-[17px] lg:text-[24px] "
+              className=" text-center lg:text-left text-[15px] lg:text-[24px] "
               style={{ 
                 fontFamily: 'Montserrat, sans-serif',
                 fontWeight: 400,

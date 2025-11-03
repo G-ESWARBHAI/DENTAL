@@ -1,5 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion"; // ✅ Add this
+import { motion } from "framer-motion";
+import styled from "styled-components";
 
 const Expect = () => {
   // Animation Variants
@@ -10,139 +11,189 @@ const Expect = () => {
 
   // Reusable card component
   const InfoCard = ({ text }) => (
-    <motion.div
+    <StyledMotionCard
       variants={fadeUp}
-      whileHover={{ scale: 1.03 }} // ✅ Subtle hover scale (desktop only)
-      style={{
-        width: "100%",
-        maxWidth: "471px",
-        minHeight: "102px",
-        borderRadius: "16.88px",
-        backgroundColor: "#F1F9FD",
-        display: "flex",
-        alignItems: "center",
-        padding: "0 24px",
-        boxSizing: "border-box",
-        marginBottom: "16px",
-        transition: "0.3s ease",
-      }}
+      whileHover={{ scale: 1.03 }}
     >
       {/* Image */}
-      <img
+      <IconImage
         src="/arrow.svg"
         alt="Feature Icon"
-        style={{
-          width: "30px",
-          height: "30px",
-          marginRight: "24px",
-          flexShrink: 0,
-        }}
       />
 
       {/* Text */}
-      <p
-        style={{
-          fontFamily: "Montserrat, sans-serif",
-          fontWeight: 500,
-          fontSize: "20px",
-          lineHeight: "130%",
-          color: "#000000",
-          margin: 0,
-          whiteSpace: "pre-line",
-        }}
-      >
+      <CardText>
         {text}
-      </p>
-    </motion.div>
+      </CardText>
+    </StyledMotionCard>
   );
 
   return (
-    <motion.div
+    <MotionContainer
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      style={{
-        width: "90%",
-        maxWidth: "962px",
-        margin: "80px auto",
-        borderRadius: "16.88px",
-        backgroundColor: "#FFFFFF",
-        padding: "24px",
-        boxSizing: "border-box",
-      }}
     >
       {/* Main Heading */}
-      <motion.h1
-        variants={fadeUp}
-        style={{
-          fontFamily: "Montserrat, sans-serif",
-          fontWeight: 700,
-          fontSize: "clamp(35px, 4vw, 36px)",
-          color: "#0267AC",
-          textAlign: "center",
-          margin: "0 auto 32px",
-        }}
-      >
+      <MotionHeading variants={fadeUp}>
         What to Expect
-      </motion.h1>
+      </MotionHeading>
 
       {/* Two Columns Layout */}
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          alignItems: "flex-start",
-          gap: "32px",
-        }}
-      >
+      <FlexWrapper>
         {/* BEFORE THE PROCEDURE SECTION */}
-        <motion.div variants={fadeUp} style={{ flex: "1 1 300px", maxWidth: "471px" }}>
-          <h2
-            style={{
-              fontFamily: "Montserrat, sans-serif",
-              fontWeight: 700,
-              fontSize: "clamp(18px, 2.5vw, 27px)",
-              color: "#0267AC",
-              textTransform: "uppercase",
-              marginBottom: "24px",
-            }}
-          >
+        <SectionContainer variants={fadeUp}>
+          <SectionHeading>
             Before the Procedure
-          </h2>
+          </SectionHeading>
 
           <InfoCard text={`Clinical evaluation & gum health\nassessment`} />
           <InfoCard text={`Digital smile design (for\ncosmetic reshaping)`} />
           <InfoCard text={`Medical history & risk review`} />
           <InfoCard text={`Pre-procedure care instructions`} />
-        </motion.div>
+        </SectionContainer>
 
         {/* AFTER THE PROCEDURE SECTION */}
-        <motion.div variants={fadeUp} style={{ flex: "1 1 300px", maxWidth: "471px" }}>
-          <h2
-            style={{
-              fontFamily: "Montserrat, sans-serif",
-              fontWeight: 700,
-              fontSize: "clamp(18px, 2.5vw, 27px)",
-              color: "#0267AC",
-              textTransform: "uppercase",
-              marginBottom: "24px",
-              textAlign: "left",
-              paddingLeft: "12px",
-            }}
-          >
+        <SectionContainer variants={fadeUp}>
+          <SectionHeadingAfter>
             After the Procedure
-          </h2>
+          </SectionHeadingAfter>
 
           <InfoCard text={`Mild swelling or tenderness\nmay occur`} />
           <InfoCard text={`Avoid spicy or hard foods\nfor 2–3 days`} />
           <InfoCard text={`Maintain excellent oral hygiene`} />
           <InfoCard text={`Use prescribed\nmouthwash or rinses`} />
           <InfoCard text={`Attend follow-up to assess\nhealing`} />
-        </motion.div>
-      </div>
-    </motion.div>
+        </SectionContainer>
+      </FlexWrapper>
+    </MotionContainer>
   );
 };
+
+/* Styled Components */
+const MotionContainer = motion(styled.div`
+  width: 90%;
+  max-width: 962px;
+  margin: 40px auto;
+  border-radius: 16.88px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    margin: 80px auto;
+    padding: 24px;
+  }
+`);
+
+const MotionHeading = motion(styled.h1`
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 4vw, 36px);
+  color: #0267AC;
+  text-align: center;
+  margin: 0 auto 24px;
+
+  @media (min-width: 768px) {
+    margin: 0 auto 32px;
+
+  }
+`);
+
+const FlexWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    gap: 32px;
+  }
+`;
+
+const SectionContainer = motion(styled.div`
+  flex: 1 1 300px;
+  max-width: 471px;
+  width: 100%;
+
+  @media (max-width: 767px) {
+    max-width: 100%;
+  }
+`);
+
+const SectionHeading = styled.h2`
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2.5vw, 27px);
+  color: #0267AC;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  // text-align: center;
+
+  @media (min-width: 768px) {
+    margin-bottom: 24px;
+    text-align: left;
+  }
+`;
+
+const SectionHeadingAfter = styled.h2`
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2.5vw, 27px);
+  color: #0267AC;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  // text-align: center;
+
+  @media (min-width: 768px) {
+    margin-bottom: 24px;
+    text-align: left;
+    padding-left: 12px;
+  }
+`;
+
+const StyledMotionCard = motion(styled.div`
+  width: 100%;
+  max-width: 471px;
+  min-height: auto;
+  border-radius: 16.88px;
+  background-color: #F1F9FD;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  transition: 0.3s ease;
+
+  @media (min-width: 768px) {
+    min-height: 102px;
+    padding: 0 24px;
+    margin-bottom: 16px;
+  }
+`);
+
+const IconImage = styled.img`
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+  flex-shrink: 0;
+
+  @media (min-width: 768px) {
+    width: 30px;
+    height: 30px;
+    margin-right: 24px;
+  }
+`;
+
+const CardText = styled.p`
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: clamp(14px, 2.2vw, 20px);
+  line-height: 130%;
+  color: #000000;
+  margin: 0;
+  white-space: pre-line;
+`;
 
 export default Expect;

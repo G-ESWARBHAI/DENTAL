@@ -117,7 +117,7 @@ export default function Benefits() {
       <div className="max-w-7xl mx-auto">
         {/* Main Heading */}
         <motion.h2 
-          className="text-center font-bold mb-8 sm:mb-10 md:mb-12 text-2xl sm:text-3xl md:text-4xl lg:text-[36px]"
+          className="text-center font-bold mb-2 sm:mb-10 md:mb-12 text-[24px] sm:text-3xl md:text-4xl lg:text-[36px]"
           style={{
             color: '#0267AC',
             fontFamily: 'Montserrat, sans-serif'
@@ -158,7 +158,7 @@ export default function Benefits() {
                   <img 
                     src={ArrowIcon} 
                     alt="Arrow icon"
-                    className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
+                    className="w-5 h-5 sm:w-7 sm:h-7 md:w-8 md:h-8"
                     loading="lazy"
                     decoding="async"
                   />

@@ -156,7 +156,7 @@ const CrownOptions = () => {
       <div className="w-full max-w-[1150px] mx-auto">
         {/* Main Heading */}
         <motion.h1 
-          className="text-3xl sm:text-4xl md:text-[42px] font-bold text-[#0267AC] text-center mb-6 sm:mb-8 md:mb-10 relative"
+          className="text-2xl sm:text-4xl md:text-[42px] font-bold text-[#0267AC] text-center mb-6 sm:mb-8 md:mb-10 relative"
           style={{fontFamily: 'Montserrat, sans-serif'}}
           variants={headingVariants}
           initial="hidden"
@@ -203,7 +203,7 @@ const CrownOptions = () => {
                   whileHover="hover"
                 />
                 <h2 
-                  className="font-bold text-black leading-tight text-[#392D44] text-xl sm:text-2xl md:text-[29px]"
+                  className="font-bold text-black leading-tight text-[#392D44] text-[20px] sm:text-2xl md:text-[29px]"
                   style={{fontFamily: 'Montserrat, sans-serif'}}
                 >
                   {card.title}
@@ -218,13 +218,13 @@ const CrownOptions = () => {
                   variants={itemVariants}
                 >
                   <p 
-                    className="text-gray-700 leading-relaxed font-bold text-[#0267AC] mb-2 text-lg sm:text-xl md:text-[22px]"
+                    className="text-gray-700 leading-relaxed font-bold text-[#0267AC] mb-2 text-[17px] sm:text-xl md:text-[22px]"
                     style={{fontFamily: 'Montserrat, sans-serif'}}
                   >
                     {card.subtitle}
                   </p>
                   <p 
-                    className="text-gray-700 leading-relaxed text-[#0267AC] text-base sm:text-lg md:text-[20px]"
+                    className="text-gray-700 leading-relaxed text-[#0267AC] text-[14px] md:text-[20px]"
                     style={{fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.6px'}}
                   >
                     {card.description}
@@ -249,7 +249,7 @@ const CrownOptions = () => {
                         whileHover="hover"
                       >
                         <motion.span
-                          className="text-white rounded-full w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0"
+                          className="text-white rounded-full w-5 h-5 sm:w-7 sm:h-7 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0"
                           whileHover={shouldReduceMotion ? {} : { scale: 1.1 }}
                           transition={{ type: "spring", stiffness: 400 }}
                         >
@@ -261,7 +261,7 @@ const CrownOptions = () => {
                             decoding="async"
                           />
                         </motion.span>
-                        <span className="flex-1">{feature}</span>
+                        <span className="flex-1 text-[14px] md:text-[20px]">{feature}</span>
                       </motion.li>
                     ))}
                 </ul>

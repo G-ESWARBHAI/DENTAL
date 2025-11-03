@@ -136,6 +136,7 @@ const Heading = styled.h2`
 
   @media(max-width: 600px) {
     font-size: 26px;
+    margin-bottom: -10px;
   }
 `;
 
@@ -167,8 +168,10 @@ const Image = styled.img`
 
   @media(max-width: 600px) {
     grid-area: image;
-    width: 100%;
+    width: 90%;
     height: auto;
+    margin: 0 auto;
+    display: block;
   }
 `;
 
@@ -204,7 +207,7 @@ const Paragraph = styled.p`
   @media(max-width: 600px) {
     grid-area: para;
     text-align: left;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 28px;
   }
 `;
@@ -229,7 +232,7 @@ const Point = styled.li`
   color: #392d44;
 
   @media(max-width: 600px) {
-    font-size: 16px;
+    font-size: 15px;
   }
 `;
 

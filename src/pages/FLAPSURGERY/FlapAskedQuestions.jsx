@@ -56,7 +56,7 @@ const FlapAskedQuestions = () => {
           maxWidth: "535px",
           fontFamily: "Montserrat, sans-serif",
           fontWeight: 700,
-          fontSize: "clamp(24px, 3vw, 36px)",
+          fontSize: "clamp(22px, 3vw, 36px)",
           color: "#0267AC",
           textAlign: "center",
           margin: "0 auto 25px auto",

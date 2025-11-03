@@ -96,7 +96,7 @@ const HeroSection = () => {
           >
             {/* Main Title */}
             <motion.h1 
-              className="font-bold text-[#0267AC] leading-tight mb-1 lg:mb-9 tracking-tight text-[11px] sm:text-base md:text-2xl lg:text-[52px]"
+              className="font-bold text-[#0267AC] leading-tight mb-1 lg:mb-9 tracking-tight text-[15px] sm:text-base md:text-2xl lg:text-[52px]"
               variants={titleVariants}
             >
               Dental Crowns & Veneers

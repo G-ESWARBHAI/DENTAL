@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <>
     <section
-      className="relative overflow-hidden w-full h-full md:max-h-[900px]  mt-1 md:mt-17 lg:min-h-[750px]  min-h-[280px]"
+      className="relative overflow-hidden w-full h-full md:max-h-[900px]  -mt-2 lg:mt-7 md:mt-17 lg:min-h-[750px]  min-h-[280px]"
       style={{
         backgroundImage: `url(${BnrSvg})`,
         // backgroundSize: "contain",
@@ -27,12 +27,12 @@ export default function Hero() {
       {/* Content */}
       <div className="relative  px-3 sm:px-6 lg:px-12 py-3 sm:py-8 md:py-14 flex flex-row items-center">
         {/* Left Text */}
-        <div className="z-10 ml-2 sm:ml-6 lg:ml-26 md:ml-28 md:mt-40   flex-shrink-0 max-w-[200px] sm:max-w-[55%] md:max-w-[48%]">
-          <h1 className="text-[#0267AC] mt-20 font-extrabold leading-tight mb-2 sm:mb-3 md:mb-5 text-base sm:text-3xl md:text-5xl lg:text-[51px] whitespace-nowrap" >
+        <div className="z-10 ml-2 sm:ml-6 lg:ml-26 md:ml-28 md:mt-36   flex-shrink-0 max-w-[200px] sm:max-w-[55%] md:max-w-[48%]">
+          <h1 className="text-[#0267AC] mt-20 font-extrabold leading-tight mb-2 sm:mb-3 md:mb-5 text-base sm:text-3xl md:text-5xl lg:text-[54px] whitespace-nowrap" >
           Teeth Whitening
          </h1>
           <div className="text-[#272727] font-medium space-y-1 sm:space-y-2 md:space-y-4 mb-3 sm:mb-5 md:mb-12" style={{lineHeight: '2' , letterSpacing: '0.6px'}}>
-            <p className="text-[10px] sm:text-base md:text-2xl lg:text-[31px] lg:max-w-[600px]" style={{lineHeight: '1.8'}}> Brighten your smile. Instantly lift years 
+            <p className="text-[10px]  max-w-[150px] sm:text-base md:text-2xl lg:text-[31px] lg:max-w-[550px]" style={{lineHeight: '1.8'}}> Brighten your smile. Instantly lift years 
             of stains</p>
           </div>
           <button

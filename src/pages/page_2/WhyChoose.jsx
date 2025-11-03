@@ -123,7 +123,7 @@ export default function WhyChoose() {
       <div className="max-w-5xl mx-auto">
         {/* Main Heading */}
         <motion.h2 
-          className="text-center mb-8 sm:mb-10 md:mb-12 font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[38px]"
+          className="text-center mb-5 sm:mb-10 md:mb-12 font-bold text-[22px] sm:text-3xl md:text-4xl lg:text-[38px]"
           style={{
             color: '#0267AC', 
             letterSpacing: '0.5px',
@@ -159,7 +159,7 @@ export default function WhyChoose() {
                   variants={iconVariants}
                   whileHover={iconVariants.hover}
                 >
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center bg-white rounded-full p-2 shadow-sm">
+                  <div className="w-11 h-11 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full p-2 ">
                     <img 
                       src={feature.icon} 
                       alt={`Feature ${index + 1}`}
@@ -177,7 +177,7 @@ export default function WhyChoose() {
                   whileHover={textVariants.hover}
                 >
                   <p 
-                    className="text-gray-700 font-medium leading-relaxed text-base sm:text-lg md:text-[18px]"
+                    className="text-gray-700 font-medium leading-relaxed text-[14px] sm:text-lg md:text-[18px]"
                     style={{
                       letterSpacing: '0.5px',
                       fontFamily: 'Montserrat, sans-serif',

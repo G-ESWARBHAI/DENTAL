@@ -79,7 +79,7 @@ const Veneer = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto -mt-16 sm:-mt-20 px-4 sm:px-6 md:px-12 overflow-x-hidden">
+    <div className="max-w-7xl mx-auto  px-4 sm:px-6 md:px-12 overflow-x-hidden">
       {/* What Is a Veneer Section */}
       <motion.div 
         className="bg-white py-8 sm:py-10 md:py-12"
@@ -90,7 +90,7 @@ const Veneer = () => {
       >
         {/* Heading */}
         <motion.h2 
-          className="font-bold text-[#0067AC] text-center mb-6 sm:mb-7 text-3xl sm:text-4xl md:text-[41px]"
+          className="font-bold text-[#0067AC] text-center mb-6 sm:mb-7 text-2xl sm:text-4xl md:text-[41px]"
           style={{ fontFamily: 'Montserrat, sans-serif' }}
           variants={headingVariants}
         >
@@ -104,7 +104,7 @@ const Veneer = () => {
         >
           <div className="max-w-[1150px] w-full">
             <p 
-              className="text-base sm:text-lg md:text-xl lg:text-[23px] text-gray-700 font-normal mx-auto text-center px-4 sm:px-6"
+              className="text-sm md:text-xl lg:text-[23px] text-gray-700 font-normal mx-auto text-center lg:text-left px-4 sm:px-6"
               style={{ 
                 fontFamily: 'Montserrat, sans-serif',
                 letterSpacing: '0.9px',
@@ -127,7 +127,7 @@ const Veneer = () => {
       >
         {/* Heading */}
         <motion.h2 
-          className="font-bold text-[#0067AC] text-center mb-8 sm:mb-10 md:mb-12 text-3xl sm:text-4xl md:text-[41px] px-4"
+          className="font-bold text-[#0067AC] text-center mb-8 sm:mb-10 md:mb-12 text-2xl sm:text-4xl md:text-[41px] px-4"
           style={{ fontFamily: 'Montserrat, sans-serif' }}
           variants={headingVariants}
         >
@@ -148,7 +148,7 @@ const Veneer = () => {
               whileHover={cardVariants.hover}
             >
               <motion.h3 
-                className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 sm:mb-4"
+                className="text-xl sm:text-3xl font-bold text-gray-800 mb-3 sm:mb-4"
                 style={{ fontFamily: 'Montserrat, sans-serif' }}
                 initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -20 }}
                 whileInView={{ 
@@ -164,7 +164,7 @@ const Veneer = () => {
                 {veneer.title}
               </motion.h3>
               <motion.p 
-                className="text-gray-700 text-base sm:text-lg md:text-xl lg:text-[21px] leading-relaxed"
+                className="text-gray-700 text-[14px] sm:text-lg md:text-xl lg:text-[21px] leading-relaxed"
                 style={{
                   fontFamily: 'Montserrat, sans-serif',
                   letterSpacing: '0.5px',

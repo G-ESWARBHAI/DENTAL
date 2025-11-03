@@ -26,7 +26,7 @@ export default function Ready() {
               <h2 className="text-white font-bold mb-1 md:mb-5 lg:mb-6 text-[10px] md:text-3xl lg:text-[38px] whitespace-nowrap" style={{letterSpacing: '0.3px'}}>
               Design the Smile You Deserve
               </h2>
-              <p className="text-white mb-2 md:mb-6 text-[8px] md:text-lg lg:text-[24px]" style={{letterSpacing: '0.6px',lineHeight: '1.2'}}>
+              <p className="text-white mb-2 md:mb-6 text-[7px] md:text-lg lg:text-[24px]" style={{letterSpacing: '0.6px',lineHeight: '1.2'}}>
               At Sasha Luxe, orthodontic care isn’t just about straight 
 teeth—it’s about confidence, harmony, and long-term 
 health. Let us help you choose the right treatment for 

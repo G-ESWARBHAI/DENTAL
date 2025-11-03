@@ -31,14 +31,14 @@ const OralTop = () => {
         <div className="relative mx-auto px-2 md:px-6 lg:px-12 py-11 md:py-20 lg:py-32 md:min-h-screen flex flex-row items-center">
           
           {/* Left Side Content */}
-          <div className="max-w-[140px] sm:max-w-[200px] md:max-w-sm lg:max-w-xl xl:max-w-2xl ml-2 md:ml-10 lg:ml-28 z-10 relative flex-shrink-0 pr-2 md:pr-4 lg:pr-8">
+          <div className="max-w-[140px] sm:max-w-[200px] md:max-w-sm lg:max-w-xl xl:max-w-2xl ml-4 md:ml-10 lg:ml-28 z-10 relative flex-shrink-0 pr-2 md:pr-4 lg:pr-8">
             {/* Main Title */}
-            <h1 className="font-bold text-[#0267AC] leading-tight mb-1 lg:mb-7 tracking-tight text-xs sm:text-base md:text-2xl lg:text-[54px]" >
+            <h1 className="font-bold text-[#0267AC] leading-tight  lg:mb-7 tracking-tight text-[14px] sm:text-base md:text-2xl lg:text-[54px]" >
               Oral Prophylaxis
             </h1>
             
             {/* Subtitle */}
-            <p className="font-medium text-[#0267AC] leading-relaxed mb-2 md:mb-6 text-[10px] sm:text-xs md:text-lg lg:text-[42px]">
+            <p className="font-medium text-[#0267AC] leading-relaxed mb-2 md:mb-8 text-[12px] sm:text-xs md:text-lg lg:text-[42px]">
               (Scaling & Polishing)
             </p>
 

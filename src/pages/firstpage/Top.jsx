@@ -91,7 +91,7 @@ export default function DentalRestorationsTop() {
           >
             {/* Main Title */}
             <motion.h1 
-              className="font-bold text-[#0267AC] leading-tight mb-1 lg:mb-7 tracking-tight text-[11px] sm:text-base md:text-2xl lg:text-[46px]"
+              className="font-bold text-[#0267AC] leading-tight mb-1 lg:mb-7 tracking-tight text-[13px] sm:text-base md:text-2xl lg:text-[46px]"
               variants={titleVariants}
             >
               Dental Restorations & Fillings
@@ -116,7 +116,7 @@ export default function DentalRestorationsTop() {
 
             {/* Call to Action Button */}
             <motion.button 
-              className="bg-[#0267AC] text-white px-1 py-0.5 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-xl font-medium hover:bg-[#0056a3] transition-colors duration-300 shadow-lg text-[7px] sm:text-[10px] md:text-base lg:text-[26px] w-full md:w-auto"
+              className="bg-[#0267AC] text-white px-1.5 py-0.5 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-xl font-medium hover:bg-[#0056a3] transition-colors duration-300 shadow-lg text-[7px] sm:text-[10px] md:text-base lg:text-[26px] w-auto md:w-auto"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"

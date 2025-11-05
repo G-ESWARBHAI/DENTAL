@@ -156,7 +156,7 @@ const CrownOptions = () => {
       <div className="w-full max-w-[1150px] mx-auto">
         {/* Main Heading */}
         <motion.h1 
-          className="text-2xl sm:text-4xl md:text-[42px] font-bold text-[#0267AC] text-center mb-6 sm:mb-8 md:mb-10 relative"
+          className="text-xl sm:text-4xl md:text-[42px] font-bold text-[#0267AC] text-center mb-6 sm:mb-8 md:mb-10 relative"
           style={{fontFamily: 'Montserrat, sans-serif'}}
           variants={headingVariants}
           initial="hidden"
@@ -203,7 +203,7 @@ const CrownOptions = () => {
                   whileHover="hover"
                 />
                 <h2 
-                  className="font-bold text-black leading-tight text-[#392D44] text-[20px] sm:text-2xl md:text-[29px]"
+                  className="font-bold text-black leading-tight text-[#392D44] text-base sm:text-2xl md:text-[29px]"
                   style={{fontFamily: 'Montserrat, sans-serif'}}
                 >
                   {card.title}
@@ -218,13 +218,13 @@ const CrownOptions = () => {
                   variants={itemVariants}
                 >
                   <p 
-                    className="text-gray-700 leading-relaxed font-bold text-[#0267AC] mb-2 text-[17px] sm:text-xl md:text-[22px]"
+                    className="text-gray-700 leading-relaxed font-bold text-[#0267AC] mb-2 text-sm sm:text-xl md:text-[22px]"
                     style={{fontFamily: 'Montserrat, sans-serif'}}
                   >
                     {card.subtitle}
                   </p>
                   <p 
-                    className="text-gray-700 leading-relaxed text-[#0267AC] text-[14px] md:text-[20px]"
+                    className="text-gray-700 leading-relaxed text-[#0267AC] text-xs md:text-[20px]"
                     style={{fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.6px'}}
                   >
                     {card.description}
@@ -240,10 +240,9 @@ const CrownOptions = () => {
                     {card.features.map((feature, idx) => (
                       <motion.li
                         key={idx}
-                        className="flex items-center mb-4 sm:mb-6 text-base font-bold text-gray-700 text-[#0267AC]"
+                        className="flex items-center mb-4 sm:mb-6 text-sm sm:text-base font-bold text-gray-700 text-[#0267AC]"
                         style={{
-                          fontFamily: 'Montserrat, sans-serif',
-                          fontSize: '17px'
+                          fontFamily: 'Montserrat, sans-serif'
                         }}
                         variants={itemVariants}
                         whileHover="hover"
@@ -261,7 +260,7 @@ const CrownOptions = () => {
                             decoding="async"
                           />
                         </motion.span>
-                        <span className="flex-1 text-[14px] md:text-[20px]">{feature}</span>
+                        <span className="flex-1 text-xs sm:text-[14px] md:text-[20px]">{feature}</span>
                       </motion.li>
                     ))}
                 </ul>
@@ -281,7 +280,7 @@ const CrownOptions = () => {
                     {card.warrantyOptions.map((option, idx) => (
                       <motion.li
                         key={idx}
-                        className="flex items-start mb-3 sm:mb-4 text-base sm:text-lg md:text-[22px] text-gray-700"
+                        className="flex items-start mb-3 sm:mb-4 text-sm sm:text-lg md:text-[22px] text-gray-700"
                         style={{
                           fontFamily: 'Montserrat, sans-serif',
                           letterSpacing: '0.6px'

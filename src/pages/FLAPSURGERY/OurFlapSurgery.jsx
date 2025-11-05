@@ -3,6 +3,30 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const OurFlapSurgery = () => {
+  // Animation variants for points
+  const pointsContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const pointItemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    }
+  };
+
   const data = [
     {
       id: 1,
@@ -95,9 +119,19 @@ const OurFlapSurgery = () => {
           <Content>
             <Title>{item.title}</Title>
             <Paragraph>{item.paragraph}</Paragraph>
-            <Points>
+            <Points
+              as={motion.ul}
+              variants={pointsContainerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               {item.points.map((point, index) => (
-                <Point key={index}>
+                <Point
+                  key={index}
+                  as={motion.li}
+                  variants={pointItemVariants}
+                >
                   <PointIcon src={"/arrow.svg"} alt="icon" /> {point}
                 </Point>
               ))}
@@ -161,14 +195,14 @@ const MotionCard = styled(motion.div)`
 `;
 
 const Image = styled.img`
-  width: 340px;
-  height: 350px;
+  width: 280px;
+  height: 290px;
   border-radius: 15px;
   object-fit: cover;
 
   @media(max-width: 600px) {
     grid-area: image;
-    width: 90%;
+    width: 75%;
     height: auto;
     margin: 0 auto;
     display: block;
@@ -177,7 +211,7 @@ const Image = styled.img`
 
 const Content = styled.div`
   flex: 1;
-  height: 350px;
+  height: 290px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

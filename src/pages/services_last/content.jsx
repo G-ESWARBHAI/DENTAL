@@ -71,7 +71,7 @@ const ContentSection = () => {
           >
             {/* First Paragraph */}
             <motion.p 
-              className=" text-left text-[15px] lg:text-[24px] leading-[29px] md:leading-[45px] "
+              className=" text-left text-[14px] lg:text-[24px] leading-[29px] md:leading-[45px] "
               style={{ 
                 fontFamily: 'Montserrat, sans-serif',
                 fontWeight: 400,
@@ -86,7 +86,7 @@ const ContentSection = () => {
 
             {/* Second Paragraph */}
             <motion.p 
-              className=" text-left text-[15px] lg:text-[24px] leading-[29px] md:leading-[45px] "
+              className=" text-left text-[14px] lg:text-[24px] leading-[29px] md:leading-[45px] "
               style={{ 
                 fontFamily: 'Montserrat, sans-serif',
                 fontWeight: 400,

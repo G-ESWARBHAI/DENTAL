@@ -66,7 +66,7 @@ const ImageContentSection = () => {
         
         {/* Main Heading - Our Whitening Treatments */}
         <motion.h2 
-          className="text-center mb-8 md:mb-12 lg:mb-16 text-[24px] lg:text-[46px]"
+          className="text-center mb-8 md:mb-12 lg:mb-16 text-[23px] lg:text-[46px]"
           style={{ 
             color: '#0267AC',
             fontFamily: 'Montserrat, sans-serif',
@@ -111,7 +111,7 @@ const ImageContentSection = () => {
             >
               {/* Sub-heading */}
               <motion.h3 
-                className="mb-4 md:mb-2 text-left mt-0 text-[22px] lg:text-[28px]"
+                className="mb-4 md:mb-2 text-left mt-0 text-[21px] lg:text-[28px]"
                 style={{ 
                   color: '#0267AC',
                   fontFamily: 'Montserrat, sans-serif',
@@ -127,7 +127,7 @@ const ImageContentSection = () => {
 
               {/* Paragraph - Exact text from Figma */}
               <motion.p 
-                className="mb-6 md:mb-8 text-left text-[15px] lg:text-[19px]"
+                className="mb-6 md:mb-8 text-left text-[14px] lg:text-[19px]"
                 style={{ 
                   fontFamily: 'Montserrat, sans-serif',
                   fontWeight: 400,
@@ -139,7 +139,7 @@ const ImageContentSection = () => {
                 variants={itemVariants}
               >
                 Zoom is one of the most trusted whitening systems in the world, and at Sasha Luxe, we tailor it to your exact needs. A special <strong 
-                className="text-[15px] lg:text-[19px]"
+                className="text-[14px] lg:text-[19px]"
                 style={{ 
                   fontFamily: 'Montserrat, sans-serif',
                   fontWeight: 700,
@@ -148,7 +148,7 @@ const ImageContentSection = () => {
                   letterSpacing: '0%',
                   color: '#392D44'
                 }}>hydrogen peroxide gel</strong> is applied to your teeth and activated with the <strong
-                className="text-[15px] lg:text-[19px]"
+                className="text-[14px] lg:text-[19px]"
                 style={{ 
                   fontFamily: 'Montserrat, sans-serif',
                   fontWeight: 700,
@@ -176,7 +176,7 @@ const ImageContentSection = () => {
 
               {/* Why Clients Love It Heading */}
               <motion.h4 
-                className="mb-4 md:mb-6 text-left text-[22px] lg:text-[24px]"
+                className="mb-4 md:mb-6 text-left text-[21px] lg:text-[24px]"
                 style={{ 
                   color: '#0267AC',
                   fontFamily: 'Montserrat, sans-serif',
@@ -215,7 +215,7 @@ const ImageContentSection = () => {
                       decoding="async"
                     />
                     <span
-                    className="text-[15px] lg:text-[19px]"
+                    className="text-[14px] lg:text-[19px]"
                      style={{ 
                       fontFamily: 'Montserrat, sans-serif',
                       fontWeight: 400,
@@ -251,7 +251,7 @@ const ImageContentSection = () => {
             >
               {/* Sub-heading */}
               <motion.h3 
-                className="mb-4 md:mb-6 text-left mt-0 text-[22px] lg:text-[28px]"
+                className="mb-4 md:mb-6 text-left mt-0 text-[21px] lg:text-[28px]"
                 style={{ 
                   color: '#0267AC',
                   fontFamily: 'Montserrat, sans-serif',
@@ -267,7 +267,7 @@ const ImageContentSection = () => {
 
               {/* Paragraph - Exact text from Figma */}
               <motion.p 
-                className="mb-6 md:mb-8 text-left text-[15px] lg:text-[19px]"
+                className="mb-6 md:mb-8 text-left text-[14px] lg:text-[19px]"
                 style={{ 
                   fontFamily: 'Montserrat, sans-serif',
                   fontWeight: 400,
@@ -298,7 +298,7 @@ const ImageContentSection = () => {
 
               {/* Why It's a Favorite Heading */}
               <motion.h4 
-                className="mb-4 md:mb-6 text-left text-[22px] lg:text-[24px]"
+                className="mb-4 md:mb-6 text-left text-[21px] lg:text-[24px]"
                 style={{ 
                   color: '#0267AC',
                   fontFamily: 'Montserrat, sans-serif',
@@ -337,7 +337,7 @@ const ImageContentSection = () => {
                       decoding="async"
                     />
                     <span
-                    className="text-[15px] lg:text-[19px]"
+                    className="text-[14px] lg:text-[19px]"
                      style={{ 
                       fontFamily: 'Montserrat, sans-serif',
                       fontWeight: 400,
@@ -381,7 +381,7 @@ const ImageContentSection = () => {
         >
           {/* Benefits Heading */}
           <motion.h2 
-            className="text-center mb-8 md:mb-12 text-[24px] lg:text-[40px]"
+            className="text-center mb-8 md:mb-12 text-[23px] lg:text-[40px]"
             style={{ 
               color: '#0267AC',
               fontFamily: 'Montserrat, sans-serif',
@@ -427,7 +427,7 @@ const ImageContentSection = () => {
                       decoding="async"
                     />
                   </div>
-                  <span className="lg:mr-4 text-[17px] lg:text-[23px]" style={{ 
+                  <span className="lg:mr-4 text-[15px] lg:text-[23px]" style={{ 
                     fontFamily: 'Montserrat, sans-serif',
                     fontWeight: 400,
                     // fontSize: '23px',
@@ -467,7 +467,7 @@ const ImageContentSection = () => {
                       decoding="async"
                     />
                   </div>
-                  <span className="lg:mr-4 text-[16px] lg:text-[23px]" style={{ 
+                  <span className="lg:mr-4 text-[15px] lg:text-[23px]" style={{ 
                     fontFamily: 'Montserrat, sans-serif',
                     fontWeight: 400,
                     // fontSize: '23px',

@@ -84,7 +84,7 @@ export default function Frequently() {
             <img 
               src={FrequentlyQuestionsImage} 
               alt="Frequently Asked Questions illustration"
-              className="w-full max-w-md lg:max-w-none lg:w-80 lg:h-80"
+              className=" w-60 h-60 lg:max-w-none lg:w-80 lg:h-80"
             />
           </motion.div>
           
@@ -111,10 +111,10 @@ export default function Frequently() {
                   
                   {/* Question and Answer */}
                   <div className="flex-1">
-                    <h3 className="text-gray-800 font-bold mb-2 md:mb-3" style={{fontSize: 'clamp(14px, 3vw, 16px)', letterSpacing: '0.5px'}}>
+                    <h3 className="text-gray-800 font-bold mb-2 md:mb-3" style={{fontSize: 'clamp(13px, 3vw, 16px)', letterSpacing: '0.5px'}}>
                       {faq.question}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed" style={{fontSize: 'clamp(12px, 2.5vw, 13px)', letterSpacing: '0.3px'}}>
+                    <p className="text-gray-600 leading-relaxed" style={{fontSize: 'clamp(11px, 2.5vw, 13px)', letterSpacing: '0.3px'}}>
                       {faq.answer}
                     </p>
                   </div>

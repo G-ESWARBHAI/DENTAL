@@ -437,6 +437,7 @@ const Slide = styled.div`
     flex-direction: column;
     text-align: center;
     margin-bottom: 70px;
+    align-items: stretch; /* Allow children to stretch full width */
   }
 
   @media (max-width: 576px) {
@@ -455,6 +456,7 @@ const LeftImage = styled.img`
   @media (max-width: 992px) {
     width: 80%;
     height: auto;
+    order: 2; /* Display image after title, before paragraph on mobile */
   }
 
   @media (max-width: 576px) {
@@ -464,7 +466,7 @@ const LeftImage = styled.img`
 
 const RightImage = styled(LeftImage)`
   @media (max-width: 992px) {
-    order: -1; /* Display image first on mobile */
+    order: 2; /* Display image after title, before paragraph on mobile */
   }
 `;
 
@@ -475,13 +477,13 @@ const RightContent = styled.div`
 
   @media (max-width: 992px) {
     width: 100%;
-    
+    display: contents; /* Remove wrapper to allow flex order on children */
   }
 `;
 
 const LeftContent = styled(RightContent)`
   @media (max-width: 992px) {
-    order: 1; /* Display content after image on mobile */
+    display: contents; /* Remove wrapper to allow flex order on children */
   }
 `;
 
@@ -496,6 +498,8 @@ const ServiceTitle = styled.h2`
 
   @media (max-width: 992px) {
     font-size: 24px;
+    order: 1; /* Display title first on mobile */
+    width: 100%;
   }
 
   @media (max-width: 576px) {
@@ -519,6 +523,8 @@ const ServiceParagraph = styled.p`
   @media (max-width: 992px) {
     font-size: 16px;
     line-height: 30px;
+    order: 3; /* Display paragraph after image on mobile */
+    width: 100%;
     
     br {
       display: none;
@@ -544,6 +550,7 @@ const Points = styled.ul`
     display: flex;
     flex-direction: column;
     width: 100%;
+    order: 4; /* Display points last on mobile */
   }
 `;
 

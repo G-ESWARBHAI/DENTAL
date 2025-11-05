@@ -14,13 +14,20 @@ export default function WhatToExpect() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 12 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.35 } },
+    hidden: { opacity: 0, x: -100 },
+    visible: { 
+      opacity: 1, 
+      x: 0, 
+      transition: { 
+        duration: 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      } 
+    },
   };
 
   const Card = ({ text }) => (
@@ -40,8 +47,8 @@ export default function WhatToExpect() {
   );
 
   return (
-    <div className="py-14 md:py-20 px-4 bg-white -mt-10">
-      <div className="max-w-[1000px] mx-auto">
+    <div className="py-14 md:py-20 px-4 bg-white -mt-10 overflow-visible">
+      <div className="max-w-[1000px] mx-auto overflow-visible">
         <h2
           className="text-center font-bold mb-8 md:mb-12 text-2xl md:text-4xl"
           style={{ color: "#0267AC", letterSpacing: "0.5px" }}
@@ -50,10 +57,11 @@ export default function WhatToExpect() {
         </h2>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5"
+          className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5 overflow-visible"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
         >
           <Card text={steps[0]} />
           <Card text={steps[1]} />

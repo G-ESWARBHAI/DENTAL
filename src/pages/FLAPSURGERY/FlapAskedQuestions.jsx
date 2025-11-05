@@ -37,10 +37,35 @@ const faqData = [
 ];
 
 const FlapAskedQuestions = () => {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, x: -80 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 25 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.45, ease: "easeOut" }}
       style={{
         width: "100%",
@@ -77,24 +102,29 @@ const FlapAskedQuestions = () => {
           src="/Frequently Asked.svg"
           alt="FAQ Illustration"
           initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.4 }}
           whileHover={{ scale: 1.04 }}
           style={{
-            maxWidth: "310.72px",
+            maxWidth: "270px",
             marginTop: "20px",
             cursor: "pointer",
             transition: "transform 0.22s ease-out",
           }}
         />
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
+        <motion.div 
+          style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {faqData.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35, delay: index * 0.08 }}
+              variants={cardVariants}
               whileHover={{ scale: 1.025 }}
               style={{
                 borderRadius: "16.88px",
@@ -152,6 +182,7 @@ const FlapAskedQuestions = () => {
           ))}
 
           <motion.div
+            variants={cardVariants}
             whileHover={{ x: 4 }}
             transition={{ type: "spring", stiffness: 340, damping: 16 }}
             style={{
@@ -174,7 +205,7 @@ const FlapAskedQuestions = () => {
               Read More →
             </span>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );

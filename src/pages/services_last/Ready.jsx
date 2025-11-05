@@ -72,16 +72,16 @@ export default function Ready() {
           {/* Content Overlay */}
           <div className="flex items-center justify-between px-3 md:px-12 py-1 md:py-12 h-full">
             {/* Left Side - Text Content */}
-            <div className="flex-1 ml-1 md:ml-8 -mt-1 md:-mt-8 pr-2 md:pr-0">
+            <div className="flex-1 md:ml-8 -mt-1 md:-mt-8 pr-2 md:pr-0">
               <motion.h2 
-                className="text-white font-bold mb-2 md:mb-5 lg:mb-11 text-[10px] md:text-3xl lg:text-[39px] whitespace-nowrap" 
+                className="text-white font-bold mb-1 md:mb-5 lg:mb-11 text-[12px] md:text-3xl lg:text-[39px] whitespace-nowrap" 
                 style={{letterSpacing: '0.3px'}}
                 variants={headingVariants}
               >
               <span style={{color: '#F6C87A'}}>Reveal</span> a Brighter, More <span style={{color: '#F6C87A'}}>Confident You</span>
               </motion.h2>
               <motion.p 
-                className="text-white mb-1 md:mb-8 text-[6px] md:text-lg lg:text-[26px] w-[190px] lg:w-[630px]" 
+                className="text-white mb-1 md:mb-8 text-[9px] md:text-lg lg:text-[26px] w-[200px] lg:w-[630px]" 
                 style={{letterSpacing: '1.4px',lineHeight: '1.5'}}
                 variants={textVariants}
               >

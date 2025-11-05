@@ -3,6 +3,30 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const WhyChooseFlap = () => {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   const cards = [
     { icon: "/PRECISION.svg", text: "Advanced periodontal expertise" },
     { icon: "/MINIMALLY.svg", text: "Cutting-edge Laser technology for better healing" },
@@ -16,10 +40,17 @@ const WhyChooseFlap = () => {
       <Heading>Why Choose Sasha Luxe?</Heading>
 
       <CardsBox>
-        <CardsWrapper>
+        <CardsWrapper
+          as={motion.div}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {cards.map((item, index) => (
             <CardMotion
               key={index}
+              variants={cardVariants}
               whileHover={{ scale: 1.04, y: -6 }}
               transition={{ type: "spring", stiffness: 260, damping: 18 }}
             >
@@ -47,11 +78,13 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: visible;
 
   @media(max-width: 600px) {
     width: 100%;
     height: auto;
     padding: 0 12px;
+    overflow: visible;
   }
 `;
 
@@ -78,11 +111,13 @@ const CardsBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: visible;
 
   @media(max-width: 600px) {
     width: 100%;
     height: auto;
     padding: 20px 0;
+    overflow: visible;
   }
 `;
 
@@ -92,12 +127,14 @@ const CardsWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
+  overflow: visible;
 
   @media(max-width: 600px) {
     width: 100%;
     flex-direction: column;
     align-items: center;
     gap: 14px;
+    overflow: visible;
   }
 `;
 

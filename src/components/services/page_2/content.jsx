@@ -128,16 +128,16 @@ const ContentSection = () => {
         {/* Content */}
         <motion.div variants={contentVariants}>
           <motion.p 
-            className="text-gray-700 text-left text-[12px]  md:text-sm lg:text-[26px]"
+            className="text-gray-700 text-left text-[14px]  md:text-sm lg:text-[26px]"
             variants={contentVariants} 
-            style={{ fontFamily: 'Montserrat, sans-serif',lineHeight: '1.5' }}
+            style={{ fontFamily: 'Montserrat, sans-serif',lineHeight: '1.8', letterSpacing: '0.5px' }}
           >
             Orthodontics focuses on aligning teeth and jaws to improve <strong style={{ color: '#272727' }}>function, health, and aesthetics.</strong> Whether you're dealing with crowding, spacing, bite issues, or misalignment, orthodontic treatment can transform your smile and your confidence.
           </motion.p>
           <br />
           <motion.p 
-            className="text-gray-700 text-left text-[12px] md:text-sm lg:text-[26px]" 
-            style={{ fontFamily: 'Montserrat, sans-serif',lineHeight: '1.5' }}
+            className="text-gray-700 text-left text-[14px] md:text-sm lg:text-[26px]" 
+            style={{ fontFamily: 'Montserrat, sans-serif',lineHeight: '1.8', letterSpacing: '0.5px' }}
             variants={contentVariants}
           >
             At <strong style={{ color: '#272727'}}>Sasha Luxe</strong>, we offer a full range of orthodontic options including <strong style={{ color: '#272727', fontWeight: '600' }}>Fixed Braces, Custom Clear Aligners, and Invisalign®</strong>, tailored to your needs, lifestyle, and goals. Expect <strong style={{ color: '#272727', fontWeight: '600' }}>precise planning, comfortable treatment, and beautiful results.</strong>

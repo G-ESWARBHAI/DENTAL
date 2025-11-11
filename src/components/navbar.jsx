@@ -306,9 +306,9 @@ const Navbar = () => {
                   )}
                 </AnimatePresence>
               </div>
-            <a href="#" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
+            <Link to="/blog" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
               Blog
-            </a>
+            </Link>
             <a href="#" className="text-dental-dark-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
               Contact us
             </a>
@@ -492,9 +492,9 @@ const Navbar = () => {
                   </AnimatePresence>
                 </motion.div>
                 <motion.div variants={mobileMenuItemVariants}>
-                  <a href="#" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
+                  <Link to="/blog" className="block px-3 py-2 text-dental-blue hover:text-dental-teal transition-colors font-medium" onClick={closeOverlays}>
                     Blog
-                  </a>
+                  </Link>
                 </motion.div>
                 <motion.div variants={mobileMenuItemVariants}>
                   <a href="#" className="block px-3 py-2 sm:py-3 text-dental-blue hover:text-dental-teal transition-colors font-medium text-sm sm:text-base" onClick={closeOverlays}>

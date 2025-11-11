@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Calendar, CalendarDays } from 'lucide-react'
+import { Calendar, CalendarDays, Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 
 const BookAppointment = () => {
@@ -10,6 +10,12 @@ const BookAppointment = () => {
     preferredDate: '',
     message: ''
   })
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState('')
+
+  // API URL from .env file (VITE_API_URL) or default to localhost
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -17,12 +23,56 @@ const BookAppointment = () => {
       ...prev,
       [name]: value
     }))
+    // Clear error when user starts typing
+    if (error) setError('')
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Handle form submission here
+    setLoading(true)
+    setError('')
+    setSuccess(false)
+
+    try {
+      const response = await fetch(`${API_URL}/appointments`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          preferredDate: formData.preferredDate,
+          message: formData.message || ''
+        })
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to create appointment')
+      }
+
+      if (data.success) {
+        setSuccess(true)
+        // Reset form
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          preferredDate: '',
+          message: ''
+        })
+        // Hide success message after 5 seconds
+        setTimeout(() => setSuccess(false), 5000)
+      }
+    } catch (err) {
+      setError(err.message || 'Something went wrong. Please try again.')
+      console.error('Error creating appointment:', err)
+    } finally {
+      setLoading(false)
+    }
   }
 
   const prefersReducedMotion = useReducedMotion();
@@ -61,6 +111,43 @@ const BookAppointment = () => {
 
         {/* Form Card */}
         <motion.div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg" variants={blockVariants}>
+          {/* Success Message */}
+          {success && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-3"
+            >
+              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
+              <div>
+                <p className="text-green-800 font-medium">Appointment booked successfully!</p>
+                <p className="text-green-600 text-sm">We've sent a confirmation email to your inbox.</p>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Error Message */}
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start space-x-3"
+            >
+              <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+              <div className="flex-1">
+                <p className="text-red-800 font-medium">Error</p>
+                <p className="text-red-600 text-sm">{error}</p>
+              </div>
+              <button
+                onClick={() => setError('')}
+                className="text-red-600 hover:text-red-800"
+                aria-label="Close error"
+              >
+                ×
+              </button>
+            </motion.div>
+          )}
+
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             {/* Input Fields Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -155,12 +242,27 @@ const BookAppointment = () => {
             <div className="pt-2 sm:pt-4">
               <motion.button
                 type="submit"
-                className="w-full bg-[#FF642F] hover:bg-[#e55a2b] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center space-x-2 transition-colors font-sans text-sm sm:text-base"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.98 }}
+                disabled={loading || success}
+                className="w-full bg-[#FF642F] hover:bg-[#e55a2b] disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center space-x-2 transition-colors font-sans text-sm sm:text-base"
+                whileHover={!loading && !success ? { y: -2 } : {}}
+                whileTap={!loading && !success ? { scale: 0.98 } : {}}
               >
-                <CalendarDays className="w-4 h-4 sm:w-5 sm:h-5" />
-                <span>Book Appointment</span>
+                {loading ? (
+                  <>
+                    <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
+                    <span>Booking Appointment...</span>
+                  </>
+                ) : success ? (
+                  <>
+                    <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span>Appointment Booked!</span>
+                  </>
+                ) : (
+                  <>
+                    <CalendarDays className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span>Book Appointment</span>
+                  </>
+                )}
               </motion.button>
             </div>
           </form>

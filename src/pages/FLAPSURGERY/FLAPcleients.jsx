@@ -174,7 +174,6 @@ const MotionHeading = motion(styled.h2`
   margin: 0 0 8px 0;
   width: 100%;
   max-width: 1108px;
-  text-align: center;
 
   @media (min-width: 768px) {
     text-align: left;
@@ -190,7 +189,6 @@ const MotionParagraph = motion(styled.p`
   line-height: clamp(22px, 4vw, 29.94px);
   color: #392D44;
   margin: 0 0 24px 0;
-  text-align: center;
   padding: 0 8px;
 
   @media (min-width: 768px) {

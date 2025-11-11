@@ -78,7 +78,7 @@ const OralTop = () => {
   return (
     <>
       <section 
-        className="relative overflow-hidden md:min-h-screen mt-8"
+        className="relative overflow-hidden md:min-h-screen mt-7"
         style={{
           backgroundImage: `url(${bnrSvg})`,
           backgroundSize: '100%',
@@ -100,7 +100,7 @@ const OralTop = () => {
           <div className="max-w-[140px] sm:max-w-[200px] md:max-w-sm lg:max-w-xl xl:max-w-2xl ml-4 md:ml-10 lg:ml-28 z-10 relative flex-shrink-0 pr-2 md:pr-4 lg:pr-8">
             {/* Main Title */}
             <motion.h1 
-              className="font-bold text-[#0267AC] leading-tight  lg:mb-7 tracking-tight text-[14px] sm:text-base md:text-2xl lg:text-[54px]"
+              className="font-bold text-[#0267AC] leading-tight  lg:mb-7 tracking-tight text-[16px] sm:text-base md:text-2xl lg:text-[54px]"
               variants={headingVariants}
             >
               Oral Prophylaxis
@@ -108,7 +108,7 @@ const OralTop = () => {
             
             {/* Subtitle */}
             <motion.p 
-              className="font-medium text-[#0267AC] leading-relaxed mb-2 md:mb-8 text-[12px] sm:text-xs md:text-lg lg:text-[42px]"
+              className="font-medium text-[#0267AC] leading-relaxed mb-2 md:mb-8 text-[14px] sm:text-xs md:text-lg lg:text-[42px]"
               variants={subtitleVariants}
             >
               (Scaling & Polishing)

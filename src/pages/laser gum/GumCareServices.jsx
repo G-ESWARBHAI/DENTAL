@@ -430,18 +430,19 @@ const Slide = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   gap: 40px;
 
   @media (max-width: 992px) {
     flex-direction: column;
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
+    align-items: stretch; /* Allow children to stretch full width */
   }
 
   @media (max-width: 576px) {
     gap: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 `;
 
@@ -455,16 +456,23 @@ const LeftImage = styled.img`
   @media (max-width: 992px) {
     width: 80%;
     height: auto;
+    order: 2; /* Display image after title, before paragraph on mobile */
+    margin: 0 auto;
+    display: block;
   }
 
   @media (max-width: 576px) {
     width: 90%;
+    margin: 0 auto;
+    display: block;
   }
 `;
 
 const RightImage = styled(LeftImage)`
   @media (max-width: 992px) {
-    order: -1; /* Display image first on mobile */
+    order: 2; /* Display image after title, before paragraph on mobile */
+    margin: 0 auto;
+    display: block;
   }
 `;
 
@@ -475,13 +483,13 @@ const RightContent = styled.div`
 
   @media (max-width: 992px) {
     width: 100%;
-    
+    display: contents; /* Remove wrapper to allow flex order on children */
   }
 `;
 
 const LeftContent = styled(RightContent)`
   @media (max-width: 992px) {
-    order: 1; /* Display content after image on mobile */
+    display: contents; /* Remove wrapper to allow flex order on children */
   }
 `;
 
@@ -491,15 +499,19 @@ const ServiceTitle = styled.h2`
   font-size: 28px;
   line-height: 41.29px;
   color: #0267ac;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   text-align: left;
 
   @media (max-width: 992px) {
     font-size: 24px;
+    order: 1; /* Display title first on mobile */
+    width: 100%;
+    text-align: center;
   }
 
   @media (max-width: 576px) {
     font-size: 16px;
+    text-align: center;
   }
 `;
 
@@ -509,7 +521,7 @@ const ServiceParagraph = styled.p`
   font-size: 19px;
   line-height: 34.87px;
   color: #392d44;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   text-align: left;
 
   br {
@@ -519,6 +531,9 @@ const ServiceParagraph = styled.p`
   @media (max-width: 992px) {
     font-size: 16px;
     line-height: 30px;
+    order: 3; /* Display paragraph after image on mobile */
+    width: 100%;
+    margin-bottom: 3px;
     
     br {
       display: none;
@@ -529,6 +544,7 @@ const ServiceParagraph = styled.p`
     font-size: 14px;
     line-height: 26px;
     margin-top:-8px;
+    margin-bottom: 2px;
     br {
       display: none;
     }
@@ -544,6 +560,7 @@ const Points = styled.ul`
     display: flex;
     flex-direction: column;
     width: 100%;
+    order: 4; /* Display points last on mobile */
   }
 `;
 

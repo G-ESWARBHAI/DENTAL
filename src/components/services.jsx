@@ -194,7 +194,7 @@ export default function DentalServices() {
                     className="flex items-start text-gray-700 font-sans"
                     variants={itemVariants}
                   >
-                    <span className="mr-2 flex-shrink-0 mt-1">•</span>
+                    <span className="mr-2 flex-shrink-0">•</span>
                     <span className="text-xs sm:text-sm leading-relaxed">{item}</span>
                   </motion.li>
                 ))}

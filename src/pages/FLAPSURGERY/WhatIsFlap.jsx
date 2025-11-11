@@ -119,7 +119,7 @@ const MotionParagraph1 = motion(styled.p`
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: clamp(14px, 2.4vw, 24px);
-  line-height: clamp(24px, 5vw, 46px);
+  line-height: clamp(26px, 5vw, 46px);
   color: #392d44;
   text-align: left;
   padding: 0 4px;
@@ -143,7 +143,7 @@ const MotionParagraph2 = motion(styled.p`
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: clamp(14px, 2.4vw, 24px);
-  line-height: clamp(24px, 5vw, 46px);
+  line-height: clamp(26px, 5vw, 46px);
   color: #392d44;
   margin-top: 20px;
   text-align: left;

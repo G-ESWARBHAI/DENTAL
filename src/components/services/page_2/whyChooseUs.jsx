@@ -18,8 +18,8 @@ export default function WhyChoose() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.06
+        staggerChildren: 0.15,
+        delayChildren: 0.1
       }
     }
   };
@@ -42,7 +42,7 @@ export default function WhyChoose() {
   const featureBoxVariants = {
     hidden: { 
       opacity: 0, 
-      x: -30,
+      x: -150,
       scale: 0.95
     },
     visible: {
@@ -50,8 +50,8 @@ export default function WhyChoose() {
       x: 0,
       scale: 1,
       transition: {
-        duration: 0.35,
-        ease: "easeOut"
+        duration: 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     },
     hover: {
@@ -67,7 +67,7 @@ export default function WhyChoose() {
   const featureBoxRightVariants = {
     hidden: { 
       opacity: 0, 
-      x: 30,
+      x: 150,
       scale: 0.95
     },
     visible: {
@@ -75,8 +75,8 @@ export default function WhyChoose() {
       x: 0,
       scale: 1,
       transition: {
-        duration: 0.35,
-        ease: "easeOut"
+        duration: 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     },
     hover: {
@@ -94,7 +94,7 @@ export default function WhyChoose() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.2
       }
     }
   };
@@ -114,15 +114,15 @@ export default function WhyChoose() {
     hidden: { 
       opacity: 0, 
       y: 40,
-      x: -30
+      x: -100
     },
     visible: {
       opacity: 1,
       y: 0,
       x: 0,
       transition: {
-        duration: 0.4,
-        ease: "easeOut"
+        duration: 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
@@ -146,7 +146,7 @@ export default function WhyChoose() {
     hidden: { 
       opacity: 0, 
       y: 25,
-      x: -20,
+      x: -100,
       scale: 0.95
     },
     visible: {
@@ -155,8 +155,8 @@ export default function WhyChoose() {
       x: 0,
       scale: 1,
       transition: {
-        duration: 0.3,
-        ease: "easeOut"
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     },
     hover: {
@@ -216,34 +216,46 @@ export default function WhyChoose() {
 
   return (
     <motion.div 
-      className="py-8 md:py-16 px-4 bg-white -mt-5 mb-6 md:mb-10"
+      className="py-8 md:py-16 px-4 bg-white -mt-5 mb-6 md:mb-10 overflow-visible"
       initial={initialAnim}
       animate={animateAnim}
       whileInView={whileInViewAnim}
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto overflow-visible">
         {/* Main Heading */}
         <motion.h2 
           className="text-center mb-8 md:mb-12 font-bold text-xl md:text-2xl lg:text-3xl" 
           style={{color: '#0267AC', letterSpacing: '0.5px'}}
           variants={headingVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
         >
           Why Choose Sasha Luxe?
         </motion.h2>
         
         {/* Features Grid - Two columns */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 overflow-visible"
           variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
         >
           {/* Left Column - 3 items */}
-          <motion.div className="space-y-3 md:space-y-4" variants={columnVariants}>
+          <motion.div 
+            className="space-y-3 md:space-y-4" 
+            variants={columnVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             {leftColumnFeatures.map((feature, index) => (
               <motion.div 
                 key={index}
-                className="rounded-2xl p-2 md:p-3 overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]"
+                className="rounded-2xl p-2 md:p-3 cursor-pointer min-h-[70px] md:min-h-[90px]"
                 style={{ backgroundColor: '#F1F9FD' }}
                 variants={featureBoxVariants}
                 whileHover="hover"
@@ -282,11 +294,17 @@ export default function WhyChoose() {
           </motion.div>
 
           {/* Right Column - 2 items */}
-          <motion.div className="space-y-3 md:space-y-4" variants={columnVariants}>
+          <motion.div 
+            className="space-y-3 md:space-y-4" 
+            variants={columnVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             {rightColumnFeatures.map((feature, index) => (
               <motion.div 
                 key={index}
-                className="rounded-2xl p-2 md:p-3 overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]"
+                className="rounded-2xl p-2 md:p-3 cursor-pointer min-h-[70px] md:min-h-[90px]"
                 style={{ backgroundColor: '#F1F9FD' }}
                 variants={featureBoxRightVariants}
                 whileHover="hover"
@@ -337,26 +355,46 @@ export default function WhyChoose() {
             className="text-center mb-8 md:mb-12 font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl" 
             style={{color: '#0267AC', letterSpacing: '0.5px', fontSize: 'clamp(20px, 4vw, 38px)'}}
             variants={headingVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
           >
             What to Expect During Treatment
           </motion.h2>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 overflow-visible"
             variants={columnStaggerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
           >
             {/* Column 1: BEFORE YOU BEGIN */}
-            <motion.div variants={columnVariantsExpect}>
+            <motion.div 
+              variants={columnVariantsExpect}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
               <motion.h3 
                 className="font-bold text-[#0267AC] mb-4 md:mb-6 text-base md:text-lg lg:text-xl" 
                 style={{letterSpacing: '0.5px', fontSize: 'clamp(16px, 2.5vw, 20px)'}}
                 variants={columnHeadingVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
               >
                 BEFORE YOU BEGIN
               </motion.h3>
-              <motion.div className="space-y-3 md:space-y-4" variants={bulletBoxStaggerVariants}>
+              <motion.div 
+                className="space-y-3 md:space-y-4" 
+                variants={bulletBoxStaggerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+              >
                 <motion.div 
-                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  className="p-3 md:p-4 flex items-center cursor-pointer min-h-[70px] md:min-h-[90px]" 
                   style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
@@ -378,7 +416,7 @@ export default function WhyChoose() {
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  className="p-3 md:p-4 flex items-center cursor-pointer min-h-[70px] md:min-h-[90px]" 
                   style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
@@ -400,7 +438,7 @@ export default function WhyChoose() {
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  className="p-3 md:p-4 flex items-center cursor-pointer min-h-[70px] md:min-h-[90px]" 
                   style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
@@ -422,7 +460,7 @@ export default function WhyChoose() {
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  className="p-3 md:p-4 flex items-center cursor-pointer min-h-[70px] md:min-h-[90px]" 
                   style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
@@ -447,17 +485,31 @@ export default function WhyChoose() {
             </motion.div>
 
             {/* Column 2: DURING TREATMENT */}
-            <motion.div variants={columnVariantsExpect}>
+            <motion.div 
+              variants={columnVariantsExpect}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
               <motion.h3 
                 className="font-bold text-[#0267AC] mb-4 md:mb-6 text-base md:text-lg lg:text-xl" 
                 style={{letterSpacing: '0.5px', fontSize: 'clamp(16px, 2.5vw, 20px)'}}
                 variants={columnHeadingVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
               >
                 DURING TREATMENT
               </motion.h3>
-              <motion.div className="space-y-3 md:space-y-4" variants={bulletBoxStaggerVariants}>
+              <motion.div 
+                className="space-y-3 md:space-y-4" 
+                variants={bulletBoxStaggerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+              >
                 <motion.div 
-                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  className="p-3 md:p-4 flex items-center cursor-pointer min-h-[70px] md:min-h-[90px]" 
                   style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
@@ -479,7 +531,7 @@ export default function WhyChoose() {
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  className="p-3 md:p-4 flex items-center cursor-pointer min-h-[70px] md:min-h-[90px]" 
                   style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
@@ -501,7 +553,7 @@ export default function WhyChoose() {
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  className="p-3 md:p-4 flex items-center cursor-pointer min-h-[70px] md:min-h-[90px]" 
                   style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
@@ -518,7 +570,7 @@ export default function WhyChoose() {
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  className="p-3 md:p-4 flex items-center cursor-pointer min-h-[70px] md:min-h-[90px]" 
                   style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
@@ -538,17 +590,31 @@ export default function WhyChoose() {
             </motion.div>
 
             {/* Column 3: AFTER TREATMENT */}
-            <motion.div variants={columnVariantsExpect}>
+            <motion.div 
+              variants={columnVariantsExpect}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
               <motion.h3 
                 className="font-bold text-[#0267AC] mb-4 md:mb-6 text-base md:text-lg lg:text-xl" 
                 style={{letterSpacing: '0.5px', fontSize: 'clamp(16px, 2.5vw, 20px)'}}
                 variants={columnHeadingVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
               >
                 AFTER TREATMENT
               </motion.h3>
-              <motion.div className="space-y-3 md:space-y-4" variants={bulletBoxStaggerVariants}>
+              <motion.div 
+                className="space-y-3 md:space-y-4" 
+                variants={bulletBoxStaggerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+              >
                 <motion.div 
-                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  className="p-3 md:p-4 flex items-center cursor-pointer min-h-[70px] md:min-h-[90px]" 
                   style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
@@ -565,7 +631,7 @@ export default function WhyChoose() {
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  className="p-3 md:p-4 flex items-center cursor-pointer min-h-[70px] md:min-h-[90px]" 
                   style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"
@@ -582,7 +648,7 @@ export default function WhyChoose() {
                   </span>
                 </motion.div>
                 <motion.div 
-                  className="p-3 md:p-4 flex items-center overflow-hidden cursor-pointer min-h-[70px] md:min-h-[90px]" 
+                  className="p-3 md:p-4 flex items-center cursor-pointer min-h-[70px] md:min-h-[90px]" 
                   style={{ backgroundColor: '#E1EDF3', borderRadius: '12.74px' }}
                   variants={bulletBoxVariants}
                   whileHover="hover"

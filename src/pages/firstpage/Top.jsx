@@ -100,14 +100,14 @@ export default function DentalRestorationsTop() {
          
             {/* Description */}
             <motion.p 
-              className="text-[#272727] font-medium leading-relaxed lg:leading-relaxed  text-[7px] sm:text-[10px] md:text-sm lg:text-[30px]" 
+              className="text-[#272727] font-medium leading-relaxed lg:leading-relaxed  text-[9px] sm:text-[10px] md:text-sm lg:text-[30px]" 
               style={{letterSpacing: '0.5px'}}
               variants={textVariants}
             >
               Restore Your Smile. Repair Damage.
             </motion.p>
             <motion.p 
-              className="text-[#272727] font-medium leading-relaxed lg:leading-relaxed mb-2 md:mb-8 lg:mb-11 text-[7px] sm:text-[10px] md:text-sm lg:text-[30px]" 
+              className="text-[#272727] font-medium leading-relaxed lg:leading-relaxed mb-2 md:mb-8 lg:mb-11 text-[9px] sm:text-[10px] md:text-sm lg:text-[30px]" 
               style={{letterSpacing: '0.5px'}}
               variants={textVariants}
             >

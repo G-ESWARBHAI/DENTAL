@@ -83,14 +83,14 @@ export default function FlapHero() {
           
           {/* Left Side Content */}
           <motion.div 
-            className="max-w-[240px]  lg:max-w-[600px] xl:max-w-2xl ml-2 md:ml-10 lg:ml-28 z-10 relative flex-shrink-0 pr-2 md:pr-4 lg:pr-8"
+            className="max-w-[240px]  lg:max-w-[600px] xl:max-w-2xl  md:ml-10 lg:ml-28 z-10 relative flex-shrink-0 pr-2 md:pr-4 lg:pr-8"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
             {/* Main Title */}
             <motion.h1 
-              className="font-bold text-[#0267AC] leading-tight mb-1 lg:mb-7 tracking-tight text-[20px] sm:text-base md:text-2xl lg:text-[60px]"
+              className="font-bold text-[#0267AC] leading-tight mb-1 lg:mb-7 tracking-tight text-[22px] sm:text-base md:text-2xl lg:text-[60px]"
               variants={titleVariants}
             >
               Flap Surgery
@@ -99,7 +99,7 @@ export default function FlapHero() {
          
             {/* Description */}
             <motion.p 
-              className="text-[#272727] font-medium leading-relaxed lg:mb-8 lg:leading-relaxed  text-[7px] sm:text-[10px] md:text-sm lg:text-[28px]" 
+              className="text-[#272727] font-medium leading-relaxed lg:mb-8 lg:leading-relaxed  text-[9px] sm:text-[10px] md:text-sm lg:text-[28px]" 
               style={{letterSpacing: '0.5px'}}
               variants={textVariants}
             >

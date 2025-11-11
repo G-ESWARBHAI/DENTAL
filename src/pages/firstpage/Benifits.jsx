@@ -28,13 +28,13 @@ export default function Benefits() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
+    hidden: { opacity: 0, x: -100 },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.5,
-        ease: "easeOut"
+        duration: 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };

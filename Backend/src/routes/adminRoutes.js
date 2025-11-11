@@ -1,0 +1,26 @@
+const express = require('express');
+const router = express.Router();
+const {
+  getAppointments,
+  getAppointment,
+  updateAppointmentStatus,
+  deleteAppointment,
+  getDashboardStats
+} = require('../controllers/adminController');
+const { protect, authorize } = require('../middlewares/authMiddleware');
+
+// All admin routes require authentication and admin role
+router.use(protect);
+router.use(authorize('admin'));
+
+// Dashboard stats
+router.get('/stats', getDashboardStats);
+
+// Appointment routes
+router.get('/appointments', getAppointments);
+router.get('/appointments/:id', getAppointment);
+router.put('/appointments/:id/status', updateAppointmentStatus);
+router.delete('/appointments/:id', deleteAppointment);
+
+module.exports = router;
+

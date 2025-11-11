@@ -89,7 +89,8 @@ const BookAppointment = () => {
 
   return (
     <motion.section 
-      className="py-12 sm:py-16 lg:py-20"
+      id="book-appointment"
+      className="py-12 sm:py-16 lg:py-20 scroll-mt-20"
       style={{
         background: 'linear-gradient(135deg, #A1D6FA 0%, #C9E8FB 52%, #EFF8FB 100%)'
       }}
@@ -217,7 +218,7 @@ const BookAppointment = () => {
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#0067AC] focus:border-transparent outline-none font-sans pr-10 sm:pr-12 text-sm sm:text-base"
                     required
                   />
-                  <Calendar className="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5" />
+                  {/* <Calendar className="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5" /> */}
                 </div>
               </div>
             </div>

@@ -6,7 +6,18 @@ import { ArrowRight } from 'lucide-react';
 
 
 
-export default function FlapHero() {
+export default function fFlapHero() {
+  // Smooth scroll function to book appointment section
+  const scrollToBookAppointment = () => {
+    const element = document.getElementById('book-appointment');
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -115,16 +126,14 @@ export default function FlapHero() {
 
             {/* Call to Action Button */}
             <motion.button 
-              className=" text-white  md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-xl font-medium  transition-colors duration-300 text-[7px] sm:text-[10px] md:text-base lg:text-[26px] w-auto md:w-auto"
+              onClick={scrollToBookAppointment}
+              className="bg-[#FF642F] text-white rounded-full flex flex-inline lg:-ml-2 items-center justify-center gap-2 font-semibold px-2 py-0.5 lg:px-10 lg:py-[7px] text-[7px] sm:text-base md:text-3xl lg:text-[17px] transition-all"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
             >
-          <button
-            className="bg-[#FF642F] text-white rounded-full flex flex-inline lg:-ml-10 items-center justify-center gap-2 font-semibold   px-2 py-0.5  lg:px-10 lg:py-[7px] text-[7px] sm:text-base md:text-3xl lg:text-[17px] transition-all  "
-            >
               Book Consultation <ArrowRight className="w-2 h-2 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-          </button>            </motion.button>
+            </motion.button>
           </motion.div>
 
           {/* Right Side - Empty space for visual balance */}

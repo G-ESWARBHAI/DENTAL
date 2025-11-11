@@ -23,6 +23,7 @@ import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import Blogs from './pages/Blogs'
 import BlogDetail from './pages/BlogDetail'
+import BookAppointment from './components/bookAppointment'
 import NotFound404 from './components/NotFound404'
 
 const App = () => {
@@ -160,6 +161,15 @@ const App = () => {
               <Footer />
             </div>
           } />
+          
+          <Route path="/book-appointment" element={
+            <div className="min-h-screen overflow-x-hidden w-full max-w-full">
+              <Navbar />
+              <BookAppointment />
+              <Footer />
+            </div>
+          } />
+          
           <Route path="*" element={
             <div className="min-h-screen overflow-x-hidden w-full max-w-full">
               <Navbar />

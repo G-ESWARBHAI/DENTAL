@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 
 
-export default function fFlapHero() {
+export default function FlapHero() {
   // Smooth scroll function to book appointment section
   const scrollToBookAppointment = () => {
     const element = document.getElementById('book-appointment');

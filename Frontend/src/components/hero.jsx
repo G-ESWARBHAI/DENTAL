@@ -93,7 +93,7 @@ export default function FlapHero() {
           
           {/* Left Side Content */}
           <motion.div 
-            className="max-w-[240px]  lg:max-w-[600px] xl:max-w-2xl ml-2 md:ml-10 lg:ml-28 z-10 relative flex-shrink-0 pr-2 md:pr-4 lg:pr-8"
+            className="max-w-[240px]  lg:max-w-[600px] xl:max-w-2xl ml-2 md:ml-10 lg:ml-20 z-10 relative flex-shrink-0 pr-2 md:pr-4 lg:pr-8"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
